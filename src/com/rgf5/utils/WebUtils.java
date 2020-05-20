@@ -23,7 +23,6 @@ public class WebUtils {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         return bean;
     }
 }
