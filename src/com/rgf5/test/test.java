@@ -56,8 +56,8 @@ public class test {
      */
     @Test
     public void test3(){
-        String sql = "update admins set passWd = ? where id=?";
-        boolean update = BaseDao.update(sql,"666",3);
+        String sql = "update admins set passWd=? where id=?";
+        boolean update = BaseDao.update(sql,"999",3);
         sql = "select * from admins";
         List<Admin> beanList = BaseDao.getBeanList(sql, Admin.class);
         System.out.println(update);
