@@ -9,10 +9,86 @@ package com.rgf5.bean;
  **/
 public class Student {
 
-//            id INT PRIMARY KEY AUTO_INCREMENT,
-//            student_id VARCHAR(20) UNIQUE NOT NULL,
-//    passwd VARCHAR(20) NOT NULL,
-//    sex CHAR(1) NOT NULL,
-//    class_id VARCHAR(20) NOT NULL
+    /**
+     * 主键，自增
+     */
+    private int id;
+    /**
+     * 学生id
+     */
+    private String studentId;
+    /**
+     * 密码
+     */
+    private String passWd;
+    /**
+     * 性别
+     */
+    private String sex;
+    /**
+     * 班级id
+     */
+    private String classId;
 
+    public Student() {
+    }
+
+    public Student(int id, String studentId, String passWd, String sex, String classId) {
+        this.id = id;
+        this.studentId = studentId;
+        this.passWd = passWd;
+        this.sex = sex;
+        this.classId = classId;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(String studentId) {
+        this.studentId = studentId;
+    }
+
+    public String getPassWd() {
+        return passWd;
+    }
+
+    public void setPassWd(String passWd) {
+        this.passWd = passWd;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
+    }
+
+    public String getClassId() {
+        return classId;
+    }
+
+    public void setClassId(String classId) {
+        this.classId = classId;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "id=" + id +
+                ", studentId='" + studentId + '\'' +
+                ", passWd='" + passWd + '\'' +
+                ", sex='" + sex + '\'' +
+                ", classId='" + classId + '\'' +
+                '}';
+    }
 }
