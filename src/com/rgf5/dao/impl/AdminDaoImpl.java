@@ -1,5 +1,6 @@
 package com.rgf5.dao.impl;
 
+
 import com.rgf5.bean.Admin;
 import com.rgf5.dao.AdminDao;
 import com.rgf5.dao.BaseDao;
