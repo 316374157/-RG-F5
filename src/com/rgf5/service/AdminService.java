@@ -11,7 +11,7 @@ public interface AdminService {
      * @param admin 已有对象
      * @return 数据库中的数据
      */
-    public Admin getBean(Admin admin);
+    public Admin login(Admin admin);
 
     /**
      * 管理员修改自身的资料

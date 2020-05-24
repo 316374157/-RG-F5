@@ -1,8 +1,10 @@
 package com.rgf5.controller;
 
 import com.rgf5.bean.Admin;
-import com.rgf5.dao.AdminDao;
-import com.rgf5.dao.impl.AdminDaoImpl;
+import com.rgf5.bean.Student;
+import com.rgf5.bean.Teacher;
+import com.rgf5.service.AdminService;
+import com.rgf5.service.impl.AdminServiceImpl;
 import com.rgf5.utils.WebUtils;
 
 import javax.servlet.ServletException;
@@ -18,12 +20,27 @@ public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        Admin admin = WebUtils.paramsToBean(request, new Admin());
-        AdminDao adminDao = new AdminDaoImpl();
-        admin = adminDao.getBean(admin);
-        if(admin!=null){
-            session.setAttribute("admin", admin);
-            request.getRequestDispatcher("/pages/admin/home.jsp").forward(request,response);
+        String user = request.getParameter("user");
+        if("admin".equals(user)){
+            Admin admin = WebUtils.paramsToBean(request, new Admin());
+            AdminService adminService = new AdminServiceImpl();
+            admin = adminService.login(admin);
+            if(admin!=null){
+                session.setAttribute("admin", admin);
+                response.sendRedirect("pages/admin/home.jsp");
+            }
+        }else if("student".equals(user)){
+            Student student = WebUtils.paramsToBean(request, new Student());
+            if(student!=null){
+                session.setAttribute("student", student);
+                response.sendRedirect("pages/student/home.jsp");
+            }
+        }else{
+            Teacher teacher = WebUtils.paramsToBean(request, new Teacher());
+            if(teacher!=null){
+                session.setAttribute("teacher", teacher);
+                response.sendRedirect("pages/teacher/home.jsp");
+            }
         }
     }
 
