@@ -68,6 +68,7 @@ public interface TeacherDao {
      */
     public boolean update(Teacher teacher);
 
+
     /**
      * 删除一个老师账号
      * @param id 要删除的老师id

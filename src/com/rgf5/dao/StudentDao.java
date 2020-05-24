@@ -79,6 +79,7 @@ public interface StudentDao {
      */
     public boolean changeClassId(Student student);
 
+
     /**
      * 删除一个学生账号
      * @param id 要删除的学生id

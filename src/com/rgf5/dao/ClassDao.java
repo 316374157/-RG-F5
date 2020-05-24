@@ -22,6 +22,7 @@ public interface ClassDao {
      */
     public boolean update(Classes classes);
 
+
     /**
      * 删除一个班级账号
      * @param id 要删除的班级id

@@ -57,6 +57,7 @@ public interface DateBankDao {
      * @return 一个课程的所有文件信息
      */
     public List<DateBank> getBeanListByCourseId(String courseId);
+
     /**
      * 通过文件类型获取文件信息
      * @param dataType 文件类型

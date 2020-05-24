@@ -39,6 +39,7 @@ public interface CourseDao {
      * @return 一个课程的所有信息
      */
     public Course getBeanByCourseId(String courseId);
+
     /**
      * 通过课程名获取课程信息
      * @param courseName 课程名

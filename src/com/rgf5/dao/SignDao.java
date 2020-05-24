@@ -45,6 +45,7 @@ public interface SignDao {
      * @return 一个班级所有的签到信息
      */
     public List<Sign> getBeanListByClassId(String classId);
+
     /**
      * 通过课程ID获取签到信息
      * @param courseId 课程ID
