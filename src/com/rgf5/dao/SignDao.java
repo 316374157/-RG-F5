@@ -1,6 +1,5 @@
 package com.rgf5.dao;
 
-import com.rgf5.bean.Course;
 import com.rgf5.bean.Sign;
 
 import java.util.List;

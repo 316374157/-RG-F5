@@ -1,6 +1,5 @@
 package com.rgf5.dao;
 
-import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 
 import java.util.List;
