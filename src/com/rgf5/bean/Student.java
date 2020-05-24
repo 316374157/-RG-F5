@@ -29,16 +29,21 @@ public class Student {
      * 班级id
      */
     private String classId;
+    /**
+     * 学生姓名
+     */
+    private String studentName;
 
     public Student() {
     }
 
-    public Student(int id, String studentId, String passWd, String sex, String classId) {
+    public Student(int id, String studentId, String passWd, String sex, String classId,String studentName) {
         this.id = id;
         this.studentId = studentId;
         this.passWd = passWd;
         this.sex = sex;
         this.classId = classId;
+        this.studentName = studentName;
     }
 
     public int getId() {
@@ -90,5 +95,13 @@ public class Student {
                 ", sex='" + sex + '\'' +
                 ", classId='" + classId + '\'' +
                 '}';
+    }
+
+    public String getStudentName() {
+        return studentName;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
 }

@@ -37,15 +37,20 @@ public class Teacher {
      * 老师所教的第三个课程
      */
     private String courseId3;
+    /**
+     * 老师姓名
+     */
+    private String teacherName;
 
     public Teacher() {
     }
 
-    public Teacher(int id, String teacherId, String passWd, String sex, String courseId1, String courseId2, String courseId3) {
+    public Teacher(int id, String teacherId, String passWd, String sex, String courseId1, String courseId2, String courseId3,String teacherName) {
         this.id = id;
         this.teacherId = teacherId;
         this.passWd = passWd;
         this.sex = sex;
+        this.teacherName = teacherName;
         this.courseId1 = courseId1;
         this.courseId2 = courseId2;
         this.courseId3 = courseId3;
@@ -118,5 +123,13 @@ public class Teacher {
                 ", courseId2='" + courseId2 + '\'' +
                 ", courseId3='" + courseId3 + '\'' +
                 '}';
+    }
+
+    public String getTeacherName() {
+        return teacherName;
+    }
+
+    public void setTeacherName(String teacherName) {
+        this.teacherName = teacherName;
     }
 }

@@ -17,4 +17,10 @@ public class AdminDaoImpl implements AdminDao {
         String sql = "select id,admin_id as adminId,passWd from admins where admin_id=? and passWd=?";
         return BaseDao.getBean(sql, Admin.class, admin.getAdminId(),admin.getPassWd());
     }
+
+    @Override
+    public boolean update(Admin admin) {
+        String sql= "update admins set passWd=? where admin_id=?";
+        return BaseDao.update(sql,admin.getPassWd(),admin.getAdminId());
+    }
 }
