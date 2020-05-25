@@ -2,8 +2,11 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
+    <script src="./JS/HeaderChose.js"></script>
 </head>
 <body>
-
+<jsp:include page="../../public/TeacherHeader.jsp"/>
+<div id="Only" style="display: none;">NewCourse</div>
 </body>
 </html>
