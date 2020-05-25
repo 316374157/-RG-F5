@@ -94,6 +94,7 @@ public class Student {
                 ", passWd='" + passWd + '\'' +
                 ", sex='" + sex + '\'' +
                 ", classId='" + classId + '\'' +
+                ", studentName='" + studentName + '\'' +
                 '}';
     }
 

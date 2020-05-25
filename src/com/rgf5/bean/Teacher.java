@@ -122,6 +122,7 @@ public class Teacher {
                 ", courseId1='" + courseId1 + '\'' +
                 ", courseId2='" + courseId2 + '\'' +
                 ", courseId3='" + courseId3 + '\'' +
+                ", teacherName='" + teacherName + '\'' +
                 '}';
     }
 
