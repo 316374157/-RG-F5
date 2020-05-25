@@ -11,41 +11,48 @@
     <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
 </head>
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">名字</a>
+    <jsp:include page="../../public/TeacherHeader.jsp"/>
+    <div class="wrap" id="wrap">
+        <div class="logGet">
+            <!-- 头部提示信息 -->
+            <div class="logD logDtip">
+                <p class="p1">登录</p>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="../../pages/teacher/home.jsp">主页<span class="sr-only">(current)</span></a></li>
-                    <li><a href="../../pages/teacher/Class.jsp">课程</a></li>
-                    <li><a href="../../pages/teacher/Data.jsp">教学资源</a></li>
-                    <li><a href="../../pages/teacher/NewData.jsp">上传资源</a></li>
-                    <li><a href="../../pages/teacher/Course.jsp">课程</a></li>
-                    <li><a href="../../pages/teacher/NewCourse.jsp">新建课程</a></li>
-                    <li><a href="../../pages/teacher/Class.jsp">班级详情</a></li>
-                    <li><a href="../../pages/teacher/Sign.jsp">签到</a></li>
-                    <li><a href="../../pages/teacher/SignInformation.jsp">签到详情</a></li>
-                    <li><a href="../../pages/teacher/Live.jsp">直播</a></li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-    <div class="main" style="margin:0 auto;">
-        <form action="" method="post">
-            用户名：<input type="text" name="" />
-            密码：<input type="password" name="" />
-            <input type="submit" >
-        </form>
+            <!-- 输入框 -->
+            <div class="lgD">
+                <img src="img/logName.png" width="20" height="20" alt=""/>
+                <input type="text"
+                       placeholder="输入用户名" />
+            </div>
+            <div class="lgD">
+                <img src="img/logPwd.png" width="20" height="20" alt=""/>
+                <input type="text"
+                       placeholder="输入用户密码" />
+            </div>
+            <div class="logC">
+                <a href="index.html" target="_self"><button>登 录</button></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer" id="foot">
+        <div class="copyright">
+            <p>Copyright © 2018 Qunar.com Inc. All Rights Reserved.</p>
+            <div class="img">
+                <i class="icon"></i><span>联系邮箱：jiankangsun@yahoo.com</span>
+            </div>
+
+            <div class="img">
+                <i class="icon1"></i><span>联系地址：合肥工业大学</span>
+            </div>
+
+            <div class="img">
+                <i class="icon2"></i><span>联系电话：18355042634</span>
+            </div>
+
+
+        </div>
+
     </div>
 </body>
 </html>
