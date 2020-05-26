@@ -4,7 +4,11 @@ import com.rgf5.bean.Admin;
 import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 import com.rgf5.service.AdminService;
+import com.rgf5.service.StudentService;
+import com.rgf5.service.TeacherService;
 import com.rgf5.service.impl.AdminServiceImpl;
+import com.rgf5.service.impl.StudentServiceImpl;
+import com.rgf5.service.impl.TeacherServiceImpl;
 import com.rgf5.utils.WebUtils;
 
 import javax.servlet.ServletException;
@@ -21,25 +25,37 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String user = request.getParameter("user");
+        System.out.println(user);
         if("admin".equals(user)){
             Admin admin = WebUtils.paramsToBean(request, new Admin());
+            System.out.println(admin);
             AdminService adminService = new AdminServiceImpl();
             admin = adminService.login(admin);
+            System.out.println(admin);
             if(admin!=null){
                 session.setAttribute("admin", admin);
+                System.out.println();
                 response.sendRedirect("pages/admin/home.jsp");
             }
         }else if("student".equals(user)){
             Student student = WebUtils.paramsToBean(request, new Student());
+            System.out.println(student);
+            StudentService studentService = new StudentServiceImpl();
+            student = studentService.login(student);
+            System.out.println(student);
             if(student!=null){
                 session.setAttribute("student", student);
                 response.sendRedirect("pages/student/home.jsp");
             }
         }else{
             Teacher teacher = WebUtils.paramsToBean(request, new Teacher());
+            System.out.println(teacher);
+            TeacherService teacherService = new TeacherServiceImpl();
+            teacher = teacherService.login(teacher);
+            System.out.println(teacher);
             if(teacher!=null){
                 session.setAttribute("teacher", teacher);
-                response.sendRedirect("pages/teacher/home.jsp");
+                response.sendRedirect("pages/teacher/Home.jsp");
             }
         }
     }

@@ -3,6 +3,8 @@ package com.rgf5.service.impl;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.Teacher;
+import com.rgf5.dao.TeacherDao;
+import com.rgf5.dao.impl.TeacherDaoImpl;
 import com.rgf5.service.TeacherService;
 
 import java.util.List;
@@ -15,6 +17,9 @@ import java.util.List;
  * @Version V1.0
  **/
 public class TeacherServiceImpl implements TeacherService {
+
+    TeacherDao teacherDao = new TeacherDaoImpl();
+
     @Override
     public boolean add(Teacher teacher) {
         return false;
@@ -52,7 +57,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Teacher login(Teacher teacher) {
-        return null;
+        return teacherDao.login(teacher.getUsername(), teacher.getPassWd());
     }
 
     @Override

@@ -15,13 +15,13 @@ import com.rgf5.dao.BaseDao;
 public class AdminDaoImpl implements AdminDao {
     @Override
     public Admin getBean(Admin admin) {
-        String sql = "select id,admin_id as adminId,passWd from admins where admin_id=? and passWd=?";
-        return BaseDao.getBean(sql, Admin.class, admin.getAdminId(),admin.getPassWd());
+        String sql = "select id,username,passWd from admins where username and passWd=?";
+        return BaseDao.getBean(sql, Admin.class, admin.getUsername(),admin.getPassWd());
     }
 
     @Override
     public boolean update(Admin admin) {
         String sql= "update admins set passWd=? where admin_id=?";
-        return BaseDao.update(sql,admin.getPassWd(),admin.getAdminId());
+        return BaseDao.update(sql,admin.getPassWd(),admin.getUsername());
     }
 }

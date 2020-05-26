@@ -10,10 +10,10 @@ import java.util.List;
 public interface StudentDao {
     /**
      * 通过账号查找用户
-     * @param studentId 账号
+     * @param username 账号
      * @return 要查找的用户
      */
-    public Student getBeanByStudentId(String studentId);
+    public Student getBeanByStudentId(String username);
 
     /**
      * 通过id查找用户
@@ -59,11 +59,11 @@ public interface StudentDao {
 
     /**
      * 学生登录
-     * @param studentId 学生账号
+     * @param username 学生账号
      * @param passWd 登录密码
      * @return 要登录的用户
      */
-    public Student login(String studentId,String passWd);
+    public Student login(String username,String passWd);
 
     /**
      * 学生信息更新

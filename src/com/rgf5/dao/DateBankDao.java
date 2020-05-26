@@ -15,12 +15,6 @@ public interface DateBankDao {
      * @return true表示添加成功
      */
     public boolean add(DateBank dateBank);
-    /**
-     * 文件的信息更新
-     * @param dateBank 更新过的文件
-     * @return True表示更新成功
-     */
-    public boolean update(DateBank dateBank);
 
     /**
      * 删除一份文件

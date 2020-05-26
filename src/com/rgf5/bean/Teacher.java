@@ -16,7 +16,7 @@ public class Teacher {
     /**
      * 老师id
      */
-    private String teacherId;
+    private String username;
     /**
      * 密码
      */
@@ -45,9 +45,9 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(int id, String teacherId, String passWd, String sex, String courseId1, String courseId2, String courseId3,String teacherName) {
+    public Teacher(int id, String username, String passWd, String sex, String courseId1, String courseId2, String courseId3,String teacherName) {
         this.id = id;
-        this.teacherId = teacherId;
+        this.username = username;
         this.passWd = passWd;
         this.sex = sex;
         this.teacherName = teacherName;
@@ -64,12 +64,12 @@ public class Teacher {
         this.id = id;
     }
 
-    public String getTeacherId() {
-        return teacherId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setTeacherId(String teacherId) {
-        this.teacherId = teacherId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassWd() {
@@ -116,7 +116,7 @@ public class Teacher {
     public String toString() {
         return "Teacher{" +
                 "id=" + id +
-                ", teacherId='" + teacherId + '\'' +
+                ", username='" + username + '\'' +
                 ", passWd='" + passWd + '\'' +
                 ", sex='" + sex + '\'' +
                 ", courseId1='" + courseId1 + '\'' +

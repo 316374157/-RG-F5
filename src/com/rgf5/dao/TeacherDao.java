@@ -17,10 +17,10 @@ public interface TeacherDao {
 
     /**
      * 通过老师的ID查询老师信息
-     * @param teacherId 被查询老师的ID
+     * @param username 被查询老师的ID
      * @return 被查询老师的信息
      */
-    public Teacher getBeanByTeacherId(String teacherId);
+    public Teacher getBeanByTeacherId(String username);
 
     /**
      * 通过id查询老师的全部信息

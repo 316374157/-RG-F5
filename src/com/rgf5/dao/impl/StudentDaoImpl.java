@@ -1,37 +1,31 @@
-package com.rgf5.service.impl;
+package com.rgf5.dao.impl;
 
-import com.rgf5.bean.Classes;
-import com.rgf5.bean.Course;
 import com.rgf5.bean.Student;
+import com.rgf5.dao.BaseDao;
 import com.rgf5.dao.StudentDao;
-import com.rgf5.dao.impl.StudentDaoImpl;
-import com.rgf5.service.StudentService;
 
 import java.util.List;
 
 /**
- * @ClassName StudentServiceImpl
+ * @ClassName StudentDaoImpl
  * @Description: TODO
  * @Author 31637
  * @Date 2020/5/26
  * @Version V1.0
  **/
-public class StudentServiceImpl implements StudentService {
-
-    StudentDao studentDao = new StudentDaoImpl();
-
+public class StudentDaoImpl implements StudentDao {
     @Override
-    public Student getBeanByStudentId(Student student) {
+    public Student getBeanByStudentId(String username) {
         return null;
     }
 
     @Override
-    public Student getBeanById(Student student) {
+    public Student getBeanById(Integer id) {
         return null;
     }
 
     @Override
-    public List<Student> getBeanListByStudentName(Student student) {
+    public List<Student> getBeanListByStudentName(String studentName) {
         return null;
     }
 
@@ -41,12 +35,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public List<Student> getBeanListByClassId(Classes classes) {
+    public List<Student> getBeanListByClassId(String classId) {
         return null;
     }
 
     @Override
-    public List<Student> getBeanListByCourseId(Course course) {
+    public List<Student> getBeanListByCourseId(String courseId) {
         return null;
     }
 
@@ -55,9 +49,12 @@ public class StudentServiceImpl implements StudentService {
         return false;
     }
 
+
     @Override
-    public Student login(Student student) {
-        return studentDao.login(student.getUsername(), student.getPassWd());
+    public Student login(String username, String passWd) {
+        String sql = "select id,username,passWd,sex,class_id as classId,student_name as studentName from " +
+                "students where username=? and passWd=?";
+        return BaseDao.getBean(sql, Student.class, username,passWd);
     }
 
     @Override
@@ -71,7 +68,7 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public boolean delete(Student student) {
+    public boolean delete(Integer id) {
         return false;
     }
 }

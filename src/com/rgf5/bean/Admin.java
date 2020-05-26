@@ -15,7 +15,7 @@ public class Admin {
     /**
      * 账号
      */
-    private String adminId;
+    private String username;
     /**
      * 密码
      */
@@ -24,9 +24,9 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(int id, String adminId, String passWd) {
+    public Admin(int id, String username, String passWd) {
         this.id = id;
-        this.adminId = adminId;
+        this.username = username;
         this.passWd = passWd;
     }
 
@@ -38,12 +38,12 @@ public class Admin {
         this.id = id;
     }
 
-    public String getAdminId() {
-        return adminId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setAdminId(String adminId) {
-        this.adminId = adminId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassWd() {
@@ -58,7 +58,7 @@ public class Admin {
     public String toString() {
         return "Admin{" +
                 "id=" + id +
-                ", adminId='" + adminId + '\'' +
+                ", username='" + username + '\'' +
                 ", passWd='" + passWd + '\'' +
                 '}';
     }
