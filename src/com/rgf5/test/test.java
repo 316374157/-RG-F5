@@ -1,10 +1,10 @@
 package com.rgf5.test;
-import com.rgf5.bean.Admin;
-import com.rgf5.dao.BaseDao;
+import com.rgf5.bean.DataBank;
+import com.rgf5.dao.DataBankDao;
+import com.rgf5.dao.impl.DataBankDaoImpl;
 import com.rgf5.utils.JDBCUtils;
 import org.junit.Test;
 
-import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.util.List;
 
@@ -32,56 +32,13 @@ public class test {
      */
     @Test
     public void test1(){
-        String sql = "select id,admin_id as adminId,passWd from admins";
-        //String sql = "select id,admin_id as adminId,passWd from admins where id=? and passWd = ?";
-        Admin admin = BaseDao.getBean(sql, Admin.class);
-        System.out.println(admin);
+        DataBankDao dataBankDao = new DataBankDaoImpl();
+        DataBank dataBank =
+        new DataBank(0, "1.ioc", "D:/JAVA/Java-IDE/git-RG-F5/web/databank/001/001/1.ico","001","001","图片");
+        dataBankDao.add(dataBank);
+        List<DataBank> beanListAll = dataBankDao.getBeanListAll();
+        System.out.println(beanListAll);
     }
 
-    /**
-     * 插入
-     */
-    @Test
-    public void test2(){
-        String sql = "insert into admins values(?,?,?)";
-        boolean update = BaseDao.update(sql,null,"123","123456");
-        sql = "select * from admins";
-        List<Admin> beanList = BaseDao.getBeanList(sql, Admin.class);
-        System.out.println(update);
-        System.out.println(beanList);
-    }
 
-    /**
-     * 修改
-     */
-    @Test
-    public void test3(){
-        String sql = "update admins set passWd=? where id=?";
-        boolean update = BaseDao.update(sql,"999",3);
-        sql = "select * from admins";
-        List<Admin> beanList = BaseDao.getBeanList(sql, Admin.class);
-        System.out.println(update);
-        System.out.println(beanList);
-    }
-
-    /**
-     * 删除
-     */
-    @Test
-    public void test4(){
-        String sql = "delete from admins where id=?";
-        boolean update = BaseDao.update(sql,3);
-        sql = "select * from admins";
-        List<Admin> beanList = BaseDao.getBeanList(sql, Admin.class);
-        System.out.println(update);
-        System.out.println(beanList);
-    }
-
-    @Test
-    public void test5(){
-        Method[] declaredMethods = Admin.class.getDeclaredMethods();
-        for (Method method : declaredMethods) {
-            System.out.println(method.getName());
-        }
-    }
 }

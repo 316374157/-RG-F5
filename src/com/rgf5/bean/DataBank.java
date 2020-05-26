@@ -7,7 +7,7 @@ package com.rgf5.bean;
  * @Date 2020/5/18
  * @Version V1.0
  **/
-public class DateBank {
+public class DataBank {
 
 //            id INT PRIMARY KEY AUTO_INCREMENT,
 //            data_name VARCHAR(20) NOT NULL,
@@ -41,10 +41,10 @@ public class DateBank {
      */
     private String dataType;
 
-    public DateBank() {
+    public DataBank() {
     }
 
-    public DateBank(int id, String dataName, String dataPath, String classId, String courseId, String dataType) {
+    public DataBank(int id, String dataName, String dataPath, String classId, String courseId, String dataType) {
         this.id = id;
         this.dataName = dataName;
         this.dataPath = dataPath;
