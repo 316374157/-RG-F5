@@ -9,34 +9,19 @@ package com.rgf5.bean;
  **/
 public class Teacher {
 
-    /**
-     * 主键，自增
-     */
-    private  int id;
-    /**
-     * 老师id
-     */
-    private String teacherId;
-    /**
-     * 密码
-     */
-    private String passWd;
-    /**
-     * 性别
-     */
-    private String sex;
-    /**
-     * 老师所教的第一个课程
-     */
-    private String courseId1;
-    /**
-     * 老师所教的第二个课程
-     */
-    private String courseId2;
-    /**
-     * 老师所教的第三个课程
-     */
-    private String courseId3;
+    private  int id;/**主键，自增*/
+
+    private String teacherId;/**老师id*/
+
+    private String passWd;/**密码*/
+
+    private String sex;/*** 性别*/
+
+    private String courseId1;/**老师所教的第一个课程*/
+
+    private String courseId2;/**老师所教的第二个课程*/
+
+    private String courseId3;/**老师所教的第三个课程*/
     /**
      * 老师姓名
      */

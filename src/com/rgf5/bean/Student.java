@@ -9,26 +9,15 @@ package com.rgf5.bean;
  **/
 public class Student {
 
-    /**
-     * 主键，自增
-     */
-    private int id;
-    /**
-     * 学生id
-     */
-    private String studentId;
-    /**
-     * 密码
-     */
-    private String passWd;
-    /**
-     * 性别
-     */
-    private String sex;
-    /**
-     * 班级id
-     */
-    private String classId;
+    private int id;/**主键，自增*/
+
+    private String studentId;/**学生id*/
+
+    private String passWd;/**密码*/
+
+    private String sex;/**性别*/
+
+    private String classId;/**班级id*/
     /**
      * 学生姓名
      */

@@ -12,30 +12,93 @@
 	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
 </head>
 <body>
-<table class="table table-condensed">
-	<!-- On rows -->
-	<tr class="active">
-		<td class="active">...</td>
-		<td class="success">...</td>
-		<td class="warning">...</td>
-		<td class="danger">...</td>
-		<td class="info">...</td>
-	</tr>
-	<tr class="success">
-	kasjhdkajs
-	</tr>
-	<tr class="warning">
+<jsp:include   page="../../public/student-header.jsp" flush="true"/>
+<div style="position: absolute;width: 90%;height: 80%;left: 5%;right: 5%">
+	<table class="table table-condensed">
+		<!-- On rows -->
+		<tr class="active">
+			<td class="active">
+				序号
+			</td>
+			<td class="success">
+				文件名
+			</td>
+			<td class="warning">
+				下载
+			</td>
+			<%--<td class="danger">
 
-	</tr>
-	<tr class="danger">
+            </td>
+            <td class="info">
 
-	</tr>
-	<tr class="info">
+            </td>--%>
+		</tr>
+		<tr class="success">
+			<td class="active">
+				1
+			</td>
+			<td class="success">
+				第一节视频
+			</td>
+			<td class="warning">
+				<a href="#">下载</a>
+			</td>
+		</tr>
+		<tr class="warning">
+			<td class="active">
+				2
+			</td>
+			<td class="success">
+				第二节视频
+			</td>
+			<td class="warning">
+				<a href="#">下载</a>
+			</td>
+		</tr>
+		<tr class="danger">
+			<td class="active">
+				3
+			</td>
+			<td class="success">
+				第三节视频
+			</td>
+			<td class="warning">
+				<a href="#">下载</a>
+			</td>
+		</tr>
+		<tr class="info">
+			<td class="active">
+				4
+			</td>
+			<td class="success">
+				第四节视频
+			</td>
+			<td class="warning">
+				<a href="#">下载</a>
+			</td>
+		</tr>
 
-	</tr>
-
-	<!-- On cells (`td` or `th`) -->
-
-</table>
+	</table>
+</div>
+<%-- 翻页 --%>
+	<nav aria-label="Page navigation" style="bottom: 0px;position:absolute;left: 40%">
+		<ul class="pagination">
+			<li>
+				<a href="#" aria-label="Previous">
+					<span aria-hidden="true">&laquo;</span>
+				</a>
+			</li>
+			<li><a href="#">1</a></li>
+			<li><a href="#">2</a></li>
+			<li><a href="#">3</a></li>
+			<li><a href="#">4</a></li>
+			<li><a href="#">5</a></li>
+			<li>
+				<a href="#" aria-label="Next">
+					<span aria-hidden="true">&raquo;</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
 </body>
 </html>
