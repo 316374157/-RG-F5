@@ -1,0 +1,105 @@
+body{
+    background-image: url(../Image/MainBack.png);
+    background-repeat: repeat;
+}
+
+.main
+{
+    width: 1000px;
+    margin: 40px auto 2px;
+}
+
+.main .main_part
+{
+    margin: 0 auto 30px;
+    height: 500px;
+
+    color: #777777;
+    width: 70%;
+
+    padding-bottom: 25px;
+    border:1px solid #96C2F1;
+    /*background-color:#EFF7FF;*/
+}
+
+.main .main_part .main_part_top
+{
+    width: 100%;
+    height: 80px;
+}
+
+.main .main_part .main_part_top .kj
+{
+    font-size: 30px;
+    font-weight: 300;
+
+    float: left;
+
+    width: 130px;
+    margin: 22px 0 0 23px;
+
+    color: #1687d9;
+}
+
+.main .main_part .main_part_top .more
+{
+    float: right;
+
+    margin: 28px 19px 0 0;
+
+    letter-spacing: -0.2px;
+
+    color: #4d4d4d;
+}
+
+.main .main_part .course{
+    float: left;
+    width: 25%;
+    height: 150px;
+    margin: 25px 4%;
+}
+
+.main .main_part .course img{
+    width: 100%;
+    height: 120px;
+}
+
+.main .main_part .course .courseuse{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #96C2F1;
+}
+
+.main .main_part .course .courseuse .enter {
+    float: left;
+    margin-left: 10px;
+    line-height: 30px;
+}
+
+.main .main_part .course .courseuse .delete {
+    float: right;
+    margin-right: 10px;
+    line-height: 30px;
+}
+
+.footer
+{
+    float: left;
+
+    width: 100%;
+    height: 125px;
+
+    color: #ffffff;
+    background: #001e36;
+}
+
+.footer p
+{
+    margin: 0;
+
+    font-weight: lighter;
+
+    padding-top: 5px;
+
+    text-align: center;
+}

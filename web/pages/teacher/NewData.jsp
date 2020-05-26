@@ -7,6 +7,6 @@
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
-<div id="Only" style="display: none;">NewData</div>
+<span id="Only" style="display: none;">NewData</span>
 </body>
 </html>
