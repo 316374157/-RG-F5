@@ -1,0 +1,96 @@
+body{
+    background-image: url(../Image/MainBack.png);
+    background-repeat: repeat;
+}
+
+.main
+{
+    width: 1000px;
+    margin: 40px auto 2px;
+}
+
+.main .main_part
+{
+    margin: 0 auto 30px;
+    height: 500px;
+
+    color: #777777;
+    width: 70%;
+
+    padding-bottom: 25px;
+    border:1px solid #96C2F1;
+    /*background-color:#EFF7FF;*/
+}
+
+.main .main_part .main_part_top
+{
+    width: 100%;
+    height: 100px;
+}
+
+.main .main_part .main_part_top .kj {
+    font-size: 30px;
+    font-weight: 300;
+
+    float: left;
+
+    width: 130px;
+    margin: 22px 0 0 12%;
+
+    color: #1687d9;
+}
+
+.main .main_part .main_part_nav
+{
+    margin: 0 0 0 23px;
+}
+
+.main .main_part .main_part_nav ul
+{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.main .main_part .main_part_nav ul li
+{
+    font-size: 14px;
+
+    margin: 25px 0;
+}
+
+.main .main_part .main_part_nav ul li:first-child
+{
+    margin-top: 0;
+}
+
+.main .main_part .main_part_nav ul li a
+{
+    color: #4d4d4d;
+}
+
+.main .main_part .main_part_nav ul li a:hover
+{
+    text-decoration: none;
+}
+
+.footer
+{
+    float: left;
+
+    width: 100%;
+    height: 125px;
+
+    color: #ffffff;
+    background: #001e36;
+}
+
+.footer p
+{
+    margin: 0;
+
+    font-weight: lighter;
+
+    padding-top: 5px;
+
+    text-align: center;
+}

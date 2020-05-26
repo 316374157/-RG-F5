@@ -1,0 +1,113 @@
+body{
+    background-image: url(../Image/MainBack.png);
+    background-repeat: repeat;
+}
+
+.main
+{
+    width: 1000px;
+    height: 565px;
+    margin: 40px auto 2px;
+}
+
+.main .menu{
+    float: left;
+    width: 30%;
+}
+
+.main .main_part
+{
+    margin-bottom: 30px;
+    float: left;
+
+    color: #777777;
+    width: 70%;
+
+    padding-bottom: 25px;
+    border:1px solid #96C2F1;
+    /*background-color:#EFF7FF;*/
+}
+
+.main .main_part .main_part_top
+{
+    width: 100%;
+    height: 67px;
+}
+
+.main .main_part .main_part_top .kj
+{
+    font-size: 22px;
+    font-weight: 300;
+
+    float: left;
+
+    width: 110px;
+    margin: 22px 0 0 23px;
+
+    color: #1687d9;
+}
+
+.main .main_part .main_part_top .more
+{
+    float: right;
+
+    margin: 28px 19px 0 0;
+
+    letter-spacing: -0.2px;
+
+    color: #4d4d4d;
+}
+
+.main .main_part .main_part_nav
+{
+    margin: 0 0 0 23px;
+}
+
+.main .main_part .main_part_nav ul
+{
+    float: left;
+}
+
+.main .main_part .main_part_nav ul li
+{
+    font-size: 14px;
+
+    margin: 16.7px 0;
+}
+
+.main .main_part .main_part_nav ul li:first-child
+{
+    margin-top: 0;
+}
+
+.main .main_part .main_part_nav ul li a
+{
+    color: #4d4d4d;
+}
+
+.main .main_part .main_part_nav ul li a:hover
+{
+    color: lightgray;
+}
+
+.footer
+{
+    float: left;
+
+    width: 100%;
+    height: 125px;
+
+    color: #ffffff;
+    background: #001e36;
+}
+
+.footer p
+{
+    margin: 0;
+
+    font-weight: lighter;
+
+    padding-top: 5px;
+
+    text-align: center;
+}
