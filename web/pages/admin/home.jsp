@@ -11,59 +11,54 @@
 	<title>Title</title>
 </head>
 <body>
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="#">Brand</a>
+	<div class="messages">
+		<div class="main_part_top">
+			<div class="checkbox">您管理的信息</div>
 		</div>
-
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-				<li><a href="#">Link</a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
+		<div class="nav nav-pills">
+			<ul>
+				<li>
+					<a href="teachermanager.jsp">教师信息</a>
+				</li>
+				<li>
+					<a href="classdetail.jsp">班级信息</a>
+				</li>
+				<li>
+					<a href="coursemanager.jsp">课程详情</a>
+				</li>
+				<li>
+					<a href="signdetail.jsp">签到详情</a>
+				</li>
+				<li>
+					<a href="studentdetail.jsp">学生详情</a>
 				</li>
 			</ul>
-			<form class="navbar-form navbar-left">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search">
-				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
-			</form>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Link</a></li>
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li role="separator" class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container-fluid -->
-</nav>
+		</div>
+	</div>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+					<li><a href="#">Link</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="添加" role="button" aria-haspopup="true" aria-expanded="false">更改信息 <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="addclass.jsp">添加班级</a></li>
+							<li><a href="addcourse.jsp">添加课程</a></li>
+							<li><a href="addteacher.jsp">添加教师</a></li>
+							<li role="separator" class="divider"><a>编辑信息</a></li>
+							<li><a href="updateclass.jsp">编辑班级信息</a></li>
+							<li><a href="updatecourse.jsp">编辑课程内容</a></li>
+							<li><a href="updateteacher.jsp">管理教师信息</a></li>
+							<li><a href="updatestudent.jsp">管理在校学生</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<h1>成功</h1>
 	${admin.id}
 </body>
