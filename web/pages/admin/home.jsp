@@ -11,7 +11,6 @@
 	<title>Title</title>
 </head>
 <body>
-	<h1>成功</h1>
-	${admin.id}
+
 </body>
 </html>

@@ -13,33 +13,31 @@
 </head>
 <body>
 <jsp:include   page="../../public/student-header.jsp" flush="true"/>
-<div style="position: absolute;width: 80%;left: 5%">
-	<table class="table table-bordered" style="width: 30%">
-		<tr class="active">
-			<td class="active" style="width: 20%">
-				姓名
-			</td>
-			<td class="active">
-				user1
-			</td>
-		</tr>
-		<tr class="active">
-			<td class="active" style="width: 20%">
-				性别
-			</td>
-			<td class="active">
-				男
-			</td>
-		</tr>
-		<tr class="active">
-			<td class="active"style="width: 20%">
-				班级
-			</td>
-			<td class="active">
-				软工
-			</td>
-		</tr>
-	</table>
-</div>
+<table class="table table-bordered" style="width: 30%">
+	<tr class="active">
+		<td class="active" style="width: 20%">
+			姓名
+		</td>
+		<td class="active">
+			user1
+		</td>
+	</tr>
+	<tr class="active">
+		<td class="active" style="width: 20%">
+			性别
+		</td>
+		<td class="active">
+			男
+		</td>
+	</tr>
+	<tr class="active">
+		<td class="active"style="width: 20%">
+			班级
+		</td>
+		<td class="active">
+			软工
+		</td>
+	</tr>
+</table>
 </body>
 </html>

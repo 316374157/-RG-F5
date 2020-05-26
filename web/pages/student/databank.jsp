@@ -13,73 +13,71 @@
 </head>
 <body>
 <jsp:include   page="../../public/student-header.jsp" flush="true"/>
-<div style="position: absolute;width: 90%;height: 80%;left: 5%;right: 5%">
-	<table class="table table-condensed">
-		<!-- On rows -->
-		<tr class="active">
-			<td class="active">
-				序号
-			</td>
-			<td class="success">
-				文件名
-			</td>
-			<td class="warning">
-				下载
-			</td>
-			<%--<td class="danger">
+<table class="table table-condensed">
+	<!-- On rows -->
+	<tr class="active">
+		<td class="active">
+			序号
+		</td>
+		<td class="success">
+			文件名
+		</td>
+		<td class="warning">
+			下载
+		</td>
+		<%--<td class="danger">
 
-            </td>
-            <td class="info">
+		</td>
+		<td class="info">
 
-            </td>--%>
-		</tr>
-		<tr class="success">
-			<td class="active">
-				1
-			</td>
-			<td class="success">
-				第一节视频
-			</td>
-			<td class="warning">
-				<a href="#">下载</a>
-			</td>
-		</tr>
-		<tr class="warning">
-			<td class="active">
-				2
-			</td>
-			<td class="success">
-				第二节视频
-			</td>
-			<td class="warning">
-				<a href="#">下载</a>
-			</td>
-		</tr>
-		<tr class="danger">
-			<td class="active">
-				3
-			</td>
-			<td class="success">
-				第三节视频
-			</td>
-			<td class="warning">
-				<a href="#">下载</a>
-			</td>
-		</tr>
-		<tr class="info">
-			<td class="active">
-				4
-			</td>
-			<td class="success">
-				第四节视频
-			</td>
-			<td class="warning">
-				<a href="#">下载</a>
-			</td>
-		</tr>
+		</td>--%>
+	</tr>
+	<tr class="success">
+		<td class="active">
+			1
+		</td>
+		<td class="success">
+			第一节视频
+		</td>
+		<td class="warning">
+			<a href="#">下载</a>
+		</td>
+	</tr>
+	<tr class="warning">
+		<td class="active">
+			2
+		</td>
+		<td class="success">
+			第二节视频
+		</td>
+		<td class="warning">
+			<a href="#">下载</a>
+		</td>
+	</tr>
+	<tr class="danger">
+		<td class="active">
+			3
+		</td>
+		<td class="success">
+			第三节视频
+		</td>
+		<td class="warning">
+			<a href="#">下载</a>
+		</td>
+	</tr>
+	<tr class="info">
+		<td class="active">
+			4
+		</td>
+		<td class="success">
+			第四节视频
+		</td>
+		<td class="warning">
+			<a href="#">下载</a>
+		</td>
+	</tr>
 
-	</table>
-</div>
+</table>
 <%-- 翻页 --%>
 	<nav aria-label="Page navigation" style="bottom: 0px;position:absolute;left: 40%">
 		<ul class="pagination">
