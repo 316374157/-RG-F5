@@ -22,6 +22,7 @@ public abstract class BaseDao {
      */
     private static QueryRunner runner = new QueryRunner();
 
+
     /**
      * 查询数据库中的某条数据
      * @param sql sql
@@ -65,7 +66,7 @@ public abstract class BaseDao {
     }
 
     /**
-     * 增删改一体的方法
+     * 增删改一体的方法，能执行增删改的数据库操作
      * @param sql sql
      * @param params 可变参数
      * @return true表示操作成功
