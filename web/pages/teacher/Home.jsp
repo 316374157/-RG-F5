@@ -33,44 +33,26 @@
 				</div>
 			</div>
 			<div class="main_part_nav">
-				<ul>
-					<li>
-						<a href="./#">第一讲：XXX</a>
-					</li>
-					<li>
-						<a href="./#">第二讲：XXX</a>
-					</li>
-					<li>
-						<a href="./#">第三讲：XXX</a>
-					</li>
-					<li>
-						<a href="./#">第四讲：XXX</a>
-					</li>
-					<li>
-						<a href="./#">第五讲：XXX</a>
-					</li>
-					<li>
-						<a href="./#">第六讲：XXX</a>
-					</li>
-					<li>
-						<a href="./#">第七讲：XXX</a>
-					</li>
-					<li>
-						<a href="./#">第八讲：XXX</a>
-					</li>
-				</ul>
-			</div>
-			<div class="main_part_nav" style="float: right;margin: 5px 19px 0 0;letter-spacing: -0.5px;">
-				<ul>
-					<li>2020-01-01</li>
-					<li>2020-01-01</li>
-					<li>2020-01-01</li>
-					<li>2020-01-01</li>
-					<li>2020-01-01</li>
-					<li>2020-01-01</li>
-					<li>2020-01-01</li>
-					<li>2020-01-01</li>
-				</ul>
+				<div class="classes">
+					<a href="./#">
+						<div class="classess" style="margin-top: 0;">
+							<span></span>
+							<div class="tz">班级1</div>
+						</div>
+					</a>
+					<a href="./#">
+						<div class="classess" style="margin-top: 0;">
+							<span></span>
+							<div class="tz">班级2</div>
+						</div>
+					</a>
+					<a href="./#">
+						<div class="classess" style="margin-top: 0;">
+							<span></span>
+							<div class="tz">班级3</div>
+						</div>
+					</a>
+				</div>
 			</div>
 		</div>
 		<div class="main_part">
@@ -93,6 +75,12 @@
 						<div class="tz">课程2</div>
 					</div>
 				</a>
+				<a href="./#">
+				<div class="courses">
+					<span></span>
+					<div class="tz">课程3</div>
+				</div>
+			</a>
 			</div>
 		</div>
 		<div class="main_part" style="float: right;border: none;">
