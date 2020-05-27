@@ -6,7 +6,7 @@ body{
 .main
 {
     width: 1000px;
-    height: 565px;
+    min-height: 80%;
     margin: 40px auto 2px;
 }
 

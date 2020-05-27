@@ -10,6 +10,10 @@ body{
     padding-bottom: 40px;
 }
 
+.main .main_part{
+    min-height: 80%;
+}
+
 .main .main_part .main_part_top
 {
     width: 100%;

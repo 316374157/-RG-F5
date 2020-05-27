@@ -5,14 +5,9 @@ body{
 
 .main
 {
-    width: 1000px;
-    height: 565px;
+    width: 1200px;
+    min-height: 80%;
     margin: 40px auto 2px;
-}
-
-.main .menu{
-    float: left;
-    width: 30%;
 }
 
 .main .main_part
@@ -21,7 +16,7 @@ body{
     float: left;
 
     color: #777777;
-    width: 70%;
+    width: 100%;
 
     padding-bottom: 25px;
     border:1px solid #96C2F1;
@@ -47,47 +42,45 @@ body{
     color: #1687d9;
 }
 
-.main .main_part .main_part_top .more
-{
-    float: right;
-
-    margin: 28px 19px 0 0;
-
-    letter-spacing: -0.2px;
-
-    color: #4d4d4d;
+.main .main_part .main_part_bot{
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-.main .main_part .main_part_nav
-{
-    margin: 0 0 0 23px;
-}
-
-.main .main_part .main_part_nav ul
-{
+.main .main_part .main_part_bot .live{
     float: left;
+    width: 750px;
+    height: 500px;
+    background: black;
 }
 
-.main .main_part .main_part_nav ul li
-{
-    font-size: 14px;
-
-    margin: 16.7px 0;
+.main .main_part .main_part_bot .word{
+    float:right;
+    width: 370px;
+    height: 500px;
 }
 
-.main .main_part .main_part_nav ul li:first-child
-{
-    margin-top: 0;
+.main .main_part .main_part_bot .word .see{
+    float:right;
+    width: 360px;
+    height: 476px;
+    padding: 20px 40px;
+    border:1px solid #96C2F1;
 }
 
-.main .main_part .main_part_nav ul li a
-{
-    color: #4d4d4d;
+.main .main_part .main_part_bot .word .see li{
+    margin: 5px 0;
 }
 
-.main .main_part .main_part_nav ul li a:hover
-{
-    color: lightgray;
+.main .main_part .main_part_bot .word .say{
+    float: right;
+    width: 360px;
+    height: 24px;
+    border:1px solid #96C2F1;
+}
+
+.main .main_part .main_part_bot .word .say .sayWord{
+    width: 100%;
 }
 
 .footer

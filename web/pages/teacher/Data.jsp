@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="./CSS/Clean.css">
-    <link rel="stylesheet" href="./CSS/Data.css">
+    <link rel="stylesheet" href="../../static/css/Clean.css">
+    <link rel="stylesheet" href="../../static/css/Data.css">
     <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="./JS/HeaderChose.js"></script>
+    <script src="../../static/js/HeaderChose.js"></script>
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
