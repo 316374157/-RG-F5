@@ -32,7 +32,7 @@ body{
 .main .main_part .main_part_top
 {
     width: 100%;
-    height: 67px;
+    height: 70px;
 }
 
 .main .main_part .main_part_top .kj
@@ -42,7 +42,7 @@ body{
 
     float: left;
 
-    width: 110px;
+    width: 80%;
     margin: 22px 0 0 23px;
 
     color: #1687d9;
@@ -89,6 +89,56 @@ body{
 .main .main_part .main_part_nav ul li a:hover
 {
     color: lightgray;
+}
+
+.half{
+    margin: 0 auto;
+    width: 50%;
+}
+
+.nav>.half>.active>a{
+    background: #4098e5;
+}
+
+.nav>.half>.active>a:hover{
+    background: #4098e5;
+}
+
+.sign{
+    line-height: 80px;
+    width: 48%;
+    height: 80px;
+
+    border: 1px #e4f0ed solid;
+    box-shadow: 0 0 1px 2px #f7f7f7;
+    margin: 30px auto;
+}
+
+.sign a
+{
+    display: inline-block;
+    float: left;
+
+    width: 100%;
+    height: 80px;
+}
+
+.sign a:hover
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.sign:hover
+{
+    color: #ffffff;
+    background: lightgray;
+}
+
+.sign p{
+    font-size: 35px;
+    text-align: center;
+    margin: 0;
 }
 
 .footer
