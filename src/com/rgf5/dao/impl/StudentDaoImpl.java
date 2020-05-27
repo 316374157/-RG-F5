@@ -1,5 +1,7 @@
 package com.rgf5.dao.impl;
 
+import com.rgf5.bean.Admin;
+import com.rgf5.bean.Classes;
 import com.rgf5.bean.Student;
 import com.rgf5.dao.BaseDao;
 import com.rgf5.dao.StudentDao;
@@ -16,37 +18,48 @@ import java.util.List;
 public class StudentDaoImpl implements StudentDao {
     @Override
     public Student getBeanByStudentId(String username) {
-        return null;
+        String sql = "select id,username,passWd,sex,class_id as classId,student_name as studentName " +
+                "from students where username=?";
+        return BaseDao.getBean(sql, Student.class,username);
     }
 
     @Override
     public Student getBeanById(Integer id) {
-        return null;
+        String sql = "select id,username,passWd,sex,class_id as classId,student_name as studentName " +
+                "from students where id=?" ;
+        return BaseDao.getBean(sql, Student.class,id);
     }
 
     @Override
     public List<Student> getBeanListByStudentName(String studentName) {
-        return null;
+        String sql = "select id,username,passWd,sex,class_id as classId,student_name as studentName " +
+                "from students where student_name=?" ;
+        return BaseDao.getBeanList(sql,Student.class,studentName);
     }
 
     @Override
     public List<Student> getBeanListAll() {
-        return null;
+        String sql = "select id,username,passWd,sex,class_id as classId,student_name as studentName from students";
+        return BaseDao.getBeanList(sql, Student.class);
     }
 
     @Override
     public List<Student> getBeanListByClassId(String classId) {
-        return null;
+        String sql = "select id,username,passWd,sex,class_id as classId,student_name as studentName from students where class_id=?";
+        return BaseDao.getBeanList(sql,Student.class,classId);
     }
 
     @Override
     public List<Student> getBeanListByCourseId(String courseId) {
-        return null;
+        String sql = "select id,username,passWd,sex,class_id as classId,student_name as studentName from students";
+        return BaseDao.getBeanList(sql,Student.class, courseId);
     }
 
     @Override
     public boolean register(Student student) {
-        return false;
+        String sql = "insert into students(id,username,passWd,sex,class_id,student_name) values(?,?,?,?,?,?)";
+        return BaseDao.update(sql,student.getId(),student.getUsername(),student.getPassWd(),
+                student.getSex(),student.getClassId(),student.getStudentName());
     }
 
 
@@ -59,16 +72,19 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public boolean update(Student student) {
-        return false;
+        String sql= "update students set passWd=? where student_name=?";
+        return BaseDao.update(sql,student.getPassWd(),student.getUsername());
     }
 
     @Override
     public boolean changeClassId(Student student) {
-        return false;
+        String sql= "update students set className=? where student_name=?";
+        return BaseDao.update(sql,student.getClassId(),student.getUsername());
     }
 
     @Override
     public boolean delete(Integer id) {
-        return false;
+        String sql = "delete students where id=?";
+        return BaseDao.update(sql, id);
     }
 }

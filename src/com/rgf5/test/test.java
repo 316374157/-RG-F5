@@ -1,6 +1,9 @@
 package com.rgf5.test;
 import com.rgf5.bean.Admin;
+import com.rgf5.bean.Student;
 import com.rgf5.dao.BaseDao;
+import com.rgf5.dao.StudentDao;
+import com.rgf5.dao.impl.StudentDaoImpl;
 import com.rgf5.utils.JDBCUtils;
 import org.junit.Test;
 
@@ -83,5 +86,14 @@ public class test {
         for (Method method : declaredMethods) {
             System.out.println(method.getName());
         }
+    }
+
+    @Test
+    public void test6(){
+        StudentDao studentDao = new StudentDaoImpl();
+        Student student = new Student(0,"2017003","123456","男","1702","王五");
+        studentDao.register(student);
+        List<Student> beanListAll = studentDao.getBeanListAll();
+        System.out.println(beanListAll);
     }
 }
