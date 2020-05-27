@@ -11,7 +11,7 @@
 <jsp:include page="../../public/TeacherHeader.jsp"/>
 <div class="main">
     <div class="main_part" style="float: none;margin: 0 auto;padding-top: 20px;">
-        <img style="margin: 0 36%;" src="./Image/pic.png" alt="" />
+        <img style="margin: 0 36%;" src="../../static/image/pic.png" alt="" />
     </div>
 </div>
 <div class="footer">

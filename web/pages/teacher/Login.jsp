@@ -16,7 +16,7 @@
         }
         #wrap {
             height: 100%;
-            background-image: url(./Image/LoginBack.png);
+            background-image: url(../../static/image/LoginBack.png);
             background-repeat: no-repeat;
             background-position: center center;
             position: relative;
