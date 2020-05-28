@@ -15,54 +15,93 @@ import java.util.List;
  **/
 public class TeacherDaoImpl implements TeacherDao {
     @Override
-    public boolean add(Teacher teacher) {
-        return false;
+    public boolean add(Teacher teacher)
+    {
+        String sql = "INSERT INTO teachers SET username = ?,passwd = ?,sex = ?," +
+                "course_id1 = ?,course_id2 = ?,course_id3 = ?,teacher_name = ?";
+        return BaseDao.update(sql, teacher.getId(),teacher.getUsername(),teacher.getPassWd(),
+                teacher.getSex(),teacher.getCourseId1(),teacher.getCourseId2(),
+                teacher.getCourseId3(),teacher.getTeacherName());
     }
 
     @Override
     public Teacher getBeanByTeacherId(String username) {
-        return null;
+        String sql = "SELECT id,username,passwd AS passWd,sex,teacher_Name AS teacherName,course_id1 AS courseId1," +
+                "course_id2 AS courseId2,course_id3 AS courseId3 FROM teachers WHERE username = ?";
+        return BaseDao.getBean(sql, Teacher.class,username);
     }
 
     @Override
     public Teacher getBeanById(Integer id) {
-        return null;
+        String sql = "SELECT id,username,passwd AS passWd,sex,teacher_Name AS teacherName,course_id1 AS courseId1," +
+                "course_id2 AS courseId2,course_id3 AS courseId3 FROM teachers WHERE id = ?";
+        return BaseDao.getBean(sql, Teacher.class,id);
     }
 
     @Override
     public List<Teacher> getBeanListByTeacherName(String teacherName) {
-        return null;
+        String sql = "SELECT id,username,passwd AS passWd,sex,teacher_name AS teacherName,course_Id1 AS courseId1," +
+                "course_Id2 AS courseId2,course_Id3 AS courseId3 FROM teachers WHERE teacher_name = ?";
+        return BaseDao.getBeanList(sql, Teacher.class,teacherName);
     }
 
     @Override
     public List<Teacher> getBeanListAll() {
-        return null;
+        String sql = "SELECT id,username,passwd AS passWd,sex,teacher_Name AS teacherName,course_Id1 AS courseId1," +
+                "course_Id2 AS courseId2,course_Id3 AS courseId3 FROM teachers";
+        return BaseDao.getBeanList(sql, Teacher.class);
     }
 
     @Override
     public List<Teacher> getBeanListByCourseId(String courseId) {
-        return null;
+        String sql = "SELECT id,username,passwd as passWd,sex,teacher_Name as teacherName," +
+                "course_id1 as courseId1,course_id2 as courseId2," +
+                "course_id3 as courseId3 FROM teachers " +
+                "WHERE course_id1 = ? OR course_id2 = ? OR course_id3 = ?";
+        return BaseDao.getBeanList(sql, Teacher.class ,courseId);
     }
 
     @Override
     public List<Teacher> getBeanListByClassId(String classId) {
-        return null;
+        String sql = "SELECT id,username,passwd ,sex,teacher_Name ,course_id1 ,course_id2 ,course_id3  FROM teachers" +
+                "                WHERE course_id1 IN (SELECT course_id1 FROM classes WHERE class_id = ?)" +
+                "                OR course_id1 IN (SELECT course_id2 FROM classes WHERE class_id = ?)" +
+                "                OR course_id1 IN (SELECT course_id3 FROM classes WHERE class_id = ?)" +
+                "                OR course_id1 IN (SELECT course_id4 FROM classes WHERE class_id = ?)" +
+                "                OR course_id1 IN (SELECT course_id5 FROM classes WHERE class_id = ?)" +
+                "                OR course_id2 IN (SELECT course_id1 FROM classes WHERE class_id = ?)" +
+                "                OR course_id2 IN (SELECT course_id2 FROM classes WHERE class_id = ?)" +
+                "                OR course_id2 IN (SELECT course_id3 FROM classes WHERE class_id = ?)" +
+                "                OR course_id2 IN (SELECT course_id4 FROM classes WHERE class_id = ?)" +
+                "                OR course_id2 IN (SELECT course_id5 FROM classes WHERE class_id = ?)" +
+                "                OR course_id3 IN (SELECT course_id1 FROM classes WHERE class_id = ?)" +
+                "                OR course_id3 IN (SELECT course_id2 FROM classes WHERE class_id = ?)" +
+                "                OR course_id3 IN (SELECT course_id3 FROM classes WHERE class_id = ?)" +
+                "                OR course_id3 IN (SELECT course_id4 FROM classes WHERE class_id = ?)" +
+                "                OR course_id3 IN (SELECT course_id5 FROM classes WHERE class_id = ?)";
+        return BaseDao.getBeanList(sql, Teacher.class,classId,classId,classId,classId,classId,classId,classId,
+                classId,classId,classId,classId,classId,classId,classId,classId);
     }
 
   @Override
   public Teacher login(String username, String passWd) {
         String sql = "select id,username,passWd,sex,teacher_name as teacherName,course_id1 as courseId1," +
-                "course_id2 as courseId2,course_id3 as courseId3 from teachers where username=? and passWd=?";
+                "course_id2 as courseId2,course_id3 as courseId3 from teachers where username = ? and passWd = ?";
         return BaseDao.getBean(sql, Teacher.class, username,passWd);
     }
 
     @Override
     public boolean update(Teacher teacher) {
-        return false;
+        String sql = "update teachers set username = ?,passwd = ?,sex = ?,course_id1 = ?," +
+                "course_id2 = ?,course_id3 = ?,teacher_name = ?";
+        return BaseDao.update(sql, teacher.getUsername(),teacher.getPassWd(),
+                teacher.getSex(),teacher.getCourseId1(),teacher.getCourseId2(),
+                teacher.getCourseId3(),teacher.getTeacherName());
     }
 
     @Override
     public boolean delete(Integer id) {
-        return false;
+        String sql = "DELETE FROM teachers WHERE id = ?";
+        return BaseDao.update(sql, id);
     }
 }

@@ -1,5 +1,5 @@
 body{
-    background-image: url(../Image/MainBack.png);
+    background-image: url(../image/MainBack.png);
     background-repeat: repeat;
 }
 
@@ -8,6 +8,10 @@ body{
     width: 1000px;
     margin: 40px auto 2px;
     padding-bottom: 40px;
+}
+
+.main .main_part{
+    min-height: 80%;
 }
 
 .main .main_part .main_part_top
@@ -51,7 +55,6 @@ body{
     border-bottom: 1px solid #fff;
     color: #039;
     text-align: center;
-    width: 25%;
 }
 
 .class td
@@ -62,7 +65,6 @@ body{
     color: #669;
     border-top: 1px solid transparent;
     text-align: center;
-    width: 25%;
 }
 
 .class tr:hover td

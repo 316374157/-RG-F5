@@ -2,10 +2,10 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="./CSS/Clean.css">
-    <link rel="stylesheet" href="./CSS/Course.css">
+    <link rel="stylesheet" href="../../static/css/Clean.css">
+    <link rel="stylesheet" href="../../static/css/Course.css">
     <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="./JS/HeaderChose.js"></script>
+    <script src="../../static/js/HeaderChose.js"></script>
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
@@ -18,21 +18,21 @@
             </div>
         </div>
         <div class="course">
-            <img src="./Image/Course.png" alt=""/>
+            <img src="../../static/image/Course.png" alt=""/>
             <div class="courseuse">
                 <a href="#" class="enter">进入课程</a>
                 <a href="#" class="delete">删除</a>
             </div>
         </div>
         <div class="course">
-            <img src="./Image/Course.png" alt=""/>
+            <img src="../../static/image/Course.png" alt=""/>
             <div class="courseuse">
                 <a href="#" class="enter">进入课程</a>
                 <a href="#" class="delete">删除</a>
             </div>
         </div>
         <div class="course">
-            <img src="./Image/Course.png" alt=""/>
+            <img src="../../static/image/Course.png" alt=""/>
             <div class="courseuse">
                 <a href="#" class="enter">进入课程</a>
                 <a href="#" class="delete">删除</a>

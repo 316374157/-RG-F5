@@ -10,6 +10,17 @@ package com.rgf5.bean;
 public class Teacher {
 
     /**
+     *   `id` int NOT NULL AUTO_INCREMENT,
+     `username` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+     `passwd` varchar(20) NOT NULL,
+     `sex` char(1) NOT NULL,
+     `course_id1` varchar(20) DEFAULT NULL,
+     `course_id2` varchar(20) DEFAULT NULL,
+     `course_id3` varchar(20) DEFAULT NULL,
+     `teacher_name` varchar(10) NOT NULL,
+     * */
+
+    /**
      * 主键，自增
      */
     private  int id;
@@ -56,17 +67,13 @@ public class Teacher {
         this.courseId3 = courseId3;
     }
 
-    public int getId() {
-        return id;
-    }
+    public int getId() { return id; }
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
-    }
+    public String getUsername() { return username; }
 
     public void setUsername(String username) {
         this.username = username;

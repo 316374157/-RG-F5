@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,10 +17,10 @@
 			<div class="main_part_nav">
 				<ul>
 					<li>
-						<a>姓名：${sessionScope.teacher.teacherName}</a>
+						<a>姓名：XXX</a>
 					</li>
 					<li>
-						<a>性别：${sessionScope.teacher.sex}</a>
+						<a>年龄：XX</a>
 					</li>
 				</ul>
 			</div>
@@ -85,26 +84,15 @@
 				<a href="./#">
 					<div class="courses" style="margin-top: 0;">
 						<span></span>
-						<div class="tz">${sessionScope.teacher.courseId1}</div>
+						<div class="tz">课程1</div>
 					</div>
 				</a>
-				<c:if test="${!empty sessionScope.teacher.courseId2}">
-					<a href="./#">
-						<div class="courses">
-							<span></span>
-							<div class="tz">${sessionScope.teacher.courseId2}</div>
-						</div>
-					</a>
-				</c:if>
-				<c:if test="${!empty sessionScope.teacher.courseId3}">
-					<a href="./#">
-						<div class="courses">
-							<span></span>
-							<div class="tz">${sessionScope.teacher.courseId3}</div>
-						</div>
-					</a>
-				</c:if>
-
+				<a href="./#">
+					<div class="courses">
+						<span></span>
+						<div class="tz">课程2</div>
+					</div>
+				</a>
 			</div>
 		</div>
 		<div class="main_part" style="float: right;border: none;">

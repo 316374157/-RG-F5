@@ -2,16 +2,23 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="./CSS/Clean.css">
-    <link rel="stylesheet" href="./CSS/Data.css">
+    <link rel="stylesheet" href="../../static/css/Clean.css">
+    <link rel="stylesheet" href="../../static/css/Data.css">
     <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="./JS/HeaderChose.js"></script>
+    <script src="../../static/js/HeaderChose.js"></script>
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
 <div class="main">
     <div class="main_part" style="float: none;margin: 0 auto;padding-top: 20px;">
-        <img style="margin: 0 36%;" src="./Image/pic.png" alt="" />
+        <div class="sign">
+            <a href="./#">
+                <div class="courses">
+                    <p class="tz">签到</p>
+                </div>
+            </a>
+        </div>
+        <img style="margin: 0 33%;" src="../../static/image/pic.png" alt="" />
     </div>
 </div>
 <div class="footer">

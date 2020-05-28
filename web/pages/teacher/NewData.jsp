@@ -3,7 +3,7 @@
 <head>
     <title>Title</title>
     <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="./JS/HeaderChose.js"></script>
+    <script src="../../static/js/HeaderChose.js"></script>
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
