@@ -12,7 +12,7 @@ public class Student {
     /**
      * 主键，自增
      */
-    private int id;
+    private Integer id;
     /**
      * 学生id
      */
@@ -37,7 +37,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(int id, String username, String passWd, String sex, String classId,String studentName) {
+    public Student(Integer id, String username, String passWd, String sex, String classId,String studentName) {
         this.id = id;
         this.username = username;
         this.passWd = passWd;
@@ -46,11 +46,11 @@ public class Student {
         this.studentName = studentName;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

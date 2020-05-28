@@ -11,7 +11,7 @@ public class Course {
     /**
      * 主键
      */
-    private int id;
+    private Integer id;
     /**
      * 课程编号
      */
@@ -24,17 +24,17 @@ public class Course {
     public Course() {
     }
 
-    public Course(int id, String courseId, String courseName) {
+    public Course(Integer id, String courseId, String courseName) {
         this.id = id;
         this.courseId = courseId;
         this.courseName = courseName;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

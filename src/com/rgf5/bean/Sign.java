@@ -12,7 +12,7 @@ public class Sign {
     /**
      * 主键
      */
-    private int id;
+    private Integer id;
     /**
      * 学生id
      */
@@ -49,7 +49,7 @@ public class Sign {
     public Sign() {
     }
 
-    public Sign(int id, String studentId, String classId, String courseId, String sign1, String sign2, String sign3, String sign4, String sign5) {
+    public Sign(Integer id, String studentId, String classId, String courseId, String sign1, String sign2, String sign3, String sign4, String sign5) {
         this.id = id;
         this.studentId = studentId;
         this.classId = classId;
@@ -61,11 +61,11 @@ public class Sign {
         this.sign5 = sign5;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

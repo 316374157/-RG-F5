@@ -16,9 +16,9 @@ public class BaseServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         String method = request.getParameter("method");
         try {
-            Method declaredMethod = this.getClass().getDeclaredMethod(method, HttpServletResponse.class, HttpServletRequest.class);
+            Method declaredMethod = this.getClass().getDeclaredMethod(method,HttpServletRequest.class, HttpServletResponse.class);
             declaredMethod.setAccessible(true);
-            declaredMethod.invoke(this, response,request);
+            declaredMethod.invoke(this, request,response);
         } catch (Exception e) {
             e.printStackTrace();
         }

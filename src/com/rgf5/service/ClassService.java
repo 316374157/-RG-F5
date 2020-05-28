@@ -3,6 +3,7 @@ package com.rgf5.service;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 
+import com.rgf5.bean.Teacher;
 import java.util.List;
 
 /**
@@ -53,4 +54,10 @@ public interface ClassService {
      */
     public Classes getBeanByClassName(Classes classes);
 
+    /**
+     * 老师获取本人所交的全部班级
+     * @param teacher 老师对象
+     * @return 老师的全部班级
+     */
+    public List<Classes> getMyBeanList(Teacher teacher);
 }
