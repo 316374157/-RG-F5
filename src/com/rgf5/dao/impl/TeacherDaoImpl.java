@@ -19,7 +19,7 @@ public class TeacherDaoImpl implements TeacherDao {
     {
         String sql = "INSERT INTO teachers SET username = ?,passwd = ?,sex = ?," +
                 "course_id1 = ?,course_id2 = ?,course_id3 = ?,teacher_name = ?";
-        return BaseDao.update(sql, teacher.getId(),teacher.getUsername(),teacher.getPassWd(),
+        return BaseDao.update(sql,teacher.getUsername(),teacher.getPassWd(),
                 teacher.getSex(),teacher.getCourseId1(),teacher.getCourseId2(),
                 teacher.getCourseId3(),teacher.getTeacherName());
     }
@@ -54,16 +54,15 @@ public class TeacherDaoImpl implements TeacherDao {
 
     @Override
     public List<Teacher> getBeanListByCourseId(String courseId) {
-        String sql = "SELECT id,username,passwd as passWd,sex,teacher_Name as teacherName," +
-                "course_id1 as courseId1,course_id2 as courseId2," +
-                "course_id3 as courseId3 FROM teachers " +
-                "WHERE course_id1 = ? OR course_id2 = ? OR course_id3 = ?";
-        return BaseDao.getBeanList(sql, Teacher.class ,courseId);
+        String sql = "SELECT id,username,passwd AS passWd,sex,teacher_name AS teacherName, " +
+                "course_id1 AS courseId1,course_id2 AS courseId2,course_id3 AS courseId3 FROM teachers " +
+                " WHERE course_id1 = ? OR course_id2 = ? OR course_id3 = ?";
+        return BaseDao.getBeanList(sql, Teacher.class ,courseId,courseId,courseId);
     }
 
     @Override
     public List<Teacher> getBeanListByClassId(String classId) {
-        String sql = "SELECT id,username,passwd ,sex,teacher_Name ,course_id1 ,course_id2 ,course_id3  FROM teachers" +
+        String sql = "SELECT id,username,passwd ,sex,teacher_name ,course_id1 ,course_id2 ,course_id3  FROM teachers" +
                 "                WHERE course_id1 IN (SELECT course_id1 FROM classes WHERE class_id = ?)" +
                 "                OR course_id1 IN (SELECT course_id2 FROM classes WHERE class_id = ?)" +
                 "                OR course_id1 IN (SELECT course_id3 FROM classes WHERE class_id = ?)" +
@@ -85,18 +84,18 @@ public class TeacherDaoImpl implements TeacherDao {
 
   @Override
   public Teacher login(String username, String passWd) {
-        String sql = "select id,username,passWd,sex,teacher_name as teacherName,course_id1 as courseId1," +
-                "course_id2 as courseId2,course_id3 as courseId3 from teachers where username = ? and passWd = ?";
+        String sql = "SELECT id,username,passWd,sex,teacher_name AS teacherName,course_id1 AS courseId1," +
+                "course_id2 AS courseId2,course_id3 AS courseId3 FROM teachers WHERE username = ? AND passWd = ?";
         return BaseDao.getBean(sql, Teacher.class, username,passWd);
     }
 
     @Override
     public boolean update(Teacher teacher) {
-        String sql = "update teachers set username = ?,passwd = ?,sex = ?,course_id1 = ?," +
-                "course_id2 = ?,course_id3 = ?,teacher_name = ?";
+        String sql = "UPDATE teachers SET username = ?,passwd = ?,sex = ?," +
+                "course_id1 = ?,course_id2 = ?,course_id3 = ?,teacher_name = ? WHERE id = ?";
         return BaseDao.update(sql, teacher.getUsername(),teacher.getPassWd(),
                 teacher.getSex(),teacher.getCourseId1(),teacher.getCourseId2(),
-                teacher.getCourseId3(),teacher.getTeacherName());
+                teacher.getCourseId3(),teacher.getTeacherName(),teacher.getId());
     }
 
     @Override

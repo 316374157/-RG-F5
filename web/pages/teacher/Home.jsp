@@ -17,7 +17,7 @@
 			<div class="main_part_nav">
 				<ul>
 					<li>
-						<a>姓名：XXX</a>
+						<a>姓名：${pageContext.session.id}</a>
 					</li>
 					<li>
 						<a>年龄：XX</a>
