@@ -2,10 +2,9 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="./CSS/Clean.css">
-    <link rel="stylesheet" href="./CSS/ChangeInfo.css">
-    <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="./JS/HeaderChose.js"></script>
+    <jsp:include page="../../public/base.jsp"/>
+    <link rel="stylesheet" href="static/css/Clean.css">
+    <link rel="stylesheet" href="static/css/ChangeInfo.css">
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>

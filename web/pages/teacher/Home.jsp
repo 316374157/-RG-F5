@@ -2,10 +2,9 @@
 <html>
 <head>
 	<title>Title</title>
-	<link rel="stylesheet" href="./CSS/Clean.css">
-	<link rel="stylesheet" href="./CSS/Home.css">
-	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-	<script src="./JS/HeaderChose.js"></script>
+	<jsp:include page="../../public/base.jsp"/>
+	<link rel="stylesheet" href="static/css/Clean.css">
+	<link rel="stylesheet" href="static/css/Home.css">
 </head>
 <body>
 	<jsp:include page="../../public/TeacherHeader.jsp"/>
@@ -17,10 +16,10 @@
 			<div class="main_part_nav">
 				<ul>
 					<li>
-						<a>姓名：XXX</a>
+						<a>姓名：${sessionScope.teacher.teacherName}</a>
 					</li>
 					<li>
-						<a>年龄：XX</a>
+						<a>性别：${sessionScope.teacher.sex}</a>
 					</li>
 				</ul>
 			</div>

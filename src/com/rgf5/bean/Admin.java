@@ -11,7 +11,7 @@ public class Admin {
     /**
      * 主键，自增
      */
-    private int id;
+    private Integer id;
     /**
      * 账号
      */
@@ -24,17 +24,17 @@ public class Admin {
     public Admin() {
     }
 
-    public Admin(int id, String username, String passWd) {
+    public Admin(Integer id, String username, String passWd) {
         this.id = id;
         this.username = username;
         this.passWd = passWd;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

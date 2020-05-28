@@ -1,27 +1,43 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="./CSS/Clean.css">
-    <link rel="stylesheet" href="./CSS/Data.css">
-    <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="./JS/HeaderChose.js"></script>
+    <jsp:include page="../../public/base.jsp"/>
+    <link rel="stylesheet" href="static/css/Clean.css">
+    <link rel="stylesheet" href="static/css/Data.css">
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
 <div class="main">
     <div class="menu">
         <ul class="nav nav-pills nav-stacked">
-            <li role="presentation" class="active"><a href="#">全部资源</a></li>
-            <li role="presentation"><a href="#">文档</a></li>
-            <li role="presentation"><a href="#">PPT</a></li>
-            <li role="presentation"><a href="#">视频</a></li>
-            <li role="presentation"><a href="#">其他</a></li>
+<%--            <c:forEach items="${requestScope.classes}" var="item">--%>
+<%--                <li role="presentation" class="active"><a href="#">${item.className}</a></li>--%>
+<%--            </c:forEach>--%>
+            <li role="presentation" class="active"><a href="#">2017级软件工程本科班</a></li>
+            <ul class="nav nav-pills nav-stacked half" style="">
+                <li role="presentation" class="active"><a href="#">软件工程</a></li>
+                <li><a href="#">计算机网络</a></li>
+                <li><a href="#">数据结构</a></li>
+            </ul>
+            <li role="presentation"><a href="#">2018级软件工程本科班</a></li>
+            <ul class="nav nav-pills nav-stacked half" style="display: none;">
+                <li role="presentation" class="active"><a href="#">软件工程</a></li>
+                <li><a href="#">计算机网络</a></li>
+                <li><a href="#">数据结构</a></li>
+            </ul>
+            <li role="presentation"><a href="#">2019级软件工程本科班</a></li>
+            <ul class="nav nav-pills nav-stacked half" style="display: none;">
+                <li role="presentation" class="active"><a href="#">软件工程</a></li>
+                <li><a href="#">计算机网络</a></li>
+                <li><a href="#">数据结构</a></li>
+            </ul>
         </ul>
     </div>
     <div class="main_part">
         <div class="main_part_top">
-            <div class="kj">教学资源</div>
+            <div class="kj"><a href="#">软件工程</a> >> <!--<a href="#">文档</a--></div>
             <div class="more">
                 <a href="./#">上传文件</a>
             </div>

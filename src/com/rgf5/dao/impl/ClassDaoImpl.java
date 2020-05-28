@@ -54,12 +54,11 @@ public class ClassDaoImpl implements ClassDao {
     }
 
     @Override
-    public List<Classes> getBeanListByCourseId(Classes classes) {
+    public List<Classes> getBeanListByCourseId(String courseId) {
         String sql = "select id,class_id as classId,class_name as className,course_id1 as courseId1,course_id2 as courseId2," +
                 "course_id3 as courseId3,course_id4 as courseId4,course_id5 as courseId5  from classes where course_id1=?" +
-                " or course_id2=? or course_id3? or course_id4=? or course_id5=?";
-        return BaseDao.getBeanList(sql, Classes.class,classes.getCourseId1(),classes.getCourseId2(),classes.getCourseId3()
-                        ,classes.getCourseId4(),classes.getCourseId5());
+                " or course_id2=? or course_id3=? or course_id4=? or course_id5=?";
+        return BaseDao.getBeanList(sql, Classes.class,courseId,courseId,courseId,courseId,courseId);
     }
 
     @Override

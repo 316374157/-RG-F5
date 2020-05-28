@@ -1,5 +1,5 @@
 body{
-    background-image: url(../Image/MainBack.png);
+    background-image: url(../image/MainBack.png);
     background-repeat: repeat;
 }
 
@@ -12,7 +12,7 @@ body{
 .main .main_part
 {
     margin: 0 auto 30px;
-    height: 500px;
+    min-height: 80%;
 
     color: #777777;
     width: 70%;
@@ -36,7 +36,7 @@ body{
     float: left;
 
     width: 130px;
-    margin: 22px 0 0 23px;
+    margin: 22px 0 0 12%;
 
     color: #1687d9;
 }
@@ -45,41 +45,45 @@ body{
 {
     float: right;
 
-    margin: 28px 19px 0 0;
+    margin: 28px 10% 0 0;
 
     letter-spacing: -0.2px;
 
     color: #4d4d4d;
 }
 
-.main .main_part .course{
-    float: left;
-    width: 25%;
-    height: 150px;
-    margin: 25px 4%;
+.main .main_part .main_part_nav
+{
+    margin: 0 0 0 23px;
 }
 
-.main .main_part .course img{
-    width: 100%;
-    height: 120px;
+.main .main_part .main_part_nav ul
+{
+    width: 80%;
+    margin: 0 auto;
 }
 
-.main .main_part .course .courseuse{
-    width: 100%;
-    height: 30px;
-    border: 1px solid #96C2F1;
+.main .main_part .main_part_nav ul li
+{
+    font-size: 14px;
+
+    margin: 16.7px 0;
 }
 
-.main .main_part .course .courseuse .enter {
-    float: left;
-    margin-left: 10px;
-    line-height: 30px;
+.main .main_part .main_part_nav ul li:first-child
+{
+    margin-top: 0;
 }
 
-.main .main_part .course .courseuse .delete {
-    float: right;
-    margin-right: 10px;
-    line-height: 30px;
+.main .main_part .main_part_nav ul li a
+{
+    color: #4d4d4d;
+}
+
+.main .main_part .main_part_nav ul li a:hover
+{
+    color: #96C2F1;
+    text-decoration: none;
 }
 
 .footer

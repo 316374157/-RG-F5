@@ -1,12 +1,12 @@
 body{
-    background-image: url(../Image/MainBack.png);
+    background-image: url(../image/MainBack.png);
     background-repeat: repeat;
 }
 
 .main
 {
     width: 1200px;
-    height: 565px;
+    min-height: 80%;
     margin: 40px auto 2px;
 }
 

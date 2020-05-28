@@ -36,6 +36,9 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("admin", admin);
                 System.out.println();
                 response.sendRedirect("pages/admin/home.jsp");
+            }else {
+                request.setAttribute("msg", "账号或密码错误！");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         }else if("student".equals(user)){
             Student student = WebUtils.paramsToBean(request, new Student());
@@ -46,6 +49,9 @@ public class LoginServlet extends HttpServlet {
             if(student!=null){
                 session.setAttribute("student", student);
                 response.sendRedirect("pages/student/home.jsp");
+            }else {
+                request.setAttribute("msg", "账号或密码错误！");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         }else{
             Teacher teacher = WebUtils.paramsToBean(request, new Teacher());
@@ -56,6 +62,9 @@ public class LoginServlet extends HttpServlet {
             if(teacher!=null){
                 session.setAttribute("teacher", teacher);
                 response.sendRedirect("pages/teacher/Home.jsp");
+            }else {
+                request.setAttribute("msg", "账号或密码错误！");
+                request.getRequestDispatcher("index.jsp").forward(request, response);
             }
         }
     }

@@ -9,8 +9,7 @@
 <html>
   <head>
     <title>欢迎来到登录页面</title>
-    <link rel="stylesheet" href="static/css/bootstrap.css"/>
-    <script type="text/javascript" src="static/js/jquery-3.4.1.js"></script>
+    <jsp:include page="public/base.jsp"/>
     <script type="text/javascript">
       $(function () {
         $("#login").click(function () {
@@ -32,16 +31,16 @@
   <body style="background-image: url(static/image/桌面.jpg);background-size: cover">
   <div style="text-align: center;position: absolute;width: 50%;height: 40%;margin: 0 auto;top: 25%;left: 35%">
     <form class="form-horizontal" action="LoginServlet" method="post">
-      <select name="user">
-        <option value="admin">管理员</option>
-        <option value="student">学生</option>
-        <option value="teacher">老师</option>
-      </select>
       <span id="msg" style="color: red">${msg}</span>
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">用户名：</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="Username" style="width: 50%">
+            <select name="user" class="btn btn-default dropdown-toggle" style="float: left">
+                <option value="admin">管理员</option>
+                <option value="student">学生</option>
+                <option value="teacher">老师</option>
+            </select>
         </div>
       </div>
       <div class="form-group">

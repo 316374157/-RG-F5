@@ -2,10 +2,9 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="./CSS/Clean.css">
-    <link rel="stylesheet" href="./CSS/SignInformation.css">
-    <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="./JS/HeaderChose.js"></script>
+    <jsp:include page="../../public/base.jsp"/>
+    <link rel="stylesheet" href="static/css/Clean.css">
+    <link rel="stylesheet" href="static/css/SignInformation.css">
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
