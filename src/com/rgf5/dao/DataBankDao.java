@@ -59,4 +59,12 @@ public interface DataBankDao {
      */
     public List<DataBank> getBeanListByDataType(String dataType);
 
+    /**
+     * 通过班级和课程查找文件
+     * @param authorId 个人编号
+     * @param authorName 个人姓名
+     * @return 查找到的文件对象
+     */
+    public List<DataBank> getBeanListByPerson(Integer authorId,String authorName);
+
 }

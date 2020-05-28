@@ -3,6 +3,7 @@ package com.rgf5.service;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.DataBank;
+import com.rgf5.bean.Teacher;
 
 import java.util.List;
 
@@ -65,4 +66,11 @@ public interface DataBankService {
      * @return 一个类型的所有文件信息
      */
     public List<DataBank> getBeanListByDataType(DataBank dataBank);
+
+    /**
+     * 查找这个老师可见的文件
+     * @param teacher 老师对象
+     * @return 这个老师可见的文件
+     */
+    public List<DataBank> teacherGetAll(Teacher teacher);
 }

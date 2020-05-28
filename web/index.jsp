@@ -9,8 +9,7 @@
 <html>
   <head>
     <title>欢迎来到登录页面</title>
-    <link rel="stylesheet" href="static/css/bootstrap.css"/>
-    <script type="text/javascript" src="static/js/jquery-3.4.1.js"></script>
+    <jsp:include page="public/base.jsp"/>
     <script type="text/javascript">
       $(function () {
         $("#login").click(function () {

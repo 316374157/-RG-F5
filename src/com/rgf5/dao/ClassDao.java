@@ -42,10 +42,10 @@ public interface ClassDao {
     public Classes getBeanByClassId(String classId);
     /**
      * 通过课程id获取班级信息
-     * @param classes 班级对象
+     * @param courseId 课程号
      * @return 班级的信息
      */
-    public List<Classes> getBeanListByCourseId(Classes classes);
+    public List<Classes> getBeanListByCourseId(String courseId);
     /**
      * 通过班级名获取班级信息
      * @param className 班级名

@@ -12,7 +12,7 @@ public class Classes {
     /**
      * 主键
      */
-    private int id;
+    private Integer id;
     /**
      * 班级id
      */
@@ -45,7 +45,7 @@ public class Classes {
     public Classes() {
     }
 
-    public Classes(int id, String classId, String className, String courseId1, String courseId2, String courseId3, String courseId4, String courseId5) {
+    public Classes(Integer id, String classId, String className, String courseId1, String courseId2, String courseId3, String courseId4, String courseId5) {
         this.id = id;
         this.classId = classId;
         this.className = className;
@@ -56,11 +56,11 @@ public class Classes {
         this.courseId5 = courseId5;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

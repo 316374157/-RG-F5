@@ -19,7 +19,7 @@ public class DataBank {
     /**
      * 主键
      */
-    private int id;
+    private Integer id;
     /**
      * 文件名
      */
@@ -40,24 +40,34 @@ public class DataBank {
      * 文件类型
      */
     private String dataType;
+    /**
+     * 上传者id
+     */
+    private Integer authorId;
+    /**
+     * 上传者姓名
+     */
+    private String authorName;
 
     public DataBank() {
     }
 
-    public DataBank(int id, String dataName, String dataPath, String classId, String courseId, String dataType) {
+    public DataBank(Integer id, String dataName, String dataPath, String classId, String courseId, String dataType, Integer authorId, String authorName) {
         this.id = id;
         this.dataName = dataName;
         this.dataPath = dataPath;
         this.classId = classId;
         this.courseId = courseId;
         this.dataType = dataType;
+        this.authorId = authorId;
+        this.authorName = authorName;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -100,16 +110,33 @@ public class DataBank {
     public void setDataType(String dataType) {
         this.dataType = dataType;
     }
+    public Integer getAuthorId() {
+        return authorId;
+    }
+
+    public void setAuthorId(Integer authorId) {
+        this.authorId = authorId;
+    }
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
 
     @Override
     public String toString() {
-        return "DateBank{" +
+        return "DataBank{" +
                 "id=" + id +
                 ", dataName='" + dataName + '\'' +
                 ", dataPath='" + dataPath + '\'' +
                 ", classId='" + classId + '\'' +
                 ", courseId='" + courseId + '\'' +
                 ", dataType='" + dataType + '\'' +
+                ", authorId=" + authorId +
+                ", authorName='" + authorName + '\'' +
                 '}';
     }
 }
