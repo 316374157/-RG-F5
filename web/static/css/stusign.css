@@ -1,0 +1,96 @@
+body{
+    background-image: url(../image/MainBack.png);
+    background-repeat: repeat;
+}
+
+.main
+{
+    width: 1000px;
+    margin: 40px auto 2px;
+    padding-bottom: 40px;
+    min-height: 80%;
+}
+
+.main .main_part .main_part_top
+{
+    width: 100%;
+    height: 67px;
+}
+
+.main .main_part .main_part_top .kj
+{
+    font-size: 22px;
+    font-weight: 300;
+
+    float: left;
+
+    width: 110px;
+    margin: 22px 0 0 10%;
+
+    color: #1687d9;
+}
+
+.class
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.class tr{
+    width: 100%;
+}
+
+.class th
+{
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    background: #b9c9fe;
+    border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #039;
+    text-align: center;
+    width: 20%;
+}
+
+.class td
+{
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+    text-align: center;
+    width: 20%;
+}
+
+.class tr:hover td
+{
+    background: #d0dafd;
+    color: #339;
+}
+
+.footer
+{
+    float: left;
+
+    width: 100%;
+    height: 125px;
+
+
+    color: #ffffff;
+    background: #001e36;
+}
+
+.footer p
+{
+    margin: 0;
+
+    font-weight: lighter;
+
+    padding-top: 5px;
+
+    text-align: center;
+}
