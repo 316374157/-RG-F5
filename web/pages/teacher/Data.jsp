@@ -1,17 +1,20 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="../../static/css/Clean.css">
-    <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../../static/css/Data.css">
-    <script src="../../static/js/HeaderChose.js"></script>
+    <jsp:include page="../../public/base.jsp"/>
+    <link rel="stylesheet" href="static/css/Clean.css">
+    <link rel="stylesheet" href="static/css/Data.css">
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
 <div class="main">
     <div class="menu">
         <ul class="nav nav-pills nav-stacked">
+            <c:forEach items="${requestScope.classes}" var="item">
+                <li role="presentation" class="active"><a href="#">${item.className}</a></li>
+            </c:forEach>
             <li role="presentation" class="active"><a href="#">2017级软件工程本科班</a></li>
             <ul class="nav nav-pills nav-stacked half" style="">
                 <li role="presentation" class="active"><a href="#">软件工程</a></li>

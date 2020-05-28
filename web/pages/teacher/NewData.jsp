@@ -2,8 +2,7 @@
 <html>
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-    <script src="../../static/js/HeaderChose.js"></script>
+    <jsp:include page="../../public/base.jsp"/>
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>

@@ -23,7 +23,7 @@ public class Teacher {
     /**
      * 主键，自增
      */
-    private  int id;
+    private  Integer id;
     /**
      * 老师id
      */
@@ -56,7 +56,7 @@ public class Teacher {
     public Teacher() {
     }
 
-    public Teacher(int id, String username, String passWd, String sex, String courseId1, String courseId2, String courseId3,String teacherName) {
+    public Teacher(Integer id, String username, String passWd, String sex, String courseId1, String courseId2, String courseId3,String teacherName) {
         this.id = id;
         this.username = username;
         this.passWd = passWd;
@@ -67,9 +67,9 @@ public class Teacher {
         this.courseId3 = courseId3;
     }
 
-    public int getId() { return id; }
+    public Integer getId() { return id; }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
