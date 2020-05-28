@@ -84,7 +84,8 @@ body{
 
 .main .main_part .main_part_nav ul li a:hover
 {
-    color: lightgray;
+    color: #337ab7;
+    text-decoration: none;
 }
 
 .classes a
