@@ -17,7 +17,7 @@
     <div class="menu">
         <ul class="nav nav-pills nav-stacked">
             <c:forEach items="${requestScope.myClasses}" var="item">
-                <li role="presentation"><a href="#">${item.className}</a></li>
+                <li role="presentation"><a href="javascript:void(0)">${item.className}</a></li>
                 <c:forEach items="${requestScope.listMap.get(item.className)}" var="list">
                     <li class="get"><a href="DataBankServlet?method=getFileByCourseAndClass&className=${item.className}&courseName=${list}">${list}</a></li>
                 </c:forEach>
@@ -26,20 +26,20 @@
     </div>
     <div class="main_part">
         <div class="main_part_top">
-            <div class="kj"><a href="#">${param.className}/${param.courseName}</a> >> <!--<a href="#">文档</a--></div>
+            <div class="kj"><a href="javascript:void(0)">${param.className}/${param.courseName}</a> >> <!--<a href="">文档</a--></div>
             <div class="more">
-                <a href="./#">上传文件</a>
+                <a href="javascript:void(0)">上传文件</a>
             </div>
         </div>
         <div class="main_part_nav">
-            <ul>
+            <ul id="datas">
                 <c:forEach items="${requestScope.fileMap.keySet()}" var="item">
-                    <li>
-                        <a href="./#">${item}</a>
+                    <li class="chose">
+                        <a href="javascript:void(0)">${item}</a>
                     </li>
-                    <ul>
+                    <ul style="display: none;">
                         <c:forEach items="${requestScope.fileMap.get(item)}" var="file">
-                            <li><a href="#">${file.dataName}</a>
+                            <li><a href="javascript:void(0)">${file.dataName}</a>
                                 <button>查看</button>
                                 <button>下载</button>
                                 <button>删除</button></li>
@@ -56,5 +56,15 @@
     <p>http://</p>
 </div>
 <span id="Only" style="display: none;">Data</span>
+<script>
+    $("#datas .chose").click(function () {
+        var index = $("#datas .chose").index(this);
+        var num = $("ul").length;
+        for(i=0;i<=num;i++){
+            $("#datas ul").css("display","none");
+        }
+        $("#datas ul").eq(index).css("display","block");
+    });
+</script>
 </body>
 </html>
