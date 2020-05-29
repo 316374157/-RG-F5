@@ -1,8 +1,10 @@
 package com.rgf5.service;
 
+import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
-
+import com.rgf5.bean.Teacher;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author 31637 课程事务控制
@@ -44,4 +46,12 @@ public interface CourseService {
      * @return 一个课程的信息
      */
     public Course getBeanByCourseName(Course course);
+
+    /**
+     * 获取该老师所在班级中自己所教的课程
+     * @param teacher 该老师
+     * @param classes 所在班级的集合
+     * @return 通过班级分类的课程
+     */
+    public Map<String, List<String>> getMyCourseInMyClass(Teacher teacher,List<Classes> classes);
 }

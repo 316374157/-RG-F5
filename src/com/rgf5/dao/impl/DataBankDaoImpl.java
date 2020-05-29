@@ -77,4 +77,12 @@ public class DataBankDaoImpl implements DataBankDao {
                 "databank where author_id=? and author_name=?";
         return BaseDao.getBeanList(sql, DataBank.class,authorId,authorName);
     }
+
+    @Override
+    public List<DataBank> getFileByCourseIdAndClassId(String courseId, String classesId) {
+        String sql = "select id,data_name as dataName,data_path as dataPath,class_id as classId,course_id as courseId" +
+                ",data_type as dataType,author_id as authorId,author_name as authorName from " +
+                "databank where course_id=? and class_id=?";
+        return BaseDao.getBeanList(sql, DataBank.class,courseId,classesId);
+    }
 }

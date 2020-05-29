@@ -6,6 +6,8 @@ import com.rgf5.bean.DataBank;
 import com.rgf5.bean.Teacher;
 import com.rgf5.dao.DataBankDao;
 import com.rgf5.dao.impl.DataBankDaoImpl;
+import com.rgf5.service.ClassService;
+import com.rgf5.service.CourseService;
 import com.rgf5.service.DataBankService;
 
 import java.util.List;
@@ -69,5 +71,14 @@ public class DataBankServiceImpl implements DataBankService {
     @Override
     public List<DataBank> teacherGetAll(Teacher teacher) {
         return dataBankDao.getBeanListByPerson(teacher.getId(), teacher.getTeacherName());
+    }
+
+    @Override
+    public List<DataBank> getFileByCourseIdAndClassId(Course course, Classes classes) {
+        ClassService classService = new ClassServiceImpl();
+        CourseService courseService = new CourseServiceImpl();
+        classes = classService.getBeanByClassName(classes);
+        course = courseService.getBeanByCourseName(course);
+        return dataBankDao.getFileByCourseIdAndClassId(course.getCourseId(), classes.getClassId());
     }
 }

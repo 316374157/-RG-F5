@@ -73,4 +73,12 @@ public interface DataBankService {
      * @return 这个老师可见的文件
      */
     public List<DataBank> teacherGetAll(Teacher teacher);
+
+    /**
+     * 通过课程和班级获取文件
+     * @param course 课程对象
+     * @param classes 班级对象
+     * @return 该班级和该课程的所有文件
+     */
+    public List<DataBank> getFileByCourseIdAndClassId(Course course,Classes classes);
 }

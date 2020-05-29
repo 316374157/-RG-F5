@@ -6,68 +6,38 @@
     <jsp:include page="../../public/base.jsp"/>
     <link rel="stylesheet" href="static/css/Clean.css">
     <link rel="stylesheet" href="static/css/Data.css">
+    <script type="text/javascript">
+        $(function () {
+        })
+    </script>
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
 <div class="main">
     <div class="menu">
         <ul class="nav nav-pills nav-stacked">
-<%--            <c:forEach items="${requestScope.classes}" var="item">--%>
-<%--                <li role="presentation" class="active"><a href="#">${item.className}</a></li>--%>
-<%--            </c:forEach>--%>
-            <li role="presentation" class="active"><a href="#">2017级软件工程本科班</a></li>
-            <ul class="nav nav-pills nav-stacked half" style="">
-                <li role="presentation" class="active"><a href="#">软件工程</a></li>
-                <li><a href="#">计算机网络</a></li>
-                <li><a href="#">数据结构</a></li>
-            </ul>
-            <li role="presentation"><a href="#">2018级软件工程本科班</a></li>
-            <ul class="nav nav-pills nav-stacked half" style="display: none;">
-                <li role="presentation" class="active"><a href="#">软件工程</a></li>
-                <li><a href="#">计算机网络</a></li>
-                <li><a href="#">数据结构</a></li>
-            </ul>
-            <li role="presentation"><a href="#">2019级软件工程本科班</a></li>
-            <ul class="nav nav-pills nav-stacked half" style="display: none;">
-                <li role="presentation" class="active"><a href="#">软件工程</a></li>
-                <li><a href="#">计算机网络</a></li>
-                <li><a href="#">数据结构</a></li>
-            </ul>
+            <c:forEach items="${requestScope.myClasses}" var="item">
+                <li role="presentation"><a href="#">${item.className}</a></li>
+                <c:forEach items="${requestScope.listMap.get(item.className)}" var="list">
+                    <li class="get"><a href="DataBankServlet?method=getFileByCourseAndClass&className=${item.className}&courseName=${list}">${list}</a></li>
+                </c:forEach>
+            </c:forEach>
         </ul>
     </div>
     <div class="main_part">
         <div class="main_part_top">
-            <div class="kj"><a href="#">软件工程</a> >> <!--<a href="#">文档</a--></div>
+            <div class="kj"><a href="#">${param.className}/${param.courseName}</a> >> <!--<a href="#">文档</a--></div>
             <div class="more">
                 <a href="./#">上传文件</a>
             </div>
         </div>
         <div class="main_part_nav">
             <ul>
-                <li>
-                    <a href="./#">第一讲：XXX</a>
-                </li>
-                <li>
-                    <a href="./#">第二讲：XXX</a>
-                </li>
-                <li>
-                    <a href="./#">第三讲：XXX</a>
-                </li>
-                <li>
-                    <a href="./#">第四讲：XXX</a>
-                </li>
-                <li>
-                    <a href="./#">第五讲：XXX</a>
-                </li>
-                <li>
-                    <a href="./#">第六讲：XXX</a>
-                </li>
-                <li>
-                    <a href="./#">第七讲：XXX</a>
-                </li>
-                <li>
-                    <a href="./#">第八讲：XXX</a>
-                </li>
+                <c:forEach items="${requestScope.set}" var="item">
+                    <li>
+                        <a href="./#">${item}</a>
+                    </li>
+                </c:forEach>
             </ul>
         </div>
         <div class="main_part_nav" style="float: right;margin: 5px 19px 0 0;letter-spacing: -0.5px;">
