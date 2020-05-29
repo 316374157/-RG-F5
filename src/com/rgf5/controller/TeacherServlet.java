@@ -46,12 +46,12 @@ public class TeacherServlet extends BaseServlet {
         Teacher teacher = (Teacher) session.getAttribute("teacher");
         ClassService classService = new ClassServiceImpl();
         List<Classes> myBeanList = classService.getMyBeanList(teacher);
+        request.setAttribute("myBeanList",myBeanList);
+        request.getRequestDispatcher("pages/teacher/MyAllClass.jsp").forward(request, response);
         System.out.println("teacherService="+teacherService);
         System.out.println("session="+session);
         System.out.println("teacher="+teacher);
         System.out.println("classService="+classService);
         System.out.println("myBeanList="+myBeanList);
-        request.setAttribute("myBeanList",myBeanList);
-        request.getRequestDispatcher("pages/teacher/MyAllClass.jsp").forward(request, response);
     }
 }
