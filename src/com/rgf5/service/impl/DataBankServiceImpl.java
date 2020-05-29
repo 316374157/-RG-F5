@@ -10,6 +10,8 @@ import com.rgf5.service.ClassService;
 import com.rgf5.service.CourseService;
 import com.rgf5.service.DataBankService;
 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -74,11 +76,24 @@ public class DataBankServiceImpl implements DataBankService {
     }
 
     @Override
-    public List<DataBank> getFileByCourseIdAndClassId(Course course, Classes classes) {
+    public LinkedHashMap<String, List<DataBank>> getFileByCourseIdAndClassId(Course course, Classes classes) {
         ClassService classService = new ClassServiceImpl();
         CourseService courseService = new CourseServiceImpl();
         classes = classService.getBeanByClassName(classes);
         course = courseService.getBeanByCourseName(course);
-        return dataBankDao.getFileByCourseIdAndClassId(course.getCourseId(), classes.getClassId());
+        LinkedHashMap<String, List<DataBank>> map = new LinkedHashMap<>();
+        List<DataBank> file = dataBankDao.getFileByCourseIdAndClassId(course.getCourseId(), classes.getClassId());
+        for (DataBank item : file) {
+          if(map.get(item.getDataType())==null){
+              List<DataBank> list = new ArrayList<>();
+              list.add(item);
+              map.put(item.getDataType(), list);
+          }else {
+              List<DataBank> list = map.get(item.getDataType());
+              list.add(item);
+              map.put(item.getDataType(), list);
+          }
+        }
+        return map;
     }
 }

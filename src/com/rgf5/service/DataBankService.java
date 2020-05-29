@@ -5,6 +5,7 @@ import com.rgf5.bean.Course;
 import com.rgf5.bean.DataBank;
 import com.rgf5.bean.Teacher;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -75,10 +76,10 @@ public interface DataBankService {
     public List<DataBank> teacherGetAll(Teacher teacher);
 
     /**
-     * 通过课程和班级获取文件
+     * 通过课程和班级获取文件并按照类型分类
      * @param course 课程对象
      * @param classes 班级对象
      * @return 该班级和该课程的所有文件
      */
-    public List<DataBank> getFileByCourseIdAndClassId(Course course,Classes classes);
+    public LinkedHashMap<String, List<DataBank>> getFileByCourseIdAndClassId(Course course,Classes classes);
 }

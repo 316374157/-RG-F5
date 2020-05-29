@@ -33,10 +33,15 @@
         </div>
         <div class="main_part_nav">
             <ul>
-                <c:forEach items="${requestScope.set}" var="item">
+                <c:forEach items="${requestScope.fileMap.keySet()}" var="item">
                     <li>
                         <a href="./#">${item}</a>
                     </li>
+                    <ul>
+                        <c:forEach items="${requestScope.fileMap.get(item)}" var="file">
+                            <li><a href="#">${file.dataName}</a></li>
+                        </c:forEach>
+                    </ul>
                 </c:forEach>
             </ul>
         </div>
