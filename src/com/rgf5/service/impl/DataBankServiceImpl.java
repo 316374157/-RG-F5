@@ -56,6 +56,11 @@ public class DataBankServiceImpl implements DataBankService {
     }
 
     @Override
+    public DataBank getBeanById(DataBank dataBank) {
+        return dataBankDao.getBeanById(dataBank.getId());
+    }
+
+    @Override
     public List<DataBank> getBeanListByClassId(Classes classes) {
         return null;
     }

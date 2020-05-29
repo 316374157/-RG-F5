@@ -49,6 +49,13 @@ public interface DataBankService {
      * @return 一份文件的信息
      */
     public DataBank getBeanByDataPath(DataBank dataBank);
+
+    /**
+     * 通过文件id获取文件对象
+     * @param dataBank 文件对象
+     * @return 该文件的信息
+     */
+    public DataBank getBeanById(DataBank dataBank);
     /**
      * 通过班级ID获取文件信息
      * @param classes 班级对象

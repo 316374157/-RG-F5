@@ -38,6 +38,14 @@ public interface DataBankDao {
      * @return 一份文件的信息
      */
     public DataBank getBeanByDataPath(String dataPath);
+
+    /**
+     * 通过文件ID获取文件信息
+     * @param id 文件id
+     * @return 该文件对象
+     */
+    public DataBank getBeanById(Integer id);
+
     /**
      * 通过班级ID获取文件信息
      * @param classId 班级ID

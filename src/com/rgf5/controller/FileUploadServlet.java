@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "FileServlet",value = "/FileServlet")
-public class FileServlet extends HttpServlet {
+@WebServlet(name = "FileUploadServlet",value = "/FileUploadServlet")
+public class FileUploadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request,
@@ -26,6 +26,7 @@ public class FileServlet extends HttpServlet {
         Teacher teacher = (Teacher) session.getAttribute("teacher");
         dataBank.setAuthorId(teacher.getId());
         dataBank.setAuthorName(teacher.getTeacherName());
+        System.out.println(dataBank);
         dataBankService.add(dataBank);
         request.getRequestDispatcher("DataBankServlet?method=getFileByCourseAndClass").forward(request, response);
     }

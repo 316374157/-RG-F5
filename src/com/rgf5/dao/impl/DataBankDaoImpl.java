@@ -50,6 +50,13 @@ public class DataBankDaoImpl implements DataBankDao {
     }
 
     @Override
+    public DataBank getBeanById(Integer id) {
+        String sql = "select id,data_name as dataName,data_path as dataPath,class_id as classId,course_id as courseId" +
+                ",data_type as dataType,author_id as authorId,author_name as authorName from databank where id=?";
+        return BaseDao.getBean(sql, DataBank.class, id);
+    }
+
+    @Override
     public List<DataBank> getBeanListByClassId(String classId) {
         String sql = "select id,data_name as dataName,data_path as dataPath,class_id as classId,course_id as courseId" +
                 ",data_type as dataType,author_id as authorId,author_name as authorName from databank where class_id=?";
