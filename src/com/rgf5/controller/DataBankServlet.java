@@ -25,4 +25,10 @@ public class DataBankServlet extends BaseServlet {
         request.setAttribute("fileMap", fileMap);
         request.getRequestDispatcher("TeacherServlet?method=getMyClass").forward(request, response);
     }
+
+
+    protected void fileUpload(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+    }
 }

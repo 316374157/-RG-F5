@@ -39,22 +39,13 @@
                     </li>
                     <ul>
                         <c:forEach items="${requestScope.fileMap.get(item)}" var="file">
-                            <li><a href="#">${file.dataName}</a></li>
+                            <li><a href="#">${file.dataName}</a>
+                                <button>查看</button>
+                                <button>下载</button>
+                                <button>删除</button></li>
                         </c:forEach>
                     </ul>
                 </c:forEach>
-            </ul>
-        </div>
-        <div class="main_part_nav" style="float: right;margin: 5px 19px 0 0;letter-spacing: -0.5px;">
-            <ul>
-                <li>2020-01-01</li>
-                <li>2020-01-01</li>
-                <li>2020-01-01</li>
-                <li>2020-01-01</li>
-                <li>2020-01-01</li>
-                <li>2020-01-01</li>
-                <li>2020-01-01</li>
-                <li>2020-01-01</li>
             </ul>
         </div>
     </div>
