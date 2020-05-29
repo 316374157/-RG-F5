@@ -17,7 +17,7 @@
                 </div>
             </a>
         </div>
-        <img style="margin: 0 33%;" src="../../static/image/pic.png" alt="" />
+        <img style="margin: 0 33%;" src="static/image/pic.png" alt="" />
     </div>
 </div>
 <div class="footer">

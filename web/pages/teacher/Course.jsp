@@ -17,21 +17,21 @@
             </div>
         </div>
         <div class="course">
-            <img src="../../static/image/Course.png" alt=""/>
+            <img src="static/image/Course.png" alt=""/>
             <div class="courseuse">
                 <a href="#" class="enter">进入课程</a>
                 <a href="#" class="delete">删除</a>
             </div>
         </div>
         <div class="course">
-            <img src="../../static/image/Course.png" alt=""/>
+            <img src="static/image/Course.png" alt=""/>
             <div class="courseuse">
                 <a href="#" class="enter">进入课程</a>
                 <a href="#" class="delete">删除</a>
             </div>
         </div>
         <div class="course">
-            <img src="../../static/image/Course.png" alt=""/>
+            <img src="static/image/Course.png" alt=""/>
             <div class="courseuse">
                 <a href="#" class="enter">进入课程</a>
                 <a href="#" class="delete">删除</a>

@@ -26,4 +26,19 @@ public class TeacherServlet extends BaseServlet {
         request.setAttribute("myClasses",myClasses);
         request.getRequestDispatcher("pages/teacher/Data.jsp").forward(request, response);
     }
+
+    protected void getMyAllClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        TeacherService teacherService = new TeacherServiceImpl();
+        HttpSession session = request.getSession();
+        Teacher teacher = (Teacher) session.getAttribute("teacher");
+        ClassService classService = new ClassServiceImpl();
+        List<Classes> myBeanList = classService.getMyBeanList(teacher);
+        System.out.println("teacherService="+teacherService);
+        System.out.println("session="+session);
+        System.out.println("teacher="+teacher);
+        System.out.println("classService="+classService);
+        System.out.println("myBeanList="+myBeanList);
+        request.setAttribute("myBeanList",myBeanList);
+        request.getRequestDispatcher("pages/teacher/MyAllClass.jsp").forward(request, response);
+    }
 }

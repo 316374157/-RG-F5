@@ -27,18 +27,5 @@ public class test {
         JDBCUtils.close(connection);
     }
 
-    /**
-     * 查询方法测试
-     */
-    @Test
-    public void test1(){
-        DataBankDao dataBankDao = new DataBankDaoImpl();
-        DataBank dataBank =
-        new DataBank(0, "1.ioc", "D:/JAVA/Java-IDE/git-RG-F5/web/databank/001/001/1.ico","001","001","图片");
-        dataBankDao.add(dataBank);
-        List<DataBank> beanListAll = dataBankDao.getBeanListAll();
-        System.out.println(beanListAll);
-    }
-
 
 }
