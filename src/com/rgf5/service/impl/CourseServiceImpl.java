@@ -24,7 +24,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public boolean add(Course course) {
-        return false;
+        return courseDao.add(course);
     }
 
     @Override

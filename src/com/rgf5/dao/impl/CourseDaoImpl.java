@@ -1,8 +1,10 @@
 package com.rgf5.dao.impl;
 
+import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.dao.BaseDao;
 import com.rgf5.dao.CourseDao;
+
 import java.util.List;
 
 /**
@@ -40,13 +42,13 @@ public class CourseDaoImpl implements CourseDao {
 
     @Override
     public Course getBeanByCourseId(String courseId) {
-        String sql = "select id,course_name as courseName  from course where course_id=?";
+        String sql = "select id,course_name as courseName,course_id as courseId  from course where course_id=?";
         return BaseDao.getBean(sql, Course.class,courseId);
     }
 
     @Override
     public Course getBeanByCourseName(String courseName) {
-        String sql = "select id,course_id as courseId,course_name as courseName from course where course_name=?";
+        String sql = "select id,course_id as courseId,course_name as courseName  from course where course_name=?";
         return BaseDao.getBean(sql, Course.class,courseName);
     }
 }
