@@ -45,9 +45,9 @@
                                 <h4 class="modal-title" id="myModalLabel1">Modal title</h4>
                             </div>
                             <div style="padding: 5% 25%;" class="modal-body">
-                                <label style="margin: 10px 10px;width: 70px;">班级名：</label><input placeholder="" readonly="readonly" name="" />
+                                <label style="margin: 10px 10px;width: 70px;">班级名：</label><input readonly="readonly" value="${param.className}" />
                                 <br />
-                                <label style="margin: 10px 10px;width: 70px;">课程名：</label><input placeholder="" readonly="readonly" name="" />
+                                <label style="margin: 10px 10px;width: 70px;">课程名：</label><input readonly="readonly" value="${param.courseName}" />
                                 <br />
                                 <label style="margin: 10px 10px;width: 70px;">文件夹名：</label><input type="text" placeholder="请输入文件夹名" />
                             </div>
@@ -65,19 +65,21 @@
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                                 <h4 class="modal-title" id="myModalLabel2">Modal title</h4>
                             </div>
-                            <div style="padding: 5% 25%;" class="modal-body">
-                                <label style="margin: 10px 10px;width: 70px;">班级名：</label><input placeholder="" readonly="readonly" name="" />
-                                <br />
-                                <label style="margin: 10px 10px;width: 70px;">课程名：</label><input placeholder="" readonly="readonly" name="" />
-                                <br />
-                                <label style="margin: 10px 10px;width: 70px;">文件夹名：</label><input placeholder="" readonly="readonly" name="" />
-                                <br />
-                                <label style="margin: 10px 10px;width: 70px;">请选择文件</label><input placeholder="" name="" />
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <button type="button" class="btn btn-primary">保存修改</button>
-                            </div>
+                            <form action="FileUploadServlet" method="post" enctype="multipart/form-data">
+                                <div style="padding: 5% 25%;" class="modal-body">
+                                    <label style="margin: 10px 10px;width: 70px;">班级名：</label><input readonly="readonly" name="className" value="${param.className}"/>
+                                    <br />
+                                    <label style="margin: 10px 10px;width: 70px;">课程名：</label><input readonly="readonly" name="courseName" value="${param.courseName}"/>
+                                    <br />
+                                    <label style="margin: 10px 10px;width: 70px;">文件夹名：</label><input id="file" readonly="readonly" name="dataType"/>
+                                    <br />
+                                    <label style="margin: 10px 10px;width: 70px;">请选择文件</label><input type="file" name="file" />
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <input type="submit" value="上传" class="btn btn-primary">
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -95,9 +97,9 @@
                                 <li style="width: 100%;">
                                     <tr style="width: 97%;border-bottom: 1px solid #999;border-spacing: 0;">
                                         <td style="width: 80%;"><a href="javascript:void(0)">${file.dataName}</a></td>
-                                        <td><a>查看</a></td>
-                                        <td><a>下载</a></td>
-                                        <td><a>删除</a></td>
+                                        <td><a href="${file.dataPath}" target="_blank">查看</a></td>
+                                        <td><a href="DataBankServlet?method=fileDownload&id=${file.id}">下载</a></td>
+                                        <td><a href="DataBankServlet?method=fileDelete&id=${file.id}&className=${param.className}&courseName=${param.courseName}">删除</a></td>
                                     </tr>
                                 </li>
                             </c:forEach>
@@ -124,6 +126,7 @@
         $("#datas ul").eq(index).css("display","block");
         var filefolder = $("#datas .chose").eq(index).text();
         $("#filefolder").text(filefolder);
+        $("#file").val(filefolder.toString().trim())
     });
     $("#classes .choses").click(function () {
         var index = $("#classes .choses").index(this);

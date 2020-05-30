@@ -9,10 +9,12 @@ import com.rgf5.service.DataBankService;
 import com.rgf5.service.impl.ClassServiceImpl;
 import com.rgf5.service.impl.CourseServiceImpl;
 import com.rgf5.service.impl.DataBankServiceImpl;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -54,7 +56,7 @@ public class WebUtils {
      * @param request 请求
      * @return 封装好的文件对象
      */
-    public static DataBank fileUpLoad(HttpServletRequest request){
+    public static Map<String,Object> fileUpLoad(HttpServletRequest request){
         ServletContext servletPath = request.getServletContext();
         String rootPath = servletPath.getRealPath("databank");
         DataBank dataBank = new DataBank();
@@ -63,6 +65,7 @@ public class WebUtils {
         CourseService courseService = new CourseServiceImpl();
         ClassService classService = new ClassServiceImpl();
         LinkedHashMap<String, String> map = new LinkedHashMap<>();
+        Map<String, Object> result = new HashMap<>();
         DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
         ServletFileUpload fileUpload = new ServletFileUpload(fileItemFactory);
         fileUpload.setHeaderEncoding("utf-8");
@@ -99,7 +102,10 @@ public class WebUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return dataBank;
+        result.put("course", course);
+        result.put("classes", classes);
+        result.put("dataBank", dataBank);
+        return result;
     }
 
     /**
@@ -122,7 +128,8 @@ public class WebUtils {
         response.setContentType(type);
         System.out.println(type);
         //2.解决下载文件的中文乱码（万能方案）
-        String gbkName = new String(dataBank.getDataName().getBytes("gbk"), "iso8859-1");
+        String fileName = dataBank.getDataName();
+        String gbkName = new String(fileName.getBytes("gbk"), "iso8859-1");
         //3.设置资源处理方式
         response.setHeader("Content-Disposition", "attachment;filename="+gbkName);
         FileInputStream inputStream = new FileInputStream(realPath);
@@ -130,5 +137,22 @@ public class WebUtils {
         IOUtils.copy(inputStream, outputStream);
         inputStream.close();
         outputStream.close();
+    }
+
+    /**
+     * 文件删除
+     * @param request 请求
+     */
+    public static void fileDelete(HttpServletRequest request){
+        ServletContext servletContext = request.getServletContext();
+        String rootPath = servletContext.getRealPath("/");
+        DataBank dataBank = paramsToBean(request, new DataBank());
+        DataBankService dataBankService = new DataBankServiceImpl();
+        dataBank = dataBankService.getBeanById(dataBank);
+        rootPath = rootPath+dataBank.getDataPath();
+        System.out.println(rootPath);
+        new File(rootPath).delete();
+        dataBankService.delete(dataBank);
+        System.out.println("删除成功");
     }
 }

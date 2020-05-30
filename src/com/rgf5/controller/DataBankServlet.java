@@ -3,7 +3,11 @@ package com.rgf5.controller;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.DataBank;
+import com.rgf5.service.ClassService;
+import com.rgf5.service.CourseService;
 import com.rgf5.service.DataBankService;
+import com.rgf5.service.impl.ClassServiceImpl;
+import com.rgf5.service.impl.CourseServiceImpl;
 import com.rgf5.service.impl.DataBankServiceImpl;
 import com.rgf5.utils.WebUtils;
 import java.io.IOException;
@@ -26,9 +30,21 @@ public class DataBankServlet extends BaseServlet {
         request.getRequestDispatcher("TeacherServlet?method=getMyClass").forward(request, response);
     }
 
-
-    protected void fileUpload(HttpServletRequest request, HttpServletResponse response)
+    protected void fileDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Course course = WebUtils.paramsToBean(request, new Course());
+        Classes classes = WebUtils.paramsToBean(request, new Classes());
+        ClassService classService = new ClassServiceImpl();
+        CourseService courseService = new CourseServiceImpl();
+        course = courseService.getBeanByCourseName(course);
+        classes = classService.getBeanByClassName(classes);
+        WebUtils.fileDelete(request);
+        request.getRequestDispatcher("DataBankServlet?method=getFileByCourseAndClass&className="+classes.getClassName()+"&courseName="+course.getCourseName()).forward(request, response);
 
+    }
+
+    protected void fileDownload(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        WebUtils.fileDownLoad(request, response);
     }
 }
