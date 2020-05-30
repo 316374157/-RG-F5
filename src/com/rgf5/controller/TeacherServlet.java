@@ -67,4 +67,5 @@ public class TeacherServlet extends BaseServlet {
         request.setAttribute("beanListByClassId",beanListByClassId);
         request.getRequestDispatcher("pages/teacher/Class.jsp").forward(request, response);
     }
+
 }

@@ -1,7 +1,12 @@
 package com.rgf5.test;
+import com.rgf5.bean.DataBank;
+import com.rgf5.dao.DataBankDao;
+import com.rgf5.dao.impl.DataBankDaoImpl;
 import com.rgf5.utils.JDBCUtils;
-import java.sql.Connection;
 import org.junit.Test;
+
+import java.sql.Connection;
+import java.util.List;
 
 /**
  * @ClassName test
@@ -27,6 +32,11 @@ public class test {
      */
     @Test
     public void test1(){
+        DataBankDao dataBankDao = new DataBankDaoImpl();
+        DataBank dataBank =new DataBank();
+        dataBankDao.add(dataBank);
+        List<DataBank> beanListAll = dataBankDao.getBeanListAll();
+        System.out.println(beanListAll);
     }
 
 
