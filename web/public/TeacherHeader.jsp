@@ -12,7 +12,7 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul id="headnav" class="nav navbar-nav" style="margin: 0 auto;width: 40%;float: none;">
-				<li id="myinfo"><a href="pages/teacher/MyInfo.jsp">张飞帆</a></li>
+				<li id="myinfo"><a href="TeacherServlet?method=searchCourse">张飞帆</a></li>
 				<li id="home"><a href="pages/teacher/Home.jsp">主页</a></li>
 				<li id="classname"><a href="TeacherServlet?method=getMyAllClass">班级详情</a></li>
 				<li id="data"><a href="TeacherServlet?method=getMyClass">教学资源</a></li>

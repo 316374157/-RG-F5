@@ -15,17 +15,22 @@
         </div>
         <div class="main_part_nav">
             <ul>
-                <form action="" method="post">
+                <form action="TeacherServlet" method="post">
                     <li>
-                        <a>姓名：</a><input type="text" placeholder="" />
+                        <a>用户名：</a><input type="text" placeholder="name" name="username" value=${sessionScope.teacher.username}>
                     </li>
                     <li>
-                        <a>年龄：</a><input type="text" placeholder="" />
+                        <a>姓名：</a><input type="text" placeholder="name" name="teachername" value=${sessionScope.teacher.teacherName}>
                     </li>
                     <li>
-                        <a>密码：</a><input type="password" />
+                        <a>性别：</a><input type="text" placeholder="gender" name="gender" value=${sessionScope.teacher.sex}>
                     </li>
-                    <input style="margin-left: 100px;" type="submit" value="提交" />
+                    <li>
+                        <a>密码：</a><input type="password" placeholder="password" name="password" value=${sessionScope.teacher.passWd}>
+                    </li>
+                    <input type="hidden" name="id" value=${sessionScope.teacher.id}>
+                    <input type="hidden" name="method" value="changeTeacher">
+                    <input style="margin-left: 100px;" type="submit" value="提交"/>
                 </form>
             </ul>
         </div>

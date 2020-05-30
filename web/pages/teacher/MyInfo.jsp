@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,7 +14,7 @@
 		<div class="main_part_top">
 			<div class="kj">个人信息</div>
 			<div class="more">
-				<a href="./ChangeInfo.jsp">修改信息</a>
+				<a href="http://localhost:8080/-RG-F5/pages/teacher/ChangeInfo.jsp">修改信息</a>
 			</div>
 		</div>
 		<div class="main_part_nav">
@@ -25,13 +26,17 @@
 					<a>性别：${sessionScope.teacher.sex}</a>
 				</li>
 				<li>
-					<a>课程：${sessionScope.teacher.courseId1}</a>
+					<a>课程：${sessionScope.course1.courseName}</a>
 				</li>
 				<li>
-					<a>课程：${sessionScope.teacher.courseId2}</a>
+					<c:if test="${!empty sessionScope.course2}">
+						<a>课程：${sessionScope.course2.courseName}</a>
+					</c:if>
 				</li>
 				<li>
-					<a>课程：${sessionScope.teacher.courseId3}</a>
+					<c:if test="${!empty sessionScope.course3}">
+						<a>课程：${sessionScope.course3.courseName}</a>
+					</c:if>
 				</li>
 			</ul>
 		</div>
