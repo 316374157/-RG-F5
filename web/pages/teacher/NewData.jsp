@@ -24,9 +24,24 @@
         <form action="FileServlet" method="post" enctype="multipart/form-data">
             <div class="modern-forms">
                 <div class="modern-container">
-                    <label class="labs">2017级软件工程本科班</label>
-                    <br />
-                    <label class="labs">软件工程</label>
+                    <div class="form-row">
+                        <div class="col col-6">
+                            <div class="field-group">
+                                <input type="text" class="mdn-input" placeholder="请输入文件名">
+                                <label class="mdn-label">文件名</label>
+                                <span class="mdn-bar"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col col-6">
+                            <div class="field-group">
+                                <input type="text" class="mdn-input" placeholder="请输入文件名">
+                                <label class="mdn-label">文件名</label>
+                                <span class="mdn-bar"></span>
+                            </div>
+                        </div>
+                    </div>
                     <div class="form-row">
                         <div class="col col-6">
                             <div class="field-group mdn-select">
@@ -38,15 +53,6 @@
                                     <option value="其他">其他</option>
                                 </select>
                                 <label class="mdn-label">文件夹</label>
-                                <span class="mdn-bar"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="col col-6">
-                            <div class="field-group">
-                                <input type="text" class="mdn-input" placeholder="请输入文件名">
-                                <label class="mdn-label">文件名</label>
                                 <span class="mdn-bar"></span>
                             </div>
                         </div>
