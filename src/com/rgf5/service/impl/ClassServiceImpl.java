@@ -54,7 +54,7 @@ public class ClassServiceImpl implements ClassService {
 
     @Override
     public Classes getBeanByClassName(Classes classes) {
-        return null;
+        return classDao.getBeanByClassName(classes.getClassName());
     }
 
     @Override

@@ -15,15 +15,13 @@
         </div>
         <div class="main_part_nav">
             <ul>
-                <form action="" method="post">
+                <form action="CourseServlet" method="post">
+                    <input type="hidden" name="method" value="addCourse">
                     <li>
-                        <a style="display: block;float: left;width: 70px;">课程名称：</a><input type="text" placeholder="" />
+                        <a style="display: block;float: left;width: 70px;">课程编号：</a><input type="text" name="courseId"/>
                     </li>
                     <li>
-                        <a style="display: block;float: left;width: 70px;">学分：</a><input type="text" placeholder="" />
-                    </li>
-                    <li>
-                        <a style="display: block;float: left;width: 70px;">课程简介：</a><input type="text" placeholder="" />
+                        <a style="display: block;float: left;width: 70px;">课程名：</a><input type="text" name="courseName" />
                     </li>
                     <input style="margin-left: 100px;" type="submit" value="提交" />
                 </form>

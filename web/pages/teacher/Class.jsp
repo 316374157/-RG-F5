@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -11,34 +12,23 @@
     <div class="main">
         <div class="main_part">
             <div class="main_part_top">
-                <div class="kj">班级1</div>
+                <div class="kj">${requestScope.beanByClassId.className}</div>
             </div>
             <div class="main_part_nav">
-                <table class="class">
+                <table class="classes">
                     <thead>
                     <tr>
                         <th scope="col">学号</th>
                         <th scope="col">姓名</th>
-                        <th scope="col">考勤</th>
-                        <th scope="col">成绩</th>
+                        <th scope="col">性别</th>
                     </tr>
                     </thead>
                     <tbody>
+                    <c:forEach items="${requestScope.beanListByClassId}" var="item">
                     <tr>
-                        <td>001</td><td>学生1</td><td>3</td><td>--</td>
+                        <td>${item.username}</td><td>${item.studentName}</td><td>${item.sex}</td>
                     </tr>
-                    <tr>
-                        <td>002</td><td>学生2</td><td>3</td><td>--</td>
-                    </tr>
-                    <tr>
-                        <td>003</td><td>学生3</td><td>3</td><td>--</td>
-                    </tr>
-                    <tr>
-                        <td>004</td><td>学生4</td><td>3</td><td>--</td>
-                    </tr>
-                    <tr>
-                        <td>005</td><td>学生5</td><td>3</td><td>--</td>
-                    </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

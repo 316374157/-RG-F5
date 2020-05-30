@@ -5,6 +5,7 @@ import com.rgf5.bean.Course;
 import com.rgf5.bean.DataBank;
 import com.rgf5.bean.Teacher;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
@@ -48,6 +49,13 @@ public interface DataBankService {
      * @return 一份文件的信息
      */
     public DataBank getBeanByDataPath(DataBank dataBank);
+
+    /**
+     * 通过文件id获取文件对象
+     * @param dataBank 文件对象
+     * @return 该文件的信息
+     */
+    public DataBank getBeanById(DataBank dataBank);
     /**
      * 通过班级ID获取文件信息
      * @param classes 班级对象
@@ -73,4 +81,12 @@ public interface DataBankService {
      * @return 这个老师可见的文件
      */
     public List<DataBank> teacherGetAll(Teacher teacher);
+
+    /**
+     * 通过课程和班级获取文件并按照类型分类
+     * @param course 课程对象
+     * @param classes 班级对象
+     * @return 该班级和该课程的所有文件
+     */
+    public LinkedHashMap<String, List<DataBank>> getFileByCourseIdAndClassId(Course course,Classes classes);
 }

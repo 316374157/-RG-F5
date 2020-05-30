@@ -1,21 +1,34 @@
 package com.rgf5.controller;
 
+import com.rgf5.bean.Classes;
+import com.rgf5.bean.Course;
+import com.rgf5.bean.DataBank;
+import com.rgf5.service.DataBankService;
+import com.rgf5.service.impl.DataBankServiceImpl;
+import com.rgf5.utils.WebUtils;
+import java.io.IOException;
+import java.util.LinkedHashMap;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @WebServlet(name = "DataBankServlet",value = "/DataBankServlet")
 public class DataBankServlet extends BaseServlet {
 
-    protected void teacherGetAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*HttpSession session = request.getSession();
-        Teacher teacher = (Teacher)session.getAttribute("teacher");
+    protected void getFileByCourseAndClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Course course = WebUtils.paramsToBean(request, new Course());
+        Classes classes = WebUtils.paramsToBean(request, new Classes());
         DataBankService dataBankService = new DataBankServiceImpl();
-        List<DataBank> teacherBank = dataBankService.teacherGetAll(teacher);
-        System.out.println(teacherBank);
-        request.setAttribute("teacherBank",teacherBank);
-        request.getRequestDispatcher("pages/teacher/Data.jsp").forward(request, response);*/
+        LinkedHashMap<String, List<DataBank>> fileMap = dataBankService.getFileByCourseIdAndClassId(course, classes);
+        request.setAttribute("fileMap", fileMap);
+        request.getRequestDispatcher("TeacherServlet?method=getMyClass").forward(request, response);
+    }
+
+
+    protected void fileUpload(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
     }
 }

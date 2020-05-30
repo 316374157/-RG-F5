@@ -1,7 +1,6 @@
 package com.rgf5.dao;
 
 import com.rgf5.bean.DataBank;
-
 import java.util.List;
 
 /**
@@ -39,6 +38,14 @@ public interface DataBankDao {
      * @return 一份文件的信息
      */
     public DataBank getBeanByDataPath(String dataPath);
+
+    /**
+     * 通过文件ID获取文件信息
+     * @param id 文件id
+     * @return 该文件对象
+     */
+    public DataBank getBeanById(Integer id);
+
     /**
      * 通过班级ID获取文件信息
      * @param classId 班级ID
@@ -60,11 +67,18 @@ public interface DataBankDao {
     public List<DataBank> getBeanListByDataType(String dataType);
 
     /**
-     * 通过班级和课程查找文件
+     * 通过提交人查找文件
      * @param authorId 个人编号
      * @param authorName 个人姓名
      * @return 查找到的文件对象
      */
     public List<DataBank> getBeanListByPerson(Integer authorId,String authorName);
 
+    /**
+     * 通过班级和课程查找文件
+     * @param courseId 课程号
+     * @param classId 班级号
+     * @return 找到的文件信息
+     */
+    List<DataBank> getFileByCourseIdAndClassId(String courseId, String classId);
 }
