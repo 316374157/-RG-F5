@@ -21,16 +21,14 @@ body{
 {
     font-size: 22px;
     font-weight: 300;
-
     float: left;
-
-    width: 110px;
-    margin: 22px 0 0 10%;
-
+    text-align: center;
+    width: 100%;
+    margin-top: 22px;
     color: #1687d9;
 }
 
-.class
+.classes
 {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
     width: 100%;
@@ -38,11 +36,11 @@ body{
     border-collapse: collapse;
 }
 
-.class tr{
+.classes tr{
     width: 100%;
 }
 
-.class th
+.classes th
 {
     font-size: 13px;
     font-weight: normal;
@@ -55,7 +53,7 @@ body{
     width: 25%;
 }
 
-.class td
+.classes td
 {
     padding: 8px;
     background: #e8edff;
@@ -66,7 +64,7 @@ body{
     width: 25%;
 }
 
-.class tr:hover td
+.classes tr:hover td
 {
     background: #d0dafd;
     color: #339;

@@ -28,7 +28,7 @@
         <div class="main_part_top">
             <div class="kj"><a href="javascript:void(0)">${param.className}/${param.courseName}</a> >> <!--<a href="">文档</a--></div>
             <div class="more">
-                <a href="javascript:void(0)">上传文件</a>
+                <a href="pages/teacher/NewData.jsp">上传文件</a>
             </div>
         </div>
         <div class="main_part_nav">

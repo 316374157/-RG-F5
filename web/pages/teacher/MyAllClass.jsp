@@ -14,12 +14,12 @@
         <div class="main_part_top">
             <div class="kj">本人所有班级</div>
         </div>
-        <c:forEach items="${requestScope.getMyBeanList}" var="item">
+        <c:forEach items="${requestScope.myBeanList}" var="item">
         <div class="classes">
-            <a href="pages/teacher/Class.jsp">
+            <a href="TeacherServlet?method=getClass&classId=${item.classId}">
                 <div class="classess" style="margin-top: 0;">
                     <span></span>
-                    <p class="tz">${item.getMyBeanList}</p>
+                    <p class="tz">${item.className}</p>
                 </div>
             </a>
         </div>
