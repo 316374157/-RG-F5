@@ -62,7 +62,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public boolean update(Teacher teacher) {
-        return false;
+        return teacherDao.update(teacher);
     }
 
     @Override

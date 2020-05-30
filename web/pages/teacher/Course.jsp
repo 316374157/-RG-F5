@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,7 +14,9 @@
                 }
             })
         })
+
     </script>
+
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
@@ -25,27 +28,35 @@
                 <a href="pages/teacher/NewCourse.jsp">新建课程</a>
             </div>
         </div>
-        <div class="course">
-            <img src="static/image/Course.png" alt=""/>
-            <div class="courseuse">
-                <a href="#" class="enter">进入课程</a>
-                <a href="#" class="delete">删除</a>
+        <c:if test="${!empty sessionScope.teacher.courseId1}">
+            <div class="course">
+                <img src="static/image/Course.png" alt=""/>
+                <div class="courseuse">
+                    <a href="#" class="enter">进入课程</a>
+                    <a href="TeacherServlet?method=updateCourse&courseId1=${sessionScope.teacher.courseId1}" class="delete">删除</a>
+                </div>
             </div>
-        </div>
-        <div class="course">
-            <img src="static/image/Course.png" alt=""/>
-            <div class="courseuse">
-                <a href="#" class="enter">进入课程</a>
-                <a href="#" class="delete">删除</a>
+        </c:if>
+        <c:if test="${!empty sessionScope.teacher.courseId2}">
+            <div class="course">
+                <img src="static/image/Course.png" alt=""/>
+                <div class="courseuse">
+                    <a href="#" class="enter">进入课程</a>
+                    <a href="TeacherServlet?method=updateCourse&courseId2=${sessionScope.teacher.courseId2}" class="delete">删除</a>
+                </div>
             </div>
-        </div>
-        <div class="course">
-            <img src="static/image/Course.png" alt=""/>
-            <div class="courseuse">
-                <a href="#" class="enter">进入课程</a>
-                <a href="#" class="delete">删除</a>
+        </c:if>
+        <c:if test="${!empty sessionScope.teacher.courseId3}">
+            <div class="course">
+                <img src="static/image/Course.png" alt=""/>
+                <div class="courseuse">
+                    <a href="#" class="enter">进入课程</a>
+                    <a href="TeacherServlet?method=updateCourse&courseId3=${sessionScope.teacher.courseId3}" class="delete">删除</a>
+                </div>
             </div>
-        </div>
+        </c:if>
+
+
     </div>
 </div>
 <div class="footer">

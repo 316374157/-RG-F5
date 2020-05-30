@@ -98,6 +98,7 @@ public class TeacherDaoImpl implements TeacherDao {
                 teacher.getCourseId3(),teacher.getTeacherName(),teacher.getId());
     }
 
+
     @Override
     public boolean delete(Integer id) {
         String sql = "DELETE FROM teachers WHERE id = ?";

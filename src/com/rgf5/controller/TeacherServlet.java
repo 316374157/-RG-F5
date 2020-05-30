@@ -1,6 +1,7 @@
 package com.rgf5.controller;
 
 import com.rgf5.bean.Classes;
+import com.rgf5.bean.Course;
 import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 import com.rgf5.dao.ClassDao;
@@ -13,6 +14,7 @@ import com.rgf5.service.TeacherService;
 import com.rgf5.service.impl.ClassServiceImpl;
 import com.rgf5.service.impl.CourseServiceImpl;
 import com.rgf5.service.impl.TeacherServiceImpl;
+import com.rgf5.utils.WebUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -66,6 +68,27 @@ public class TeacherServlet extends BaseServlet {
         System.out.println(beanByClassId);
         request.setAttribute("beanListByClassId",beanListByClassId);
         request.getRequestDispatcher("pages/teacher/Class.jsp").forward(request, response);
+    }
+    protected void updateCourse(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+        Teacher params = WebUtils.paramsToBean(request, new Teacher());
+        HttpSession session = request.getSession();
+        Teacher teacher = (Teacher) session.getAttribute("teacher");
+        System.out.println(params);
+        System.out.println(teacher);
+        if(teacher.getCourseId1()!=null&&teacher.getCourseId1().equals(params.getCourseId1())){
+            teacher.setCourseId1(null);
+        }
+        if(teacher.getCourseId2()!=null&&teacher.getCourseId2().equals(params.getCourseId2())){
+            teacher.setCourseId2(null);
+        }
+        if(teacher.getCourseId3()!=null&&teacher.getCourseId3().equals(params.getCourseId3())){
+            teacher.setCourseId3(null);
+        }
+        System.out.println(teacher);
+        TeacherService teacherService = new TeacherServiceImpl();
+        teacherService.update(teacher);
+        session.setAttribute("teacher",teacher);
+        response.sendRedirect("pages/teacher/Course.jsp");
     }
 
 }
