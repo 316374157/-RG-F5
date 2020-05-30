@@ -1,11 +1,14 @@
 package com.rgf5.controller;
 
+import com.rgf5.bean.Classes;
+import com.rgf5.bean.Course;
 import com.rgf5.bean.DataBank;
 import com.rgf5.bean.Teacher;
 import com.rgf5.service.DataBankService;
 import com.rgf5.service.impl.DataBankServiceImpl;
 import com.rgf5.utils.WebUtils;
 import java.io.IOException;
+import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +23,10 @@ public class FileUploadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
             throws ServletException, IOException {
-        DataBank dataBank = WebUtils.fileUpLoad(request);
+        Map<String, Object> map = WebUtils.fileUpLoad(request);
+        Course course = (Course) map.get("course");
+        DataBank dataBank = (DataBank) map.get("dataBank");
+        Classes classes = (Classes) map.get("classes");
         DataBankService dataBankService = new DataBankServiceImpl();
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher) session.getAttribute("teacher");
@@ -28,7 +34,7 @@ public class FileUploadServlet extends HttpServlet {
         dataBank.setAuthorName(teacher.getTeacherName());
         System.out.println(dataBank);
         dataBankService.add(dataBank);
-        request.getRequestDispatcher("DataBankServlet?method=getFileByCourseAndClass").forward(request, response);
+        request.getRequestDispatcher("DataBankServlet?method=getFileByCourseAndClass&className="+classes.getClassName()+"&courseName="+course.getCourseName()).forward(request, response);
     }
 
     @Override

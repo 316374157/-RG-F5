@@ -42,8 +42,8 @@ body{
 
     float: left;
 
-    width: 80%;
-    margin: 22px 0 0 23px;
+    width: 60%;
+    margin: 20px 0 20px 20px;
 
     color: #1687d9;
 }
@@ -52,7 +52,7 @@ body{
 {
     float: right;
 
-    margin: 28px 19px 0 0;
+    margin: 13px 20px 13px 0;
 
     letter-spacing: -0.2px;
 
@@ -72,8 +72,6 @@ body{
 .main .main_part .main_part_nav ul li
 {
     font-size: 14px;
-
-    margin: 16.7px 0;
 }
 
 .main .main_part .main_part_nav ul li:first-child
@@ -102,6 +100,32 @@ body{
 
 .nav>.half>.active>a:hover{
     background: #4098e5;
+}
+
+.main .main_part .main_part_nav ul ul table li tr td a
+{
+    color: #4d4d4d;
+}
+
+.main .main_part .main_part_nav ul ul table li tr td a:hover
+{
+    color: lightgray;
+}
+
+.all{
+    width: 100%;
+}
+
+.files{
+    width: 100%;
+}
+
+.files li a:nth-child(n+1){
+    margin: 0 10px;
+}
+
+.files li a:nth-child(1){
+    margin-right: 70%;
 }
 
 .footer

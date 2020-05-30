@@ -27,7 +27,7 @@ public class DataBankServiceImpl implements DataBankService {
 
     @Override
     public boolean add(DataBank dataBank) {
-        return false;
+        return dataBankDao.add(dataBank);
     }
 
     @Override
@@ -37,7 +37,7 @@ public class DataBankServiceImpl implements DataBankService {
 
     @Override
     public boolean delete(DataBank dataBank) {
-        return false;
+        return dataBankDao.delete(dataBank);
     }
 
     @Override

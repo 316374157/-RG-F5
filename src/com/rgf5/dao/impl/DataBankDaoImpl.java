@@ -24,7 +24,7 @@ public class DataBankDaoImpl implements DataBankDao {
 
     @Override
     public boolean delete(DataBank dataBank) {
-        String sql = "delete databank where id=?";
+        String sql = "delete from databank where id=?";
         return BaseDao.update(sql, dataBank.getId());
     }
 
