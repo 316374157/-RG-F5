@@ -3,7 +3,7 @@
     <!-- 命名的配置,可以通过方法调用实现 -->
     <named-config name="learn">
         <property name="user">root</property>
-        <property name="password">2017188035</property>
+        <property name="password">root</property>
         <property name="jdbcUrl">jdbc:mysql://localhost:3306/rg?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false</property>
         <property name="driverClass">com.mysql.jdbc.Driver</property>
         <!-- 如果池中数据连接不够时一次增长多少个 -->
