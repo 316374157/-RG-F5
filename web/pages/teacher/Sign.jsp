@@ -11,7 +11,7 @@
 <div class="main">
     <div class="main_part" style="float: none;margin: 0 auto;padding-top: 20px;">
         <div class="sign">
-            <a href="./#">
+            <a href="javascript:void(0)">
                 <div class="courses">
                     <p class="tz">签到</p>
                 </div>
