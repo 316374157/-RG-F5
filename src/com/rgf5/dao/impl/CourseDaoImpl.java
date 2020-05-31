@@ -33,7 +33,7 @@ public class CourseDaoImpl implements CourseDao {
 
     @Override
     public Course getBeanByCourseId(String courseId) {
-        String sql = "select course_name as coursename from course where course_id = ?";
+        String sql = "select id,course_id as courseId,course_name as coursename from course where course_id = ?";
         return BaseDao.getBean(sql, Course.class, courseId);
     }
 

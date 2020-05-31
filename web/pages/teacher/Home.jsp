@@ -28,34 +28,34 @@
 			<div class="main_part_top">
 				<div class="kj">教学资源</div>
 				<div class="more">
-					<a href="./#">MORE+</a>
+					<a href="javascript:void(0)">MORE+</a>
 				</div>
 			</div>
 			<div class="main_part_nav">
 				<ul>
 					<li>
-						<a href="./#">第一讲：XXX</a>
+						<a href="javascript:void(0)">第一讲：XXX</a>
 					</li>
 					<li>
-						<a href="./#">第二讲：XXX</a>
+						<a href="javascript:void(0)">第二讲：XXX</a>
 					</li>
 					<li>
-						<a href="./#">第三讲：XXX</a>
+						<a href="javascript:void(0)">第三讲：XXX</a>
 					</li>
 					<li>
-						<a href="./#">第四讲：XXX</a>
+						<a href="javascript:void(0)">第四讲：XXX</a>
 					</li>
 					<li>
-						<a href="./#">第五讲：XXX</a>
+						<a href="javascript:void(0)">第五讲：XXX</a>
 					</li>
 					<li>
-						<a href="./#">第六讲：XXX</a>
+						<a href="javascript:void(0)">第六讲：XXX</a>
 					</li>
 					<li>
-						<a href="./#">第七讲：XXX</a>
+						<a href="javascript:void(0)">第七讲：XXX</a>
 					</li>
 					<li>
-						<a href="./#">第八讲：XXX</a>
+						<a href="javascript:void(0)">第八讲：XXX</a>
 					</li>
 				</ul>
 			</div>
@@ -76,17 +76,17 @@
 			<div class="main_part_top">
 				<div class="kj">课程</div>
 				<div class="more">
-					<a href="./#">MORE+</a>
+					<a href="javascript:void(0)">MORE+</a>
 				</div>
 			</div>
 			<div class="course">
-				<a href="./#">
+				<a href="javascript:void(0)">
 					<div class="courses" style="margin-top: 0;">
 						<span></span>
 						<div class="tz">课程1</div>
 					</div>
 				</a>
-				<a href="./#">
+				<a href="javascript:void(0)">
 					<div class="courses">
 						<span></span>
 						<div class="tz">课程2</div>
@@ -96,14 +96,14 @@
 		</div>
 		<div class="main_part" style="float: right;border: none;">
 			<div class="sign">
-				<a href="./#">
+				<a href="javascript:void(0)">
 					<div class="courses">
 						<p class="tz">签到</p>
 					</div>
 				</a>
 			</div>
 			<div class="signInfo">
-				<a href="./#">
+				<a href="SignServlet?method=getAllSignInfo">
 					<div class="courses">
 						<p class="tz">签到详情</p>
 					</div>

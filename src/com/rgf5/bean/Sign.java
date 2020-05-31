@@ -18,6 +18,10 @@ public class Sign {
      */
     private String studentId;
     /**
+     * 学生姓名
+     */
+    private  String studentName;
+    /**
      * 班级id
      */
     private String classId;
@@ -49,9 +53,10 @@ public class Sign {
     public Sign() {
     }
 
-    public Sign(Integer id, String studentId, String classId, String courseId, String sign1, String sign2, String sign3, String sign4, String sign5) {
+    public Sign(Integer id, String studentId, String studentName, String classId, String courseId, String sign1, String sign2, String sign3, String sign4, String sign5) {
         this.id = id;
         this.studentId = studentId;
+        this.studentName = studentName;
         this.classId = classId;
         this.courseId = courseId;
         this.sign1 = sign1;
@@ -76,6 +81,10 @@ public class Sign {
     public void setStudentId(String studentId) {
         this.studentId = studentId;
     }
+
+    public String getStudentName() { return studentName; }
+
+    public void setStudentName(String studentName) { this.studentName = studentName; }
 
     public String getClassId() {
         return classId;
@@ -138,6 +147,7 @@ public class Sign {
         return "Sign{" +
                 "id=" + id +
                 ", studentId='" + studentId + '\'' +
+                ", studentName='" + studentName + '\''+
                 ", classId='" + classId + '\'' +
                 ", courseId='" + courseId + '\'' +
                 ", sign1='" + sign1 + '\'' +
@@ -147,4 +157,5 @@ public class Sign {
                 ", sign5='" + sign5 + '\'' +
                 '}';
     }
+
 }

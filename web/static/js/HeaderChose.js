@@ -22,7 +22,7 @@ $(function () {
     if(only == "Sign"){
         $("#sign").addClass("active");
     }
-    if(only == "SignInformation"){
-        $("#signinformation").addClass("active");
+    if(only == "AllSignInfo"){
+        $("#allsigninfo").addClass("active");
     }
 })
