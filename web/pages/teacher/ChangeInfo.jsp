@@ -17,16 +17,16 @@
             <ul>
                 <form action="TeacherServlet" method="post">
                     <li>
-                        <a>用户名：</a><input type="text" placeholder="name" name="username" value=${sessionScope.teacher.username}>
+                        <label>用户名：</label><input type="text" placeholder="name" name="username" value=${sessionScope.teacher.username}>
                     </li>
                     <li>
-                        <a>姓名：</a><input type="text" placeholder="name" name="teachername" value=${sessionScope.teacher.teacherName}>
+                        <label>姓名：</label><input type="text" placeholder="name" name="teachername" value=${sessionScope.teacher.teacherName}>
                     </li>
                     <li>
-                        <a>性别：</a><input type="text" placeholder="gender" name="gender" value=${sessionScope.teacher.sex}>
+                        <label>性别：</label><input type="text" placeholder="gender" name="gender" value=${sessionScope.teacher.sex}>
                     </li>
                     <li>
-                        <a>密码：</a><input type="password" placeholder="password" name="password" value=${sessionScope.teacher.passWd}>
+                        <label>密码：</label><input type="password" placeholder="password" name="password" value=${sessionScope.teacher.passWd}>
                     </li>
                     <input type="hidden" name="id" value=${sessionScope.teacher.id}>
                     <input type="hidden" name="method" value="changeTeacher">

@@ -1,22 +1,23 @@
 body{
+    min-height: 100%;
     background-image: url(../image/MainBack.png);
     background-repeat: repeat;
 }
 
 .main
 {
+    min-height: 70%;
     width: 1000px;
-    min-height: 80%;
     margin: 40px auto 2px;
 }
 
 .main .main_part
 {
-    margin-bottom: 30px;
-    float: left;
+    margin: 0 1% 30px;
+    display: inline-block;
 
     color: #777777;
-    width: 48.4%;
+    width: 48%;
 
     padding-bottom: 25px;
     border:1px solid #96C2F1;
@@ -60,11 +61,6 @@ body{
     margin: 0 0 0 23px;
 }
 
-.main .main_part .main_part_nav ul
-{
-    float: left;
-}
-
 .main .main_part .main_part_nav ul li
 {
     font-size: 14px;
@@ -91,7 +87,6 @@ body{
 .classes a
 {
     display: inline-block;
-    float: left;
 
     width: 90%;
     height: 80px;
@@ -101,8 +96,6 @@ body{
 .classes .classess
 {
     line-height: 80px;
-
-    float: left;
 
     width: 100%;
     height: 80px;
@@ -186,10 +179,25 @@ body{
     color: #1687d9;
 }
 
+.classes a:nth-child(5)  span::before
+{
+    font-size: 36px;
+    font-weight: lighter;
+    line-height: 77px;
+
+    float: left;
+
+    margin-right: 17px;
+    margin-left: 21.3px;
+
+    content: '05';
+
+    color: #1687d9;
+}
+
 .course a
 {
     display: inline-block;
-    float: left;
 
     width: 90%;
     height: 80px;
@@ -199,8 +207,6 @@ body{
 .course .courses
 {
     line-height: 80px;
-
-    float: left;
 
     width: 100%;
     height: 80px;
@@ -269,12 +275,12 @@ body{
 }
 
 .sign{
-    line-height: 80px;
-
+    line-height: 150px;
+    border-radius: 75px;
     float: left;
 
     width: 48%;
-    height: 80px;
+    height: 150px;
 
     border: 1px #e4f0ed solid;
     box-shadow: 0 0 1px 2px #f7f7f7;
@@ -286,7 +292,7 @@ body{
     float: left;
 
     width: 100%;
-    height: 80px;
+    height: 150px;
 }
 
 .sign a:hover
@@ -302,18 +308,18 @@ body{
 }
 
 .sign p{
-    font-size: 35px;
+    font-size: 50px;
     text-align: center;
     margin: 0;
 }
 
 .signInfo{
-    line-height: 80px;
-
+    line-height: 150px;
+    border-radius: 75px;
     float: right;
 
     width: 48%;
-    height: 80px;
+    height: 150px;
 
     border: 1px #e4f0ed solid;
     box-shadow: 0 0 1px 2px #f7f7f7;
@@ -348,8 +354,6 @@ body{
 
 .footer
 {
-    float: left;
-
     width: 100%;
     height: 125px;
 
