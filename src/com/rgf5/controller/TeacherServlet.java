@@ -4,14 +4,8 @@ import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
-import com.rgf5.dao.ClassDao;
-import com.rgf5.dao.CourseDao;
-import com.rgf5.dao.StudentDao;
-import com.rgf5.dao.TeacherDao;
-import com.rgf5.dao.impl.ClassDaoImpl;
-import com.rgf5.dao.impl.CourseDaoImpl;
-import com.rgf5.dao.impl.StudentDaoImpl;
-import com.rgf5.dao.impl.TeacherDaoImpl;
+import com.rgf5.dao.*;
+import com.rgf5.dao.impl.*;
 import com.rgf5.service.ClassService;
 import com.rgf5.service.CourseService;
 import com.rgf5.service.TeacherService;
@@ -131,6 +125,22 @@ public class TeacherServlet extends BaseServlet {
         teacherService.update(teacher);
         session.setAttribute("teacher",teacher);
         response.sendRedirect("pages/teacher/Course.jsp");
+    }
+
+    protected void CourseInfo(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
+        HttpSession session = request.getSession();
+        Teacher teacher = (Teacher) session.getAttribute("teacher");
+        SignDao signDao = new SignDaoImpl();
+        CourseDao courseDao = new CourseDaoImpl();
+        ClassDao classDao = new ClassDaoImpl();
+        String courseId = request.getParameter("courseId");
+        Course beanByCourseId = courseDao.getBeanByCourseId(courseId);
+        List<Classes> beanListByCourseId = classDao.getBeanListByCourseId(courseId);
+        System.out.println(beanByCourseId);
+        System.out.println(beanListByCourseId);
+        request.setAttribute("beanByCourseId1",beanByCourseId);
+        request.setAttribute("beanListByCourseId1",beanListByCourseId);
+        response.sendRedirect("pages/teacher/CourseClass.jsp");
     }
 
 }

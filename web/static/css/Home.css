@@ -110,6 +110,10 @@ body{
     background: lightgray;
 }
 
+.classes .classess a:hover{
+    text-decoration: none;
+}
+
 .classes:hover span::before
 {
     color: #ffffff;
@@ -202,6 +206,10 @@ body{
     width: 90%;
     height: 80px;
     margin: 20px 5% 0;
+}
+
+.course a:hover{
+    text-decoration: none;
 }
 
 .course .courses

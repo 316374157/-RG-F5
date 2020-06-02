@@ -32,7 +32,7 @@
                 <div class="course">
                     <img src="static/image/Course.png" alt=""/>
                     <div class="courseuse">
-                        <a href="#" class="enter">进入课程</a>
+                        <a href="TeacherServlet?method=CourseInfo&courseId=${sessionScope.teacher.courseId1}" class="enter">进入课程</a>
                         <a href="TeacherServlet?method=updateCourse&courseId1=${sessionScope.teacher.courseId1}" class="delete">删除</a>
                     </div>
                 </div>
@@ -41,7 +41,7 @@
                 <div class="course">
                     <img src="static/image/Course.png" alt=""/>
                     <div class="courseuse">
-                        <a href="#" class="enter">进入课程</a>
+                        <a href="TeacherServlet?method=CourseInfo&courseId=${sessionScope.teacher.courseId2}" class="enter">进入课程</a>
                         <a href="TeacherServlet?method=updateCourse&courseId2=${sessionScope.teacher.courseId2}" class="delete">删除</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                 <div class="course">
                     <img src="static/image/Course.png" alt=""/>
                     <div class="courseuse">
-                        <a href="#" class="enter">进入课程</a>
+                        <a href="TeacherServlet?method=CourseInfo&courseId=${sessionScope.teacher.courseId3}" class="enter">进入课程</a>
                         <a href="TeacherServlet?method=updateCourse&courseId3=${sessionScope.teacher.courseId3}" class="delete">删除</a>
                     </div>
                 </div>
