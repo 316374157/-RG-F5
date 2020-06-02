@@ -42,7 +42,7 @@
         </div>
         <div class="main_part">
             <div class="main_part_top">
-                <div class="kj">课程</div>
+                <div class="kj">班级</div>
                 <div class="more">
                     <a href="javascript:void(0)">MORE+</a>
                 </div>
