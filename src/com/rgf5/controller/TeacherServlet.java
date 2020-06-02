@@ -5,9 +5,13 @@ import com.rgf5.bean.Course;
 import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 import com.rgf5.dao.ClassDao;
+import com.rgf5.dao.CourseDao;
 import com.rgf5.dao.StudentDao;
+import com.rgf5.dao.TeacherDao;
 import com.rgf5.dao.impl.ClassDaoImpl;
+import com.rgf5.dao.impl.CourseDaoImpl;
 import com.rgf5.dao.impl.StudentDaoImpl;
+import com.rgf5.dao.impl.TeacherDaoImpl;
 import com.rgf5.service.ClassService;
 import com.rgf5.service.CourseService;
 import com.rgf5.service.TeacherService;
@@ -46,6 +50,44 @@ public class TeacherServlet extends BaseServlet {
         request.setAttribute("myClasses",myClasses);
         request.setAttribute("listMap",listMap);
         request.getRequestDispatcher("pages/teacher/Data.jsp").forward(request, response);
+    }
+
+    public void changeTeacher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        HttpSession session = request.getSession();
+        int id= Integer.parseInt(request.getParameter("id"));
+        String username = request.getParameter("username");
+        String teachername = request.getParameter("teachername");
+        String password = request.getParameter("password");
+        String gender = request.getParameter("gender");
+        TeacherDao teacherDao =new TeacherDaoImpl();
+        Teacher oldteacher = teacherDao.getBeanById(id);
+        String courceId1=oldteacher.getCourseId1();
+        String courceId2=oldteacher.getCourseId2();
+        String courceId3=oldteacher.getCourseId3();
+        System.out.println(id+" "+username+" "+password+" "+gender+" "+username);
+        List<Teacher> beanListAll = teacherDao.getBeanListAll();
+        System.out.println(beanListAll);
+        Teacher newteacher = new Teacher(id,username,password,gender,courceId1,courceId2,courceId3,teachername);
+        teacherDao.update(newteacher);
+        session.setAttribute("teacher", newteacher);
+        response.sendRedirect("pages/teacher/MyInfo.jsp");
+    }
+
+    public void searchCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+    {
+        String coursename1 ="";String coursename2 ="";String coursename3 ="";
+        HttpSession session = request.getSession();
+        TeacherDao teacherDao =new TeacherDaoImpl();
+        Teacher teacher = (Teacher) session.getAttribute("teacher");
+        CourseDao courseDao = new CourseDaoImpl();
+        Course course1 = courseDao.getBeanByCourseId(teacher.getCourseId1());
+        Course course2 = courseDao.getBeanByCourseId(teacher.getCourseId2());
+        Course course3 = courseDao.getBeanByCourseId(teacher.getCourseId3());
+        session.setAttribute("course1", course1);
+        session.setAttribute("course2", course2);
+        session.setAttribute("course3", course3);
+        response.sendRedirect("pages/teacher/MyInfo.jsp");
     }
 
     protected void getMyAllClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
