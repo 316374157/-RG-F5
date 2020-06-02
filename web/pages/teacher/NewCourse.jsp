@@ -4,7 +4,12 @@
     <title>Title</title>
     <jsp:include page="../../public/base.jsp"/>
     <link rel="stylesheet" href="static/css/Clean.css">
+    <link rel="stylesheet" href="static/css/Course.css">
     <link rel="stylesheet" href="static/css/ChangeInfo.css">
+    <script type="text/javascript">
+        $(function () {
+        })
+    </script>
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
