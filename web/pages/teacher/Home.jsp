@@ -93,7 +93,7 @@
 	</div>
 	<div class="footer">
 		<p style="padding-top: 30px;">软件工程</p>
-		<p>Copyright ©</p>
+		<p>Copyright  ©</p>
 		<p>http://</p>
 	</div>
 	<span id="Only" style="display: none;">Home</span>
