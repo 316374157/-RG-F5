@@ -3,9 +3,9 @@
 <html>
 <head>
 	<title>注册</title>
-	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
+	<jsp:include page="../../public/base.jsp"/>
 </head>
-<body style="background-image: url(../../static/images/桌面.jpg);background-size: cover">
+<body style="background-image: url(static/image/桌面.jpg);background-size: cover">
 <div style="text-align: center;position: absolute;width: 50%;height: 40%;margin: 0 auto;top: 25%;left: 35%">
 	<form class="form-horizontal">
 		<div class="form-group" >

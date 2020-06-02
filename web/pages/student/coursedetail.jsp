@@ -3,10 +3,8 @@
 <html>
 <head>
 	<title>我的课程</title>
-	<link rel="stylesheet" href="../../static/css/Clean.css">
-	<link rel="stylesheet" href="../../static/css/Course.css">
-	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-	<script src="../../static/js/HeaderChose.js"></script>
+	<jsp:include page="../../public/base.jsp"/>
+	<link rel="stylesheet" href="static/css/Course.css">
 </head>
 <body>
 <jsp:include   page="../../public/student-header.jsp" flush="true"/>
@@ -14,9 +12,6 @@
 	<div class="main_part">
 		<div class="main_part_top">
 			<div class="kj">课程名</div>
-			<div class="more">
-				<a href="./NewCourse.jsp">新建课程</a>
-			</div>
 		</div>
 	</div>
 </div>

@@ -3,10 +3,8 @@
 <html>
 <head>
 	<title>我的主页</title>
-	<link rel="stylesheet" href="../../static/css/Clean.css">
-	<link rel="stylesheet" href="../../static/css/stuhome.css">
-	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-	<script src="../../static/js/HeaderChose.js"></script>
+	<jsp:include page="../../public/base.jsp"/>
+	<link rel="stylesheet" href="static/css/stuhome.css">
 </head>
 <body>
      <jsp:include   page="../../public/student-header.jsp" flush="true"/>
@@ -82,19 +80,19 @@
 				 <a href="./#">
 					 <div class="courses" style="margin-top: 0;">
 						 <span></span>
-						 <div class="tz">同学1</div>
+						 <div class="tz">老师1 <p style="float: right;">课程名1</p></div>
 					 </div>
 				 </a>
 				 <a href="./#">
 					 <div class="courses">
 						 <span></span>
-						 <div class="tz">同学2</div>
+						 <div class="tz">老师2 <p style="float: right;">课程名2</p></div>
 					 </div>
 				 </a>
 				 <a href="./#">
 					 <div class="courses">
 						 <span></span>
-						 <div class="tz">同学3</div>
+						 <div class="tz">老师3 <p style="float: right;">课程名3</p></div>
 					 </div>
 				 </a>
 			 </div>

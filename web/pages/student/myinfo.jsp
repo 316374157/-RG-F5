@@ -3,13 +3,12 @@
 <html>
 <head>
 	<title>个人信息</title>
-	<link rel="stylesheet" href="../../static/css/Clean.css">
-	<link rel="stylesheet" href="../../static/css/MyInfo.css">
-	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
+	<jsp:include page="../../public/base.jsp"/>
+	<link rel="stylesheet" href="static/css/MyInfo.css">
 </head>
 <body>
 <jsp:include   page="../../public/student-header.jsp" flush="true"/>
-<div class="main">
+<div class="main" style="height: 65%">
 	<div class="main_part">
 		<div class="main_part_top">
 			<div class="kj">个人信息</div>
