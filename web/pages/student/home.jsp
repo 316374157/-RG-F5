@@ -3,10 +3,10 @@
 <html>
 <head>
 	<title>我的主页</title>
-	<link rel="stylesheet" href="../../static/css/Clean.css">
-	<link rel="stylesheet" href="../../static/css/stuhome.css">
-	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
-	<script src="../../static/js/HeaderChose.js"></script>
+	<jsp:include page="../../public/base.jsp"/>
+	<link rel="stylesheet" href="static/css/Clean.css">
+	<link rel="stylesheet" href="static/css/stuhome.css">
+	<script src="static/js/HeaderChose.js"></script>
 </head>
 <body>
      <jsp:include   page="../../public/student-header.jsp" flush="true"/>
