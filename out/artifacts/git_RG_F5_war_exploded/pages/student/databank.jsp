@@ -8,9 +8,34 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-	<title>Title</title>
+	<title>资料库</title>
+	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
 </head>
 <body>
+<table class="table table-condensed">
+	<!-- On rows -->
+	<tr class="active">
+		<td class="active">...</td>
+		<td class="success">...</td>
+		<td class="warning">...</td>
+		<td class="danger">...</td>
+		<td class="info">...</td>
+	</tr>
+	<tr class="success">
+	kasjhdkajs
+	</tr>
+	<tr class="warning">
 
+	</tr>
+	<tr class="danger">
+
+	</tr>
+	<tr class="info">
+
+	</tr>
+
+	<!-- On cells (`td` or `th`) -->
+
+</table>
 </body>
 </html>

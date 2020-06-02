@@ -8,7 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-	<title>Title</title>
+	<title>个人信息</title>
+	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
 </head>
 <body>
 

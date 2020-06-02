@@ -28,7 +28,7 @@ public class SignDaoImpl implements SignDao {
     @Override
     public boolean delete(Sign sign)
     {
-        String sql = "DELETE FROM sign WHERE sign = ?";
+        String sql = "DELETE FROM student WHERE id = ?";
         return BaseDao.update(sql, sign);
     }
 

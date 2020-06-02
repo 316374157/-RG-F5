@@ -12,6 +12,6 @@
 	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
 </head>
 <body>
-	<jsp:include page="../../public/header.jsp"/>
+
 </body>
 </html>

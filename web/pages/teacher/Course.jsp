@@ -20,46 +20,53 @@
 </head>
 <body>
 <jsp:include page="../../public/TeacherHeader.jsp"/>
-<div class="main">
-    <div class="main_part">
-        <div class="main_part_top">
-            <div class="kj">课程</div>
-            <div class="more">
-                <a href="pages/teacher/NewCourse.jsp">新建课程</a>
+    <div class="main">
+        <div class="main_part">
+            <div class="main_part_top">
+                <div class="kj">课程</div>
+                <div class="more">
+                    <a href="pages/teacher/NewCourse.jsp">新建课程</a>
+                </div>
             </div>
+            <c:if test="${!empty sessionScope.teacher.courseId1}">
+                <div class="course">
+                    <img src="static/image/Course.png" alt=""/>
+                    <div class="courseuse">
+                        <a href="#" class="enter">进入课程</a>
+                        <a href="TeacherServlet?method=updateCourse&courseId1=${sessionScope.teacher.courseId1}" class="delete">删除</a>
+                    </div>
+                </div>
+            </c:if>
+            <c:if test="${!empty sessionScope.teacher.courseId2}">
+                <div class="course">
+                    <img src="static/image/Course.png" alt=""/>
+                    <div class="courseuse">
+                        <a href="#" class="enter">进入课程</a>
+                        <a href="TeacherServlet?method=updateCourse&courseId2=${sessionScope.teacher.courseId2}" class="delete">删除</a>
+                    </div>
+                </div>
+            </c:if>
+            <c:if test="${!empty sessionScope.teacher.courseId3}">
+                <div class="course">
+                    <img src="static/image/Course.png" alt=""/>
+                    <div class="courseuse">
+                        <a href="#" class="enter">进入课程</a>
+                        <a href="TeacherServlet?method=updateCourse&courseId3=${sessionScope.teacher.courseId3}" class="delete">删除</a>
+                    </div>
+                </div>
+            </c:if>
+
+
         </div>
-        <c:if test="${!empty sessionScope.teacher.courseId1}">
-            <div class="course">
-                <img src="static/image/Course.png" alt=""/>
-                <div class="courseuse">
-                    <a href="javascript:void(0)" class="enter">进入课程</a>
-                    <a href="TeacherServlet?method=updateCourse&courseId1=${sessionScope.teacher.courseId1}" class="delete">删除</a>
-                </div>
-            </div>
-        </c:if>
-        <c:if test="${!empty sessionScope.teacher.courseId2}">
-            <div class="course">
-                <img src="static/image/Course.png" alt=""/>
-                <div class="courseuse">
-                    <a href="javascript:void(0)" class="enter">进入课程</a>
-                    <a href="TeacherServlet?method=updateCourse&courseId2=${sessionScope.teacher.courseId2}" class="delete">删除</a>
-                </div>
-            </div>
-        </c:if>
-        <c:if test="${!empty sessionScope.teacher.courseId3}">
-            <div class="course">
-                <img src="static/image/Course.png" alt=""/>
-                <div class="courseuse">
-                    <a href="javascript:void(0)" class="enter">进入课程</a>
-                    <a href="TeacherServlet?method=updateCourse&courseId3=${sessionScope.teacher.courseId3}" class="delete">删除</a>
-                </div>
-            </div>
-        </c:if>
-
-
     </div>
-</div>
-<div class="footer">
+    <tbody>
+    <c:forEach items="${requestScope.beanListByClassId}" var="item">
+        <tr>
+            <td>${item.username}</td><td>${item.studentName}</td><td>${item.sex}</td>
+        </tr>
+    </c:forEach>
+    </tbody>
+    <div class="footer">
     <p style="padding-top: 30px;">软件工程</p>
     <p>Copyright ©</p>
     <p>http://</p>
