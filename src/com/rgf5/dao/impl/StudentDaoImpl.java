@@ -1,11 +1,8 @@
 package com.rgf5.dao.impl;
 
-import com.rgf5.bean.Admin;
-import com.rgf5.bean.Classes;
 import com.rgf5.bean.Student;
 import com.rgf5.dao.BaseDao;
 import com.rgf5.dao.StudentDao;
-
 import java.util.List;
 
 /**
@@ -22,6 +19,7 @@ public class StudentDaoImpl implements StudentDao {
                 "from students where username=?";
         return BaseDao.getBean(sql, Student.class,username);
     }
+
 
     @Override
     public Student getBeanById(Integer id) {

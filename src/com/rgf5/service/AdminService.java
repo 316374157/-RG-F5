@@ -13,6 +13,7 @@ public interface AdminService {
      */
     public Admin login(Admin admin);
 
+
     /**
      * 管理员修改自身的资料
      * @param admin 改好资料的管理员

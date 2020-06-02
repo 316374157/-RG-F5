@@ -11,6 +11,7 @@ import java.util.List;
  * @author Administrator
  */
 public interface ClassService {
+
     /**
      * 管理员添加一个班级
      * @param classes 班级对象

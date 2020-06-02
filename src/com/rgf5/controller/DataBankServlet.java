@@ -21,6 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "DataBankServlet",value = "/DataBankServlet")
 public class DataBankServlet extends BaseServlet {
 
+
     protected void getFileByCourseAndClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Course course = WebUtils.paramsToBean(request, new Course());
         Classes classes = WebUtils.paramsToBean(request, new Classes());

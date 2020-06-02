@@ -11,6 +11,7 @@ import java.util.List;
  */
 public interface TeacherService {
 
+
     /**
      * 管理员添加一名老师
      * @param teacher 添加的老师

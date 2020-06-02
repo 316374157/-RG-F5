@@ -1,3 +1,4 @@
+
 $(function () {
     var only = $("#Only").text();
     console.log(only);

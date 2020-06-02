@@ -21,7 +21,6 @@ public interface SignDao {
      * @return True表示更新成功
      */
     public boolean update(Sign sign);
-
     /**
      * 删除一次签到
      * @param sign 要删除的签到

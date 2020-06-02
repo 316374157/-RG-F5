@@ -14,7 +14,7 @@
 		<div class="main_part_top">
 			<div class="kj">个人信息</div>
 			<div class="more">
-				<a href="http://localhost:8080/-RG-F5/pages/teacher/ChangeInfo.jsp">修改信息</a>
+				<a href="pages/teacher/ChangeInfo.jsp">修改信息</a>
 			</div>
 		</div>
 		<div class="main_part_nav">
@@ -26,16 +26,16 @@
 					<a>性别：${sessionScope.teacher.sex}</a>
 				</li>
 				<li>
-					<a>课程：${sessionScope.course1.courseName}</a>
+					<a>课程：${requestScope.course1.courseName}</a>
 				</li>
 				<li>
-					<c:if test="${!empty sessionScope.course2}">
-						<a>课程：${sessionScope.course2.courseName}</a>
+					<c:if test="${!empty requestScope.course2}">
+						<a>课程：${requestScope.course2.courseName}</a>
 					</c:if>
 				</li>
 				<li>
-					<c:if test="${!empty sessionScope.course3}">
-						<a>课程：${sessionScope.course3.courseName}</a>
+					<c:if test="${!empty requestScope.course3}">
+						<a>课程：${requestScope.course3.courseName}</a>
 					</c:if>
 				</li>
 			</ul>

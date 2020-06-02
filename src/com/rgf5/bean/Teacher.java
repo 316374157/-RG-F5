@@ -8,18 +8,6 @@ package com.rgf5.bean;
  * @Version V1.0
  **/
 public class Teacher {
-
-    /**
-     *   `id` int NOT NULL AUTO_INCREMENT,
-     `username` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-     `passwd` varchar(20) NOT NULL,
-     `sex` char(1) NOT NULL,
-     `course_id1` varchar(20) DEFAULT NULL,
-     `course_id2` varchar(20) DEFAULT NULL,
-     `course_id3` varchar(20) DEFAULT NULL,
-     `teacher_name` varchar(10) NOT NULL,
-     * */
-
     /**
      * 主键，自增
      */

@@ -11,6 +11,7 @@ public interface AdminDao {
      */
     public Admin getBean(Admin admin);
 
+
     /**
      * 管理员修改自身的资料
      * @param admin 改好资料的管理员

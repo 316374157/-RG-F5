@@ -42,6 +42,7 @@ public class SignServlet extends BaseServlet {
         request.getRequestDispatcher("pages/teacher/AllSignInfo.jsp").forward(request, response);
     }
 
+
     protected void getSignInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String courseId = request.getParameter("courseId");
         String classId = request.getParameter("classId");

@@ -24,6 +24,7 @@ public class TeacherDaoImpl implements TeacherDao {
                 teacher.getCourseId3(),teacher.getTeacherName());
     }
 
+
     @Override
     public Teacher getBeanByTeacherId(String username) {
         String sql = "SELECT id,username,passwd AS passWd,sex,teacher_Name AS teacherName,course_id1 AS courseId1," +

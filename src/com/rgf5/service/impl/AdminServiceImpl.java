@@ -14,6 +14,7 @@ import com.rgf5.service.AdminService;
  **/
 public class AdminServiceImpl implements AdminService {
 
+
     AdminDao adminDao = new AdminDaoImpl();
 
     @Override

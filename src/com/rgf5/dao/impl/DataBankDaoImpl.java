@@ -15,6 +15,7 @@ import java.util.List;
  **/
 public class DataBankDaoImpl implements DataBankDao {
 
+
     @Override
     public boolean add(DataBank dataBank) {
         String sql = "insert into databank(data_name,data_path,class_id,course_id,data_type,author_id,author_name) values(?,?,?,?,?,?,?)";

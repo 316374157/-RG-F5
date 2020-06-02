@@ -54,6 +54,7 @@ public class Course {
         this.courseName = courseName;
     }
 
+
     @Override
     public String toString() {
         return "Course{" +

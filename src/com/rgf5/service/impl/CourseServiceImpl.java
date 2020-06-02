@@ -44,7 +44,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course getBeanByCourseId(Course course) {
-        return null;
+        return courseDao.getBeanByCourseId(course.getCourseId());
     }
 
     @Override
@@ -71,6 +71,18 @@ public class CourseServiceImpl implements CourseService {
             result.put(item.getClassName(), list);
         }
         return result;
+    }
+
+    @Override
+    public List<Course> getBeanListTeacherAll(Teacher teacher) {
+        List<Course> courseList = new ArrayList<>();
+        Course course1 = courseDao.getBeanByCourseId(teacher.getCourseId1());
+        Course course2 = courseDao.getBeanByCourseId(teacher.getCourseId2());
+        Course course3 = courseDao.getBeanByCourseId(teacher.getCourseId3());
+        courseList.add(course1);
+        courseList.add(course2);
+        courseList.add(course3);
+        return courseList;
     }
 
 

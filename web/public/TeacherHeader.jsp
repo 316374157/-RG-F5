@@ -11,9 +11,9 @@
 	<div class="container-fluid">
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul id="headnav" class="nav navbar-nav" style="margin: 0 auto;width: 600px;float: none;">
-				<li id="myinfo" class=""><a href="TeacherServlet?method=searchCourse">张飞帆</a></li>
-				<li id="home" class=""><a href="pages/teacher/Home.jsp">主页</a></li>
+			<ul id="headnav" class="nav navbar-nav" style="margin: 0 auto;width: 40%;float: none;">
+				<li id="myinfo" class=""><a href="TeacherServlet?method=searchCourse">${sessionScope.teacher.teacherName}</a></li>
+				<li id="home" class=""><a href="TeacherServlet?method=home">主页</a></li>
 				<li id="myallclass" class=""><a href="TeacherServlet?method=getMyAllClass">班级详情</a></li>
 				<li id="data" class=""><a href="TeacherServlet?method=getMyClass">教学资源</a></li>
 				<li id="course" class=""><a href="pages/teacher/Course.jsp">课程</a></li>

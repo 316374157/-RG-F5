@@ -21,7 +21,6 @@ public interface CourseDao {
      * @return True表示修改成功
      */
     public boolean update(Course course);
-
     /**
      * 删除一个课程
      * @param id 要删除的课程id

@@ -13,6 +13,7 @@ public class CourseDaoImpl implements CourseDao {
         return BaseDao.update(sql,course.getCourseId(),course.getCourseName());
     }
 
+
     @Override
     public boolean update(Course course) {
         String sql = "update course set course_id=?,course_name=? where id = ?";

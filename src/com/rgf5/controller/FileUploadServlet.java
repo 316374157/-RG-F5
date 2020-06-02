@@ -37,6 +37,7 @@ public class FileUploadServlet extends HttpServlet {
         request.getRequestDispatcher("DataBankServlet?method=getFileByCourseAndClass&className="+classes.getClassName()+"&courseName="+course.getCourseName()).forward(request, response);
     }
 
+
     @Override
     protected void doGet(HttpServletRequest request,
             HttpServletResponse response)

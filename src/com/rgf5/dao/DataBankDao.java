@@ -21,6 +21,7 @@ public interface DataBankDao {
      * @return true表示删除成功
      */
     public boolean delete(DataBank dataBank);
+
     /**
      * 获取所有的文件信息
      * @return 所有的文件信息

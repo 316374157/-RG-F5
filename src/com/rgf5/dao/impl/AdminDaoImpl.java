@@ -13,6 +13,7 @@ import com.rgf5.dao.BaseDao;
  * @Version V1.0
  **/
 public class AdminDaoImpl implements AdminDao {
+
     @Override
     public Admin getBean(Admin admin) {
         String sql = "select id,username,passWd from admins where username and passWd=?";

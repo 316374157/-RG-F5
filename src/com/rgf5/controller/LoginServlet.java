@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
             System.out.println(teacher);
             if(teacher!=null){
                 session.setAttribute("teacher", teacher);
-                response.sendRedirect("pages/teacher/Home.jsp");
+                request.getRequestDispatcher("TeacherServlet?method=home").forward(request, response);
             }else {
                 request.setAttribute("msg", "账号或密码错误！");
                 request.getRequestDispatcher("index.jsp").forward(request, response);

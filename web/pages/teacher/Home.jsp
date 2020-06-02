@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -48,24 +49,14 @@
                 </div>
             </div>
             <div class="classes">
-                <a href="javascript:void(0)">
-                    <div class="classess" style="margin-top: 0;">
-                        <span></span>
-                        <div class="tz">班级1</div>
-                    </div>
-                </a>
-                <a href="javascript:void(0)">
-                    <div class="classess">
-                        <span></span>
-                        <div class="tz">班级2</div>
-                    </div>
-                </a>
-                <a href="javascript:void(0)">
-                    <div class="classess" style="margin-top: 0;">
-                        <span></span>
-                        <div class="tz">班级3</div>
-                    </div>
-                </a>
+                <c:forEach items="${requestScope.myBeanList}" var="item">
+                    <a href="TeacherServlet?method=getClass&classId=${item.classId}">
+                        <div class="classess" style="margin-top: 0;">
+                            <span></span>
+                            <div class="tz">${item.className}</div>
+                        </div>
+                    </a>
+                </c:forEach>
             </div>
         </div>
         <div class="main_part" style="float: right;">
@@ -76,18 +67,16 @@
                 </div>
             </div>
             <div class="course">
-                <a href="javascript:void(0)">
-                    <div class="courses" style="margin-top: 0;">
-                        <span></span>
-                        <div class="tz">课程1</div>
-                    </div>
-                </a>
-                <a href="javascript:void(0)">
-                    <div class="courses">
-                        <span></span>
-                        <div class="tz">课程2</div>
-                    </div>
-                </a>
+                <c:forEach items="${requestScope.courseList}" var="item">
+                    <c:if test="${!empty item}">
+                        <a href="TeacherServlet?method=CourseInfo&courseId=${item.courseId}">
+                            <div class="courses">
+                                <span></span>
+                                <div class="tz">${item.courseName}</div>
+                            </div>
+                        </a>
+                    </c:if>
+                </c:forEach>
             </div>
         </div>
 	</div>

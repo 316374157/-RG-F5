@@ -22,7 +22,6 @@ public abstract class BaseDao {
      */
     private static QueryRunner runner = new QueryRunner();
 
-
     /**
      * 查询数据库中的某条数据
      * @param sql sql

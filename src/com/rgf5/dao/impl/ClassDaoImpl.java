@@ -53,6 +53,7 @@ public class ClassDaoImpl implements ClassDao {
         return BaseDao.getBean(sql, Classes.class,classId);
     }
 
+
     @Override
     public List<Classes> getBeanListByCourseId(String courseId) {
         String sql = "select id,class_id as classId,class_name as className,course_id1 as courseId1,course_id2 as courseId2," +

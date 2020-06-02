@@ -8,6 +8,7 @@ import java.util.List;
  * @author Administrator 老师的数据库操作
  */
 public interface TeacherDao {
+
     /**
      * 管理员添加一名老师
      * @param teacher 添加的老师

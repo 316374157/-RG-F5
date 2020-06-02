@@ -8,7 +8,6 @@ package com.rgf5.bean;
  * @Version V1.0
  **/
 public class Classes {
-
     /**
      * 主键
      */

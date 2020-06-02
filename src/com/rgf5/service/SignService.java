@@ -11,6 +11,7 @@ import java.util.List;
  * @author 31637 签到的事务控制
  */
 public interface SignService {
+
     /**
      * 添加第一次签到信息
      * @param sign 添加的签到信息

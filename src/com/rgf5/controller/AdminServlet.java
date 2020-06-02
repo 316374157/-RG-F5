@@ -8,6 +8,7 @@ import java.io.IOException;
 
 @WebServlet(name = "AdminServlet",value = "/AdminServlet")
 public class AdminServlet extends BaseServlet {
+
     /**
      * 获取所有的班级
      * @param request 请求

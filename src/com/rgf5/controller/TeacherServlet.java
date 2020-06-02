@@ -78,10 +78,10 @@ public class TeacherServlet extends BaseServlet {
         Course course1 = courseDao.getBeanByCourseId(teacher.getCourseId1());
         Course course2 = courseDao.getBeanByCourseId(teacher.getCourseId2());
         Course course3 = courseDao.getBeanByCourseId(teacher.getCourseId3());
-        session.setAttribute("course1", course1);
-        session.setAttribute("course2", course2);
-        session.setAttribute("course3", course3);
-        response.sendRedirect("pages/teacher/MyInfo.jsp");
+        request.setAttribute("course1", course1);
+        request.setAttribute("course2", course2);
+        request.setAttribute("course3", course3);
+        request.getRequestDispatcher("pages/teacher/MyInfo.jsp").forward(request, response);
     }
 
     protected void getMyAllClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -105,6 +105,20 @@ public class TeacherServlet extends BaseServlet {
         request.setAttribute("beanListByClassId",beanListByClassId);
         request.getRequestDispatcher("pages/teacher/Class.jsp").forward(request, response);
     }
+
+    protected void home(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Teacher teacher = (Teacher) session.getAttribute("teacher");
+        ClassService classService = new ClassServiceImpl();
+        List<Classes> myBeanList = classService.getMyBeanList(teacher);
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListTeacherAll(teacher);
+        request.setAttribute("myBeanList",myBeanList);
+        request.setAttribute("courseList",courseList);
+        request.getRequestDispatcher("pages/teacher/Home.jsp").forward(request, response);
+    }
+
+
     protected void updateCourse(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
         Teacher params = WebUtils.paramsToBean(request, new Teacher());
         HttpSession session = request.getSession();
@@ -138,9 +152,9 @@ public class TeacherServlet extends BaseServlet {
         List<Classes> beanListByCourseId = classDao.getBeanListByCourseId(courseId);
         System.out.println(beanByCourseId);
         System.out.println(beanListByCourseId);
-        request.setAttribute("beanByCourseId1",beanByCourseId);
-        request.setAttribute("beanListByCourseId1",beanListByCourseId);
-        response.sendRedirect("pages/teacher/CourseClass.jsp");
+        request.setAttribute("beanByCourseId",beanByCourseId);
+        request.setAttribute("beanListByCourseId",beanListByCourseId);
+        request.getRequestDispatcher("pages/teacher/CourseClass.jsp").forward(request, response);
     }
 
 }

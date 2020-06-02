@@ -9,13 +9,6 @@ package com.rgf5.bean;
  **/
 public class DataBank {
 
-//            id INT PRIMARY KEY AUTO_INCREMENT,
-//            data_name VARCHAR(20) NOT NULL,
-//    data_path VARCHAR(50) NOT NULL,
-//    class_id  VARCHAR(20) NOT NULL,
-//    course_id VARCHAR(20) NOT NULL,
-//    data_type VARCHAR(20)
-
     /**
      * 主键
      */

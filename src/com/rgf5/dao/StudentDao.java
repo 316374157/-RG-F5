@@ -15,6 +15,7 @@ public interface StudentDao {
      */
     public Student getBeanByStudentId(String username);
 
+
     /**
      * 通过id查找用户
      * @param id ID

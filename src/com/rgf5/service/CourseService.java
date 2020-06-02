@@ -54,4 +54,11 @@ public interface CourseService {
      * @return 通过班级分类的课程
      */
     public Map<String, List<String>> getMyCourseInMyClass(Teacher teacher,List<Classes> classes);
+
+    /**
+     * 获取某老师的所有课程信息
+     * @param teacher 老师
+     * @return 所有的课程信息
+     */
+    public List<Course> getBeanListTeacherAll(Teacher teacher);
 }

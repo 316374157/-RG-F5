@@ -10,6 +10,7 @@ import java.lang.reflect.Method;
 
 @WebServlet(name = "BaseServlet")
 public class BaseServlet extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html; charset=UTF-8");
