@@ -3,7 +3,10 @@
 <head>
     <title>修改信息</title>
     <jsp:include page="../../public/base.jsp"/>
+    <link rel="stylesheet" href="static/css/Clean.css">
     <link rel="stylesheet" href="static/css/ChangeInfo.css">
+    <link rel="stylesheet" href="static/css/bootstrap.css"/>
+    <script src="static/js/HeaderChose.js"></script>
 </head>
 <body>
 <jsp:include   page="../../public/student-header.jsp" flush="true"/>
@@ -14,15 +17,18 @@
         </div>
         <div class="main_part_nav">
             <ul>
-                <form action="" method="post">
+                <form action="StudentServlet" method="post">
                     <li>
-                        <a>姓名：</a><input type="text" placeholder="" />
+                        <a>姓名：</a><input type="text" placeholder="name" name="studentname" value=${sessionScope.student.studentName}>
                     </li>
                     <li>
-                        <a>性别：</a><input type="text" placeholder="" />
+                        <a>学号：</a><input type="text" placeholder="name" name="username" value=${sessionScope.student.username}>
                     </li>
                     <li>
-                        <a>密码：</a><input type="password" />
+                        <a>性别：</a><input type="text" placeholder="gender" name="gender" value=${sessionScope.student.sex}>
+                    </li>
+                    <li>
+                        <a>密码：</a><input type="password" placeholder="password" name="password" value=${sessionScope.student.passWd}>
                     </li>
                     <input style="margin-left: 100px;" type="submit" value="提交" />
                 </form>
