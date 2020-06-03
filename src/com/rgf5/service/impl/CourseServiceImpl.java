@@ -85,5 +85,19 @@ public class CourseServiceImpl implements CourseService {
         return courseList;
     }
 
-
+    @Override
+    public List<Course> getBeanListClassAll(Classes classes) {
+        List<Course> courseList = new ArrayList<>();
+        Course course1 = courseDao.getBeanByCourseId(classes.getCourseId1());
+        Course course2 = courseDao.getBeanByCourseId(classes.getCourseId2());
+        Course course3 = courseDao.getBeanByCourseId(classes.getCourseId3());
+        Course course4 = courseDao.getBeanByCourseId(classes.getCourseId4());
+        Course course5 = courseDao.getBeanByCourseId(classes.getCourseId5());
+        courseList.add(course1);
+        courseList.add(course2);
+        courseList.add(course3);
+        courseList.add(course4);
+        courseList.add(course5);
+        return courseList;
+    }
 }

@@ -83,8 +83,8 @@ public class TeacherDaoImpl implements TeacherDao {
                 classId,classId,classId,classId,classId,classId,classId,classId);
     }
 
-  @Override
-  public Teacher login(String username, String passWd) {
+    @Override
+    public Teacher login(String username, String passWd) {
         String sql = "SELECT id,username,passWd,sex,teacher_name AS teacherName,course_id1 AS courseId1," +
                 "course_id2 AS courseId2,course_id3 AS courseId3 FROM teachers WHERE username = ? AND passWd = ?";
         return BaseDao.getBean(sql, Teacher.class, username,passWd);
@@ -104,5 +104,13 @@ public class TeacherDaoImpl implements TeacherDao {
     public boolean delete(Integer id) {
         String sql = "DELETE FROM teachers WHERE id = ?";
         return BaseDao.update(sql, id);
+    }
+
+    @Override
+    public Teacher getBeanByCourseId(String courseId) {
+        String sql = "SELECT id,username,passwd AS passWd,sex,teacher_Name AS teacherName,course_id1 AS courseId1," +
+                "course_id2 AS courseId2,course_id3 AS courseId3 FROM teachers WHERE course_id1 = ? or course_id2 = ? " +
+                "or course_id3 = ?";
+        return BaseDao.getBean(sql, Teacher.class,courseId,courseId,courseId);
     }
 }

@@ -3,6 +3,7 @@ package com.rgf5.service.impl;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.Teacher;
+import com.rgf5.dao.BaseDao;
 import com.rgf5.dao.ClassDao;
 import com.rgf5.dao.impl.ClassDaoImpl;
 import com.rgf5.service.ClassService;
@@ -44,7 +45,8 @@ public class ClassServiceImpl implements ClassService {
 
     @Override
     public Classes getBeanByClassId(Classes classes) {
-        return null;
+
+        return classDao.getBeanByClassId(classes.getClassId());
     }
 
     @Override

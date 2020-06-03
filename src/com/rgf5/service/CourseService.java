@@ -61,4 +61,6 @@ public interface CourseService {
      * @return 所有的课程信息
      */
     public List<Course> getBeanListTeacherAll(Teacher teacher);
+
+    public List<Course> getBeanListClassAll(Classes classes);
 }
