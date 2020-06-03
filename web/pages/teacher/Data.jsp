@@ -54,7 +54,7 @@
                                 <label id="mis" style="display: none;color: red;">文件夹已存在</label>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button id="close" type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                                 <button id="click1" type="button" class="btn btn-primary">确定添加</button>
                             </div>
                         </div>
@@ -184,13 +184,22 @@
         for(i=0;i<=num;i++){
             var filesName = $(".filesName").eq(i).text();
             if(filesName == folderName){
-                $("#mis").hidden;
+                console.log(filesName == folderName);
+                $("#mis").show();
+                break;
+            }
+            else{
+                console.log(filesName == folderName);
+                $("#mis").hide();
             }
         }
         if($("#mis").is(':hidden')){
             var newfolder = '<li style="margin-top: 10px;" class="chose"><a class="filesName" href="javascript:void(0)">'+folderName+'</a></li>';
             $(".files:last").after(newfolder);
         }
+    })
+    $("#close").click(function () {
+        $("#folderName").val("");
     })
 </script>
 </body>
