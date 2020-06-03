@@ -3,4 +3,3 @@
 <link rel="stylesheet" href="static/css/Clean.css">
 <link rel="stylesheet" href="static/css/bootstrap.css">
 <script type="text/javascript" src="static/js/jquery-3.4.1.js"></script>
-<script src="static/js/HeaderChose.js"></script>
