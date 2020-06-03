@@ -26,7 +26,7 @@ public interface TeacherDao {
     /**
      * 通过id查询老师的全部信息
      * @param id 老师的ID
-     * @return  被查询老师的信息
+     * @return  被查询老师的id
      */
     public Teacher getBeanById(Integer id);
 
@@ -78,4 +78,5 @@ public interface TeacherDao {
      */
     public boolean delete(Integer id);
 
+    public Teacher getBeanByCourseId(String courseId);
 }

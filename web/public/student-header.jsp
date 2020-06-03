@@ -6,7 +6,7 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul id="headnav" class="nav navbar-nav" style="margin: 0 auto;width: 600px;float: none;">
                 <li id="myinfo" class=""><a href="pages/student/myinfo.jsp">个人信息</a></li>
-                <li id="home" class=""><a href="pages/student/home.jsp">主页</a></li>
+                <li id="home" class=""><a href="StudentServlet?method=home">主页</a></li>
                 <li id="course" class=""><a href="pages/student/coursedetail.jsp">我的课程</a></li>
                 <li id="data" class=""><a href="pages/student/databank.jsp">教学资源</a></li>
                 <li id="sign" class=""><a href="pages/student/studentsign.jsp">签到</a></li>

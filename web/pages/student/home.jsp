@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -21,7 +22,7 @@
 						 <a>性别：${student.sex}</a>
 					 </li>
 					 <li>
-						 <a>班级：</a>
+						 <a>班级：${requestScope.classes.className}</a>
 					 </li>
 				 </ul>
 			 </div>
@@ -35,36 +36,16 @@
 			 </div>
 			 <div class="main_part_nav">
 				 <div class="classes">
-					 <a href="./#">
-						 <div class="classess" style="margin-top: 0;">
-							 <span></span>
-							 <div class="tz">课程1</div>
-						 </div>
-					 </a>
-					 <a href="./#">
-						 <div class="classess" style="margin-top: 0;">
-							 <span></span>
-							 <div class="tz">课程2</div>
-						 </div>
-					 </a>
-					 <a href="./#">
-						 <div class="classess" style="margin-top: 0;">
-							 <span></span>
-							 <div class="tz">课程3</div>
-						 </div>
-					 </a>
-					 <a href="./#">
-						 <div class="classess" style="margin-top: 0;">
-							 <span></span>
-							 <div class="tz">课程4</div>
-						 </div>
-					 </a>
-					 <a href="./#">
-						 <div class="classess" style="margin-top: 0;">
-							 <span></span>
-							 <div class="tz">课程5</div>
-						 </div>
-					 </a>
+					 <c:forEach items="${requestScope.courseList}" var="item">
+						 <c:if test="${!empty item}">
+							 <a href="pages/student/coursedetail.jsp">
+								 <div class="classess" style="margin-top: 0;">
+									 <span></span>
+									 <div class="tz">${item.courseName}</div>
+								 </div>
+							 </a>
+						 </c:if>
+					 </c:forEach>
 				 </div>
 			 </div>
 		 </div>
@@ -76,24 +57,56 @@
 				 </div>
 			 </div>
 			 <div class="course">
-				 <a href="./#">
-					 <div class="courses" style="margin-top: 0;">
-						 <span></span>
-						 <div class="tz">老师1 <p style="float: right;">课程名1</p></div>
-					 </div>
-				 </a>
-				 <a href="./#">
-					 <div class="courses">
-						 <span></span>
-						 <div class="tz">老师2 <p style="float: right;">课程名2</p></div>
-					 </div>
-				 </a>
-				 <a href="./#">
-					 <div class="courses">
-						 <span></span>
-						 <div class="tz">老师3 <p style="float: right;">课程名3</p></div>
-					 </div>
-				 </a>
+				 <c:if test="${!empty requestScope.course1}">
+					 <a>
+						 <div class="courses">
+							 <span></span>
+							 <div class="tz">${requestScope.teacher1.teacherName}
+								 <p style="float: right;">${requestScope.course1.courseName}</p>
+							 </div>
+						 </div>
+					 </a>
+				 </c:if>
+				 <c:if test="${!empty requestScope.course2}">
+					 <a>
+						 <div class="courses">
+							 <span></span>
+							 <div class="tz">${requestScope.teacher2.teacherName}
+								 <p style="float: right;">${requestScope.course2.courseName}</p>
+							 </div>
+						 </div>
+					 </a>
+				 </c:if>
+				 <c:if test="${!empty requestScope.course3}">
+					 <a>
+						 <div class="courses">
+							 <span></span>
+							 <div class="tz">${requestScope.teacher3.teacherName}
+								 <p style="float: right;">${requestScope.course3.courseName}</p>
+							 </div>
+						 </div>
+					 </a>
+				 </c:if>
+				 <c:if test="${!empty requestScope.course4}">
+					 <a>
+						 <div class="courses">
+							 <span></span>
+							 <div class="tz">${requestScope.teacher4.teacherName}
+								 <p style="float: right;">${requestScope.course4.courseName}</p>
+							 </div>
+						 </div>
+					 </a>
+				 </c:if>
+				 <c:if test="${!empty requestScope.course5}">
+					 <a>
+						 <div class="courses">
+							 <span></span>
+							 <div class="tz">${requestScope.teacher5.teacherName}
+								 <p style="float: right;">${requestScope.course5.courseName}</p>
+							 </div>
+						 </div>
+					 </a>
+				 </c:if>
 			 </div>
 		 </div>
 	 </div>
