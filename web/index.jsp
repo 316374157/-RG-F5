@@ -48,7 +48,7 @@
             <label>
               <input type="checkbox"> 记住密码
             </label>
-            <a href="pages/student/register.jsp" style="width: 50px;height: 30px;margin-left: 150px">注册</a>
+            <a href="CourseServlet?method=getAllStudent" style="width: 50px;height: 30px;margin-left: 150px">注册</a>
           </div>
         </div>
       </div>

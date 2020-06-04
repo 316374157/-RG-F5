@@ -52,8 +52,8 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
-    public boolean register(Student student) {
-        return false;
+    public boolean register(Student student){
+        return studentDao.register(student);
     }
 
     @Override

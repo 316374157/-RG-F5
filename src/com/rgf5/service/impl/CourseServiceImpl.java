@@ -39,7 +39,7 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> getBeanListAll() {
-        return null;
+        return courseDao.getBeanListAll();
     }
 
     @Override

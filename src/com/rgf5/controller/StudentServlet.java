@@ -17,6 +17,12 @@ import com.rgf5.service.CourseService;
 import com.rgf5.service.impl.ClassServiceImpl;
 import com.rgf5.service.impl.CourseServiceImpl;
 
+import com.rgf5.bean.Student;
+import com.rgf5.bean.Teacher;
+import com.rgf5.service.StudentService;
+import com.rgf5.service.impl.StudentServiceImpl;
+import com.rgf5.utils.WebUtils;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -75,5 +81,19 @@ public class StudentServlet extends BaseServlet {
         request.setAttribute("courseList",courseList);
         request.setAttribute("teacher1",teacher1);
         request.getRequestDispatcher("pages/student/home.jsp").forward(request, response);
+    }
+    protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        Student student = WebUtils.paramsToBean(request, new Student());
+        System.out.println(student);
+        StudentService studentService = new StudentServiceImpl();
+        boolean register = studentService.register(student);
+        if(register){
+            response.sendRedirect("index.jsp");
+        }else {
+            request.setAttribute("msg","账号已存在！");
+            request.getRequestDispatcher("CourseServlet?method=getAllStudent").forward(request,response);
+        }
+
     }
 }
