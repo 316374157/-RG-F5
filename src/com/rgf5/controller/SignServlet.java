@@ -3,6 +3,7 @@ package com.rgf5.controller;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.Sign;
+import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 import com.rgf5.dao.ClassDao;
 import com.rgf5.dao.CourseDao;
@@ -11,6 +12,9 @@ import com.rgf5.dao.impl.ClassDaoImpl;
 import com.rgf5.dao.impl.CourseDaoImpl;
 import com.rgf5.dao.impl.SignDaoImpl;
 
+import com.rgf5.service.SignService;
+import com.rgf5.service.impl.SignServiceImpl;
+import com.rgf5.utils.WebUtils;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +25,7 @@ import java.util.List;
 
 @WebServlet(name = "SignServlet",value = "/SignServlet")
 public class SignServlet extends BaseServlet {
+
     protected void getAllSignInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher) session.getAttribute("teacher");
@@ -51,5 +56,14 @@ public class SignServlet extends BaseServlet {
         System.out.println(beanListByCC);
         request.setAttribute("beanListByCC",beanListByCC);
         request.getRequestDispatcher("pages/teacher/SignInformation.jsp").forward(request, response);
+    }
+
+    protected void signStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Student student = (Student) session.getAttribute("student");
+        SignService signService = new SignServiceImpl();
+        Sign sign = WebUtils.paramsToBean(request, new Sign());
+        signService.signStudent(student, sign);
+        response.getWriter().write(student.getStudentName()+"签到成功");
     }
 }

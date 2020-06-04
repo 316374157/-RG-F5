@@ -1,7 +1,6 @@
 package com.rgf5.dao;
 
 import com.rgf5.bean.Sign;
-
 import java.util.List;
 
 /**
@@ -27,6 +26,14 @@ public interface SignDao {
      * @return true表示删除成功
      */
     public boolean delete(Sign sign);
+
+    /**
+     * 获取指定学生的指定课程的上一次的签到信息
+     * @param sign 要修改的部分信息
+     * @return 上一次的签到信息
+     */
+    public Sign getSignInfo(Sign sign);
+
     /**
      * 获取所有的签到信息
      * @return 所有的签到信息
