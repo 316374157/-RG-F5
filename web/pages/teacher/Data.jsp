@@ -131,10 +131,6 @@
         $("#filefolder").text(filefolder);
         $("#datas ul").eq(index).css("display","block");
         $("#file").val(filefolder.toString().trim())
-        /*
-        控制右侧的文件夹中的文件显示
-        并且会修改上边的路径导航
-         */
     });
     $("#classes .choses").click(function () {
         var index = $("#classes .choses").index(this);

@@ -6,26 +6,20 @@ import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 import com.rgf5.dao.ClassDao;
 import com.rgf5.dao.CourseDao;
-import com.rgf5.dao.StudentDao;
 import com.rgf5.dao.TeacherDao;
 import com.rgf5.dao.impl.ClassDaoImpl;
 import com.rgf5.dao.impl.CourseDaoImpl;
-import com.rgf5.dao.impl.StudentDaoImpl;
 import com.rgf5.dao.impl.TeacherDaoImpl;
 import com.rgf5.service.ClassService;
 import com.rgf5.service.CourseService;
+import com.rgf5.service.StudentService;
 import com.rgf5.service.impl.ClassServiceImpl;
 import com.rgf5.service.impl.CourseServiceImpl;
-
-import com.rgf5.bean.Student;
-import com.rgf5.bean.Teacher;
-import com.rgf5.service.StudentService;
 import com.rgf5.service.impl.StudentServiceImpl;
 import com.rgf5.utils.WebUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -95,5 +89,24 @@ public class StudentServlet extends BaseServlet {
             request.getRequestDispatcher("CourseServlet?method=getAllStudent").forward(request,response);
         }
 
+    }
+
+    protected void getMyAllCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Student student = (Student) session.getAttribute("student");
+        ClassDao classDao = new ClassDaoImpl();
+        Classes beanByClassId = classDao.getBeanByClassId(student.getClassId());
+        request.setAttribute("beanByClassId",beanByClassId);
+        request.getRequestDispatcher("pages/student/coursedetail.jsp").forward(request, response);
+    }
+
+    protected void getCourseInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Student student = (Student) session.getAttribute("student");
+        String courseId = request.getParameter("courseId");
+        CourseDao courseDao = new CourseDaoImpl();
+        Course beanByCourseId = courseDao.getBeanByCourseId(courseId);
+        request.setAttribute("beanByCourseId",beanByCourseId);
+        request.getRequestDispatcher("pages/student/CourseInfo.jsp").forward(request, response);
     }
 }

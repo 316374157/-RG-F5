@@ -16,7 +16,7 @@
             const backContext = document.getElementById("output").getContext("2d");
             let socket;
             let interval;
-            setTimeout(init, 100);
+            setTimeout(init, 10);
             //初始化
             function init(){
                 //需要浏览器支持
@@ -28,7 +28,7 @@
             function onOpen(){
                 //定时传输数据到服务器
                 clearInterval(interval);
-                interval = setInterval(function(){draw()},50);
+                interval = setInterval(function(){draw()},5);
             }
             function onClose(){
                 init();
@@ -84,7 +84,7 @@
                 </div>
                 <div class="say">
                     <input id="msg" class="sayWord" type="text" placeholder="发送弹幕" style="width: 90%"/>
-                    <button id="sendBtn" style="float: right;width: 10%">发送</button>
+                    <button id="i" style="float: right;width: 10%">发送</button>
                 </div>
             </div>
         </div>

@@ -1,11 +1,11 @@
 package com.rgf5.controller;
 
-import java.util.Vector;
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
+import java.util.Vector;
 
 @ServerEndpoint("/ChatRoomServlet")
 public class ChatRoomServlet {
