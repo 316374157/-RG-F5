@@ -1,59 +1,83 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-	<title>Title</title>
+	<title>管理员界面</title>
+	<jsp:include page="../../public/base.jsp"/>
+	<link rel="stylesheet" href="static/css/Clean.css">
+	<link rel="stylesheet" href="static/css/Home.css">
 </head>
 <body>
-	<div class="messages">
-		<div class="main_part_top">
-			<div class="checkbox">您管理的信息</div>
-		</div>
-		<div class="nav nav-pills">
-			<ul>
-				<li>
-					<a href="teachermanager.jsp">教师信息</a>
-				</li>
-				<li>
-					<a href="classdetail.jsp">班级信息</a>
-				</li>
-				<li>
-					<a href="coursemanager.jsp">课程详情</a>
-				</li>
-				<li>
-					<a href="signdetail.jsp">签到详情</a>
-				</li>
-				<li>
-					<a href="studentdetail.jsp">学生详情</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<!-- Brand and toggle get grouped for better mobile display -->
-			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-					<li><a href="#">Link</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="添加" role="button" aria-haspopup="true" aria-expanded="false">更改信息 <span class="caret"></span></a>
-						<ul class="dropdown-menu">
-							<li><a href="addclass.jsp">添加班级</a></li>
-							<li><a href="addcourse.jsp">添加课程</a></li>
-							<li><a href="addteacher.jsp">添加教师</a></li>
-							<li role="separator" class="divider"><a>编辑信息</a></li>
-							<li><a href="updateclass.jsp">编辑班级信息</a></li>
-							<li><a href="updatecourse.jsp">编辑课程内容</a></li>
-							<li><a href="updateteacher.jsp">管理教师信息</a></li>
-							<li><a href="updatestudent.jsp">管理在校学生</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<h1>成功</h1>
-	${admin.id}
+<jsp:include page="../../public/user-hader.jsp"/>
+<div class="main">
+    <div class="main_part">
+        <div class="main_part_top">
+            <div class="kj">管理信息</div>
+        </div>
+        <div class="main_part" style="float: top;border: none;margin-bottom: 0;">
+            <div class="sign">
+                <a href="WEB-INF/index.jsp">
+                    <div class="courses">
+                        <p class="tz">登出</p>
+                    </div>
+                </a>
+            </div>
+            <div class="signInfo">
+                <a href="***">
+                    <div class="***">
+                        <p class="tz">修改密码</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="main_part" style="float: right;">
+        <div class="main_part_top">
+            <div class="kj">签到</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
+        </div>
+    </div>
+    <div class="main_part">
+        <div class="main_part_top">
+            <div class="kj">班级</div>
+                <div class="more">
+                    <a href="javascript:void(0)">MORE+</a>
+                </div>
+        </div>
+    </div>
+    <div class="main_part" style="float: right;">
+        <div class="main_part_top">
+            <div class="kj">课程</div>
+                <div class="more">
+                    <a href="javascript:void(0)">MORE+</a>
+                </div>
+        </div>
+    </div>
+    <div class="main_part">
+        <div class="main_part_top">
+            <div class="kj">教师</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
+        </div>
+    </div>
+    <div class="main_part" style="float: right;">
+        <div class="main_part_top">
+            <div class="kj">学生</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <p style="padding-top: 30px;">软件工程</p>
+    <p>Copyright  ©</p>
+    <p>http://</p>
+</div>
+<span id="Only" style="display: none;">Home</span>
 </body>
 </html>

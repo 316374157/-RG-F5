@@ -8,27 +8,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
 	<title>添加班级</title>
-	<link rel="stylesheet" href="../../static/css/bootstrap.css"/>
+	<jsp:include page="../../public/base.jsp"/>
+	<link rel="stylesheet" href="static/css/Clean.css">
+	<link rel="stylesheet" href="static/css/Course.css">
+	<link rel="stylesheet" href="static/css/ChangeInfo.css">
+	<script type="text/javascript">
+        $(function () {
+        })
+	</script>
 </head>
 <body>
-	<form class="form-horizontal">
-		<div class="form-group">
-			<label for="classname" class="control-label">班级名：</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="classname" placeholder="请输入班级名">
+<jsp:include page="../../public/user-hader.jsp"/>
+	<div class="main">
+		<div class="main_part">
+			<div class="main_part_top">
+				<div class="kj">课程信息</div>
+			</div>
+			<div class="main_part_nav">
+				<ul>
+					<form action="CourseServlet" method="post">
+						<input type="hidden" name="method" value="addCourse">
+						<li>
+							<a style="display: block;float: left;width: 70px;">课程编号：</a><input type="text" name="courseId"/>
+						</li>
+						<li>
+							<a style="display: block;float: left;width: 70px;">课程名：</a><input type="text" name="courseName" />
+						</li>
+						<input style="margin-left: 100px;" type="submit" value="提交" />
+                        <input style="margin-left: 100px;" type="submit" value="重置" />
+                        <input style="margin-left: 100px;" type="submit" value="返回" />
+					</form>
+				</ul>
 			</div>
 		</div>
-		<div class="form-group">
-			<label for="classnumber">班级号：</label>
-			<input type="text" class="form-control" id="classnumber" placeholder="请输入班级号">
-		</div>
-		<div class="form-group" style="text-align: center">
-			<input class="btn btn-primary" type="submit" value="提交" />
-			<input class="btn btn-default" type="reset" value="重置" />
-			<input class="btn btn-default" type="button" value="返回" />
-		</div>
-	</form>
+	</div>
 </body>
 </html>
