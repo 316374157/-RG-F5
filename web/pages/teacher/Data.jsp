@@ -50,11 +50,12 @@
                                 <br />
                                 <label style="margin: 10px 10px;width: 70px;">课程名：</label><input readonly="readonly" value="${param.courseName}" />
                                 <br />
-                                <label style="margin: 10px 10px;width: 70px;">文件夹名：</label><input type="text" placeholder="请输入文件夹名" />
+                                <label style="margin: 10px 10px;width: 70px;">文件夹名：</label><input id="folderName" type="text" placeholder="请输入文件夹名" />
+                                <label id="mis" style="display: none;color: red;">文件夹已存在</label>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                <button type="button" class="btn btn-primary">保存修改</button>
+                                <button id="close" type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                <button id="click1" type="button" class="btn btn-primary">确定添加</button>
                             </div>
                         </div>
                     </div>
@@ -90,7 +91,7 @@
             <ul class="all" id="datas">
                 <c:forEach items="${requestScope.fileMap.keySet()}" var="item">
                     <li style="margin-top: 10px;" class="chose">
-                        <a href="javascript:void(0)">${item}</a>
+                        <a class="filesName" href="javascript:void(0)">${item}</a>
                     </li>
                     <ul class="files" style="display: none;">
                         <table style="width: 100%;margin: 10px 0;">
@@ -118,15 +119,17 @@
 </div>
 <span id="Only" style="display: none;">Data</span>
 <script>
-    $("#datas .chose").click(function () {
+    $("#datas").on("click",".chose",function () {
         var index = $("#datas .chose").index(this);
+        console.log(index);
+        console.log($("#datas .chose").length);
         var num = $("ul").length;
         for (i=0;i<=num;i++){
             $("#datas ul").eq(i).css("display","none");
         }
-        $("#datas ul").eq(index).css("display","block");
         var filefolder = $("#datas .chose").eq(index).text();
         $("#filefolder").text(filefolder);
+        $("#datas ul").eq(index).css("display","block");
         $("#file").val(filefolder.toString().trim())
     });
     $("#classes .choses").click(function () {
@@ -170,6 +173,29 @@
                 $("#courses .chosess").eq(i).addClass("active");
             }
         }
+    })
+    $("#click1").click(function () {
+        var num = $(".filesName").length;
+        var folderName = $("#folderName").val();
+        for(i=0;i<=num;i++){
+            var filesName = $(".filesName").eq(i).text();
+            if(filesName == folderName){
+                console.log(filesName == folderName);
+                $("#mis").show();
+                break;
+            }
+            else{
+                console.log(filesName == folderName);
+                $("#mis").hide();
+            }
+        }
+        if($("#mis").is(':hidden')){
+            var newfolder = '<li style="margin-top: 10px;" class="chose"><a class="filesName" href="javascript:void(0)">'+folderName+'</a></li>';
+            $(".files:last").after(newfolder);
+        }
+    })
+    $("#close").click(function () {
+        $("#folderName").val("");
     })
 </script>
 </body>

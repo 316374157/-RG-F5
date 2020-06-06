@@ -56,10 +56,11 @@ public interface StudentService {
 
     /**
      * 学生注册
+     *
      * @param student 要注册的学生
      * @return true表示注册成功
      */
-    public boolean register(Student student);
+    public  boolean register(Student student);
 
     /**
      * 学生登录

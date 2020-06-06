@@ -18,6 +18,7 @@ public interface SignService {
      * @return true表示添加成功
      */
     public boolean add(Sign sign);
+
     /**
      * 签到信息更新
      * @param sign 更新过的签到
@@ -31,6 +32,13 @@ public interface SignService {
      * @return true表示删除成功
      */
     public boolean delete(Sign sign);
+
+    /**
+     * 获取指定学生的指定课程的签到信息
+     * @param student 指定的学生
+     * @param sign 要修改的部分信息
+     */
+    public void signStudent(Student student,Sign sign);
     /**
      * 获取所有的签到信息
      * @return 所有的签到信息
