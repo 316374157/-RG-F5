@@ -9,7 +9,7 @@
                 <li id="home" class=""><a href="StudentServlet?method=home">主页</a></li>
                 <li id="course" class=""><a href="pages/student/coursedetail.jsp">我的课程</a></li>
                 <li id="data" class=""><a href="pages/student/databank.jsp">教学资源</a></li>
-                <li id="sign" class=""><a href="pages/student/studentsign.jsp">签到</a></li>
+                <li id="sign" class=""><a href="SignServlet?method=getMySign">签到</a></li>
                 <li id="live" class=""><a href="pages/student/view.jsp">直播</a></li>
             </ul>
         </div><!-- /.navbar-collapse -->

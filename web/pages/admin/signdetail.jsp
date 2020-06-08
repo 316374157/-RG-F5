@@ -15,69 +15,33 @@
 		<div class="plan_title">
 			<p>签到信息</p>
 		</div>
-		<div class="plan_nav1">
-			<ul>
-				<li>
-					<div class="plan_nav1_part"><p>${requestScope.beanByCourseId1.courseName}</p></div>
-				</li>
-				<li>
-					<div class="plan_nav1_part"><p>${requestScope.beanByCourseId2.courseName}</p></div>
-				</li>
-				<li>
-					<div class="plan_nav1_part"><p>${requestScope.beanByCourseId3.courseName}</p></div>
-				</li>
-			</ul>
-		</div>
-		<div class="plan_main">
-			<div class="main_part">
-				<div class="main_part_top">
-					<div class="kj">该课程所有班级</div>
-				</div>
-				<c:forEach items="${requestScope.beanListByCourseId1}" var="item">
-					<div class="classes">
-						<a href="SignServlet?method=getSignInfo&courseId=${requestScope.beanByCourseId1.courseId}&classId=${item.classId}">
-							<div class="classess" style="margin-top: 0;">
-								<span></span>
-								<p class="tz">${item.className}</p>
-							</div>
-						</a>
-					</div>
+			<table class="table table-hover">
+				<tr>
+					<td>学号</td>
+					<td>姓名</td>
+					<td>班级</td>
+					<td>课程</td>
+					<td>第一次签到</td>
+					<td>第二次签到</td>
+					<td>第三次签到</td>
+					<td>第四次签到</td>
+					<td>第五次签到</td>
+				</tr>
+
+				<c:forEach items="${requestScope.signList}" var="item">
+					<tr>
+						<td>${item.studentId}</td>
+						<td>${item.studentName}</td>
+						<td>${requestScope.classMap.get(item.classId)}</td>
+						<td>${requestScope.courseMap.get(item.classId)}</td>
+						<td>${item.sign1}</td>
+						<td>${item.sign2}</td>
+						<td>${item.sign3}</td>
+						<td>${item.sign4}</td>
+						<td>${item.sign5}</td>
+					</tr>
 				</c:forEach>
-			</div>
-		</div>
-		<div class="plan_main">
-			<div class="main_part">
-				<div class="main_part_top">
-					<div class="kj">该课程所有班级</div>
-				</div>
-				<c:forEach items="${requestScope.beanListByCourseId2}" var="item">
-					<div class="classes">
-						<a href="SignServlet?method=getSignInfo&courseId=${requestScope.beanByCourseId2.courseId}&classId=${item.classId}">
-							<div class="classess" style="margin-top: 0;">
-								<span></span>
-								<p class="tz">${item.className}</p>
-							</div>
-						</a>
-					</div>
-				</c:forEach>
-			</div>
-		</div>
-		<div class="plan_main">
-			<div class="main_part">
-				<div class="main_part_top">
-					<div class="kj">该课程所有班级</div>
-				</div>
-				<c:forEach items="${requestScope.beanListByCourseId3}" var="item">
-					<div class="classes">
-						<a href="SignServlet?method=getSignInfo&courseId=${requestScope.beanByCourseId3.courseId}&classId=${item.classId}">
-							<div class="classess" style="margin-top: 0;">
-								<span></span>
-								<p class="tz">${item.className}</p>
-							</div>
-						</a>
-					</div>
-				</c:forEach>
-			</div>
+			</table>
 		</div>
 	</div>
 </div>

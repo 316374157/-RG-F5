@@ -16,15 +16,15 @@
             let msg_socket = new WebSocket("ws"+realPath+"/InformServlet");
 
             msg_socket.onmessage = function(data){
-                document.getElementById("sign").innerHTML = " "+data.data;
+
             }
 
             function sendMsg(){
-                const classId = "classId:"+$("#classId").val();
-                const courseId = "courseId:"+$("#courseId").val();
+                const className = "className:"+$("#className").val();
+                const courseName = "courseName:"+$("#courseName").val();
                 const signId = "signId:"+$("#signId").val();
                 const isSign = "isSign:"+$("#isSign").val();
-                const msg = classId+","+courseId+","+signId+","+isSign;
+                const msg = className+","+courseName+","+signId+","+isSign;
                 if (msg_socket.readyState === 1){
                     msg_socket.send(msg);
                 }
@@ -60,10 +60,10 @@
             <div class="kj" style="padding-left: 90px;"><a id="classess" href="javascript:void(0)"></a> >> <a id="coursess" href="javascript:void(0)"></a></div>
         </div>
         <div id="sign" style="width: 300px;height: 300px;margin: 0 auto;padding-top: 2px;">
-            <label style="margin-bottom: 20px;">班级：</label><input style="margin-bottom: 20px;" id="classId" readonly="readonly" type="text" placeholder="选择班级" />
+            <label style="margin-bottom: 20px;">班级：</label><input style="margin-bottom: 20px;" id="className" readonly="readonly" type="text" placeholder="选择班级" />
             </select>
             <br />
-            <label class="zzz">课程：</label><input class="zzz" id="courseId" readonly="readonly" type="text" placeholder="选择课程" />
+            <label class="zzz">课程：</label><input class="zzz" id="courseName" readonly="readonly" type="text" placeholder="选择课程" />
             <br />
             <label class="zzz">签到次数：</label>
             <select id="signId" class="zzz" style="height: 24px;">
@@ -74,7 +74,7 @@
                 <option value="sign5">第五次签到</option>
             </select>
             <br />
-            <input  class="zzz" id="isSign" readonly="readonly" type="text"  value="false" />
+            <input  class="zzz" id="isSign" readonly="readonly" type="hidden"  value="false" />
             <br />
             <button class="zzz" id="sendBtn">发起签到</button>
             <button class="zzz" id="overBtn">结束签到</button>
@@ -98,9 +98,9 @@
         }
         this.className = "choses active";
         $("#classess").text($("#classes .choses.active").text());
-        $("#classId").val($("#classes .choses.active").text());
+        $("#className").val($("#classes .choses.active").text());
         $("#coursess").text('');
-        $("#courseId").val('');
+        $("#courseName").val('');
         $("#classes ul").eq(index).css("display","block");
         $(".main_part_nav").hide();
     })
@@ -115,7 +115,7 @@
         $("#classes ul").eq(index).css("display","block");
         $(".main_part_nav").show();
         $("#coursess").text($("#courses .chosess.active").text());
-        $("#courseId").val($("#courses .chosess.active").text());
+        $("#courseName").val($("#courses .chosess.active").text());
     })
     $(function () {
         var classess = $("#classess").text();

@@ -16,7 +16,7 @@ public class AdminDaoImpl implements AdminDao {
 
     @Override
     public Admin getBean(Admin admin) {
-        String sql = "select id,username,passWd from admins where username and passWd=?";
+        String sql = "select id,username,passWd from admins where username=? and passWd=?";
         return BaseDao.getBean(sql, Admin.class, admin.getUsername(),admin.getPassWd());
     }
 

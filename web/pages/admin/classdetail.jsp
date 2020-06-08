@@ -12,18 +12,38 @@
 <div class="main">
 	<div class="main_part">
 		<div class="main_part_top">
-			<div class="kj">班级：***</div>
+			<div class="kj">班级列表</div>
+			<div><a href="">增加班级</a></div>
 		</div>
 		<div class="main_part_nav">
 			<table class="classes">
 				<thead>
 				<tr>
-					<th scope="col">学号</th>
-					<th scope="col">姓名</th>
-					<th scope="col">性别</th>
+					<th scope="col">班级编号</th>
+					<th scope="col">班级名称</th>
+					<th scope="col">课程</th>
+					<th scope="col">课程</th>
+					<th scope="col">课程</th>
+					<th scope="col">课程</th>
+					<th scope="col">课程</th>
+					<th scope="col">操作</th>
 				</tr>
 				</thead>
 				<tbody>
+				<c:forEach items="${requestScope.classesList}" var="item">
+					<tr>
+						<td>${item.classId}</td>
+						<td>${item.className}</td>
+						<td>${requestScope.map.get(item.courseId1)}</td>
+						<td>${requestScope.map.get(item.courseId2)}</td>
+						<td>${requestScope.map.get(item.courseId3)}</td>
+						<td>${requestScope.map.get(item.courseId4)}</td>
+						<td>${requestScope.map.get(item.courseId5)}</td>
+						<td><a href="">修改</a></td>
+						<td><a href="">删除</a></td>
+					</tr>
+				</c:forEach>
+
 				</tbody>
 			</table>
 		</div>

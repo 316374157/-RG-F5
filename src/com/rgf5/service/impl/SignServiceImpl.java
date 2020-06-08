@@ -7,6 +7,7 @@ import com.rgf5.bean.Student;
 import com.rgf5.dao.SignDao;
 import com.rgf5.dao.impl.SignDaoImpl;
 import com.rgf5.service.SignService;
+
 import java.util.List;
 
 /**
@@ -66,12 +67,12 @@ public class SignServiceImpl implements SignService {
 
     @Override
     public List<Sign> getBeanListAll() {
-        return null;
+        return signDao.getBeanListAll();
     }
 
     @Override
     public List<Sign> getBeanListByStudentId(Student student) {
-        return null;
+        return signDao.getBeanListByStudentId(student.getUsername());
     }
 
     @Override

@@ -28,7 +28,7 @@
       <div class="form-group">
         <label for="inputEmail3" class="col-sm-2 control-label">用户名：</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="inputEmail3" name="username" placeholder="Username" style="width: 50%">
+          <input type="text" class="form-control" id="inputEmail3" name="username" value="${param.username}" placeholder="Username" style="width: 50%">
             <select name="user" class="btn btn-default dropdown-toggle" style="float: left">
                 <option value="admin">管理员</option>
                 <option value="student">学生</option>

@@ -31,13 +31,27 @@
 				<table class="classes">
 					<thead>
 					<tr>
-						<th scope="col">教师号</th>
+						<th scope="col">教师编号</th>
 						<th scope="col">姓名</th>
 						<th scope="col">性别</th>
+                        <th scope="col">课程</th>
+                        <th scope="col">课程</th>
                         <th scope="col">课程</th>
 					</tr>
 					</thead>
 					<tbody>
+					<c:forEach items="${requestScope.teacherList}" var="item">
+						<tr>
+							<td>${item.username}</td>
+							<td>${item.teacherName}</td>
+							<td>${item.sex}</td>
+							<td>${requestScope.map.get(item.courseId1)}</td>
+							<td>${requestScope.map.get(item.courseId2)}</td>
+							<td>${requestScope.map.get(item.courseId3)}</td>
+							<td><a href="">修改</a></td>
+							<td><a href="">删除</a></td>
+						</tr>
+					</c:forEach>
 					</tbody>
 				</table>
 			</div>

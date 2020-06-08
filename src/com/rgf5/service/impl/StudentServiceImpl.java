@@ -38,7 +38,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> getBeanListAll() {
-        return null;
+        return studentDao.getBeanListAll();
     }
 
     @Override

@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -157,4 +158,18 @@ public class TeacherServlet extends BaseServlet {
         request.getRequestDispatcher("pages/teacher/CourseClass.jsp").forward(request, response);
     }
 
+
+    protected void getAllTeacher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        TeacherService teacherService = new TeacherServiceImpl();
+        List<Teacher> teacherList = teacherService.getBeanListAll();
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListAll();
+        HashMap<String, Object> map = new HashMap<>();
+        for (Course course : courseList) {
+          map.put(course.getCourseId(), course.getCourseName());
+        }
+        request.setAttribute("teacherList",teacherList);
+        request.setAttribute("map",map);
+        request.getRequestDispatcher("pages/admin/teachermanager.jsp").forward(request, response);
+    }
 }

@@ -43,7 +43,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public List<Teacher> getBeanListAll() {
-        return null;
+        return teacherDao.getBeanListAll();
     }
 
     @Override

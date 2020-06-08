@@ -27,6 +27,25 @@
 			<div class="more">
 				<a href="pages/admin/addcourse.jsp">新建课程</a>
 			</div>
+			<table class="table table-hover">
+				<thead>
+				<tr>
+					<th scope="col">课程编号</th>
+					<th scope="col">课程名称</th>
+					<th scope="col">操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<c:forEach items="${requestScope.courseList}" var="item">
+					<tr>
+						<td>${item.courseId}</td>
+						<td>${item.courseName}</td>
+						<td><a href="">修改</a></td>
+						<td><a href="">删除</a></td>
+					</tr>
+				</c:forEach>
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>

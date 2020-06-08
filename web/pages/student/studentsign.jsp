@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -16,19 +17,18 @@
 			let msg = '';
 			msg_socket.onmessage = function(data){
 				msg = data.data;
-				document.getElementById("info").innerHTML = " "+data.data;
 			}
 
 			$("#signBtn").click(function () {
 				msg = msg.split(',');
-				const classId = msg[0].substr(8)
-				const courseId = msg[1].substr(9)
+				const className = msg[0].substr(10)
+				const courseName = msg[1].substr(11)
 				const signId = msg[2].substr(7)
 				const isSign = msg[3].substr(7)
 				if(isSign ==="true"){
 					alert("签到")
-					$("#classId").val(classId)
-					$("#courseId").val(courseId)
+					$("#className").val(className)
+					$("#courseName").val(courseName)
 					$("#signId").attr("name",signId)
 					$("#signId").val('是')
 					$.ajax({
@@ -53,13 +53,42 @@
 			<div class="kj">签到</div>
 			<div class="main">
 					<div class="main_part_nav">
-						<div id="info" style="width: 300px;height: 300px"></div>
+						<div>
+							<table class="table table-hover">
+								<tr>
+									<th>学号</th>
+									<th>姓名</th>
+									<th>课程</th>
+									<th>第一次签到</th>
+									<th>第二次签到</th>
+									<th>第三次签到</th>
+									<th>第四次签到</th>
+									<th>第五次签到</th>
+								</tr>
+								<c:forEach items="${requestScope.signList}" var="item">
+									<tr>
+										<td>${item.studentId}</td>
+										<td>${item.studentName}</td>
+										<c:forEach items="${requestScope.courseList}" var="course">
+											<c:if test="${course.courseId == item.courseId}">
+												<td>${course.courseName}</td>
+											</c:if>
+										</c:forEach>
+										<td>${item.sign1}</td>
+										<td>${item.sign2}</td>
+										<td>${item.sign3}</td>
+										<td>${item.sign4}</td>
+										<td>${item.sign5}</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</div>
 						<button id="signBtn">签到</button>
 					</div>
 				<form id="signTb">
-					<input name="classId" id="classId">
-					<input name="courseId" id="courseId">
-					<input name="signId" id="signId">
+					<input name="className" id="className" type="hidden">
+					<input name="courseName" id="courseName" type="hidden">
+					<input name="signId" id="signId" type="hidden">
 				</form>
 			</div>
 		</div>

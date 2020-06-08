@@ -13,11 +13,11 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul id="headnav" class="nav navbar-nav" style="margin: 0 auto;width: 40%;float: none;">
 				<li id="home" class=""><a href="pages/admin/home.jsp">主页</a></li>
-				<li id="myallclass" class=""><a href="pages/admin/classdetail.jsp">班级详情</a></li>
-				<li id="course" class=""><a href="pages/admin/coursemanager.jsp">管理课程</a></li>
-				<li id="teacher" class=""><a href="pages/admin/teachermanager.jsp">管理教师</a></li>
-				<li id="allsigninfo" class=""><a href="SignServlet?method=getAllSignInfo">签到详情</a></li>
-				<li id="student" class=""><a href="pages/admin/studentdetail.jsp">学生详情</a></li>
+				<li id="myallclass" class=""><a href="ClassesServlet?method=getAllClasses">班级详情</a></li>
+				<li id="course" class=""><a href="CourseServlet?method=getAllCourse">管理课程</a></li>
+				<li id="teacher" class=""><a href="TeacherServlet?method=getAllTeacher">管理教师</a></li>
+				<li id="allsigninfo" class=""><a href="SignServlet?method=getAllSignAdmin">签到详情</a></li>
+				<li id="student" class=""><a href="StudentServlet?method=getAllStudent">学生详情</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->

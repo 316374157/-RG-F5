@@ -45,7 +45,7 @@ public class SignDaoImpl implements SignDao {
     @Override
     public List<Sign> getBeanListAll()
     {
-        String sql = "SELECT id,class_Id as classId,student_Id as studentId,student_name as studentName," +
+        String sql = "SELECT id,class_Id as classId,course_Id as courseId,student_Id as studentId,student_name as studentName," +
                 "sign1,sign2,sign3,sign4,sign5 from sign_table";
         return BaseDao.getBeanList(sql, Sign.class);
     }
@@ -53,7 +53,7 @@ public class SignDaoImpl implements SignDao {
     @Override
     public List<Sign> getBeanListByStudentId(String studentId)
     {
-        String sql = "SELECT id,class_Id as classId,student_Id as studentId,student_name as studentName," +
+        String sql = "SELECT id,class_Id as classId,course_id as courseId,student_Id as studentId,student_name as studentName," +
                 "sign1,sign2,sign3,sign4,sign5 from sign_table where student_Id = ?";
         return BaseDao.getBeanList(sql, Sign.class, studentId);
     }

@@ -3,10 +3,10 @@ package com.rgf5.service.impl;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.Teacher;
-import com.rgf5.dao.BaseDao;
 import com.rgf5.dao.ClassDao;
 import com.rgf5.dao.impl.ClassDaoImpl;
 import com.rgf5.service.ClassService;
+
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -40,7 +40,7 @@ public class ClassServiceImpl implements ClassService {
 
     @Override
     public List<Classes> getBeanListAll() {
-        return null;
+        return classDao.getBeanListAll();
     }
 
     @Override

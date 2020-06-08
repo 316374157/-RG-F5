@@ -10,13 +10,14 @@ import com.rgf5.service.impl.ClassServiceImpl;
 import com.rgf5.service.impl.CourseServiceImpl;
 import com.rgf5.service.impl.DataBankServiceImpl;
 import com.rgf5.utils.WebUtils;
-import java.io.IOException;
-import java.util.LinkedHashMap;
-import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.LinkedHashMap;
+import java.util.List;
 
 @WebServlet(name = "DataBankServlet",value = "/DataBankServlet")
 public class DataBankServlet extends BaseServlet {

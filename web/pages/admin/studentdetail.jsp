@@ -22,9 +22,18 @@
 					<th scope="col">学号</th>
 					<th scope="col">姓名</th>
 					<th scope="col">性别</th>
+					<th scope="col">班级</th>
 				</tr>
 				</thead>
 				<tbody>
+				<c:forEach items="${requestScope.studentList}" var="item">
+					<tr>
+						<td>${item.username}</td>
+						<td>${item.studentName}</td>
+						<td>${item.sex}</td>
+						<td>${requestScope.classMap.get(item.classId)}</td>
+					</tr>
+				</c:forEach>
 				</tbody>
 			</table>
 		</div>

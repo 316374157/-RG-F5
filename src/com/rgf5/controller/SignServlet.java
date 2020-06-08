@@ -23,6 +23,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -67,8 +68,31 @@ public class SignServlet extends BaseServlet {
         Student student = (Student) session.getAttribute("student");
         SignService signService = new SignServiceImpl();
         Sign sign = WebUtils.paramsToBean(request, new Sign());
+        Classes classes = WebUtils.paramsToBean(request, new Classes());
+        Course course = WebUtils.paramsToBean(request, new Course());
+        ClassService classService = new ClassServiceImpl();
+        classes = classService.getBeanByClassName(classes);
+        CourseService courseService = new CourseServiceImpl();
+        course = courseService.getBeanByCourseName(course);
+        System.out.println(classes);
+        System.out.println(course);
+        sign.setClassId(classes.getClassId());
+        sign.setCourseId(course.getCourseId());
         signService.signStudent(student, sign);
         response.getWriter().write(student.getStudentName()+"签到成功");
+    }
+
+    protected void getMySign(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Student student = (Student) session.getAttribute("student");
+        SignService signService = new SignServiceImpl();
+        List<Sign> signList = signService.getBeanListByStudentId(student);
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListAll();
+        request.setAttribute("signList",signList);
+        request.setAttribute("courseList",courseList);
+        System.out.println(signList);
+        request.getRequestDispatcher("pages/student/studentsign.jsp").forward(request, response);
     }
 
     protected void getSign(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -90,5 +114,26 @@ public class SignServlet extends BaseServlet {
         LinkedHashMap<String, List<DataBank>> fileMap = dataBankService.getFileByCourseIdAndClassId(course, classes);
         request.setAttribute("fileMap", fileMap);
         request.getRequestDispatcher("SignServlet?method=getSign").forward(request, response);
+    }
+
+    protected void getAllSignAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        SignService signService = new SignServiceImpl();
+        List<Sign> signList = signService.getBeanListAll();
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListAll();
+        HashMap<String, Object> courseMap = new HashMap<>();
+        for (Course course : courseList) {
+            courseMap.put(course.getCourseId(), course.getCourseName());
+        }
+        ClassService classService = new ClassServiceImpl();
+        List<Classes> classesList = classService.getBeanListAll();
+        HashMap<String, Object> classMap = new HashMap<>();
+        for (Classes classes : classesList) {
+          classMap.put(classes.getClassId(), classes.getClassName());
+        }
+        request.setAttribute("signList",signList);
+        request.setAttribute("classMap",classMap);
+        request.setAttribute("courseMap",courseMap);
+        request.getRequestDispatcher("pages/admin/signdetail.jsp").forward(request, response);
     }
 }

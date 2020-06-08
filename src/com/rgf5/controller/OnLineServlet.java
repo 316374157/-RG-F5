@@ -1,12 +1,12 @@
 package com.rgf5.controller;
 
-import java.io.IOException;
-import java.util.Vector;
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
+import java.util.Vector;
 
 /**
  * 指定一个URI，客户端可以通过指定的URI来连接到我们的websocket

@@ -60,7 +60,7 @@ public interface TeacherDao {
      * @param passWd 登录密码
      * @return 要登录的用户
      */
-    public Teacher login(String teacherId,String passWd);
+    public Teacher login(String teacherId, String passWd);
 
     /**
      * 老师信息更新

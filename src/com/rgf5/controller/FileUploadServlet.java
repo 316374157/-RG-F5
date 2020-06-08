@@ -7,14 +7,15 @@ import com.rgf5.bean.Teacher;
 import com.rgf5.service.DataBankService;
 import com.rgf5.service.impl.DataBankServiceImpl;
 import com.rgf5.utils.WebUtils;
-import java.io.IOException;
-import java.util.Map;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.util.Map;
 
 @WebServlet(name = "FileUploadServlet",value = "/FileUploadServlet")
 public class FileUploadServlet extends HttpServlet {

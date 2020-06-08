@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 @WebServlet(name = "StudentServlet",value = "/StudentServlet")
@@ -108,5 +109,19 @@ public class StudentServlet extends BaseServlet {
         Course beanByCourseId = courseDao.getBeanByCourseId(courseId);
         request.setAttribute("beanByCourseId",beanByCourseId);
         request.getRequestDispatcher("pages/student/CourseInfo.jsp").forward(request, response);
+    }
+
+    protected void getAllStudent(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        StudentService studentService = new StudentServiceImpl();
+        List<Student> studentList = studentService.getBeanListAll();
+        ClassService classService = new ClassServiceImpl();
+        List<Classes> classesList = classService.getBeanListAll();
+        HashMap<String, Object> classMap = new HashMap<>();
+        for (Classes classes : classesList) {
+            classMap.put(classes.getClassId(), classes.getClassName());
+        }
+        request.setAttribute("classMap",classMap);
+        request.setAttribute("studentList",studentList);
+        request.getRequestDispatcher("pages/admin/studentdetail.jsp").forward(request, response);
     }
 }

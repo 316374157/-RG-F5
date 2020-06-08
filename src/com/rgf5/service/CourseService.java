@@ -3,6 +3,7 @@ package com.rgf5.service;
 import com.rgf5.bean.Classes;
 import com.rgf5.bean.Course;
 import com.rgf5.bean.Teacher;
+
 import java.util.List;
 import java.util.Map;
 
@@ -53,7 +54,7 @@ public interface CourseService {
      * @param classes 所在班级的集合
      * @return 通过班级分类的课程
      */
-    public Map<String, List<String>> getMyCourseInMyClass(Teacher teacher,List<Classes> classes);
+    public Map<String, List<String>> getMyCourseInMyClass(Teacher teacher, List<Classes> classes);
 
     /**
      * 获取某老师的所有课程信息
