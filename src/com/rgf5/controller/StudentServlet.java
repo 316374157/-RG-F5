@@ -125,6 +125,25 @@ public class StudentServlet extends BaseServlet {
         request.getRequestDispatcher("pages/admin/studentdetail.jsp").forward(request, response);
     }
 
+
+    protected void toUpdateStu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Student student = WebUtils.paramsToBean(request, new Student());
+        StudentService studentService = new StudentServiceImpl();
+        student = studentService.getBeanById(student);
+        ClassService classService = new ClassServiceImpl();
+        List<Classes> classesList = classService.getBeanListAll();
+        request.setAttribute("classesList",classesList);
+        request.setAttribute("student",student);
+        request.getRequestDispatcher("pages/admin/updatestudent.jsp").forward(request, response);
+    }
+
+    protected void updateStu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Student student = WebUtils.paramsToBean(request, new Student());
+        StudentService studentService = new StudentServiceImpl();
+        studentService.update(student);
+        getAllStudent(request,response);
+    }
+
     protected void studentOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         session.invalidate();

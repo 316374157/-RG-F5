@@ -33,7 +33,7 @@
 						<td style="width: 20%;">${item.studentName}</td>
 						<td style="width: 20%;">${item.sex}</td>
 						<td style="width: 20%;">${requestScope.classMap.get(item.classId)}</td>
-						<td  style="width: 20%;"><a href="">修改</a></td>
+						<td  style="width: 20%;"><a href="StudentServlet?method=toUpdateStu&id=${item.id}">修改</a></td>
 					</tr>
 				</c:forEach>
 				</tbody>

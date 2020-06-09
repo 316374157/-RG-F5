@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -16,20 +17,37 @@
 		</div>
 		<div class="main_part_nav">
 			<ul>
-				<form action="AdminServlet" method="post">
+				<form action="StudentServlet" method="post">
+					<input type="hidden" name="method" value="updateStu" readonly>
+					<input type="hidden" name="id" value="${requestScope.student.id}" readonly>
+					<input type="hidden" name="passWd" value="${requestScope.student.passWd}" readonly>
 					<li>
-						<label>学号：</label><input type="text" placeholder="id" name="studentid">
+						<label>学号：</label><input type="text" value="${requestScope.student.username}" name="username">
 					</li>
 					<li>
-						<label>姓名：</label><input type="text" placeholder="name" name="studentname">
+						<label>姓名：</label><input type="text" value="${requestScope.student.studentName}" name="studentName">
 					</li>
 					<li>
-						<label>性别：</label><input type="text" placeholder="gender" name="gender">
+						<label>性别：</label>
+						<input type="radio" name="sex" value="男" checked>男
+						<input type="radio" name="sex" value="女">女
 					</li>
 					<li>
-						<label>密码：</label><input type="password" placeholder="password" name="password">
+						<label>班级：</label>
+						<select name="classId">
+							<c:if test="${requestScope.student.classId==null || requestScope.student.classId==''}">
+								<option value="" selected>当前无课程</option>
+							</c:if>
+							<c:forEach items="${requestScope.classesList}" var="item">
+								<c:if test="${item.classId==requestScope.student.classId}">
+									<option value="${item.classId}" selected>${item.className}</option>
+								</c:if>
+								<c:if test="${item.classId!=requestScope.student.classId}">
+									<option value="${item.classId}">${item.className}</option>
+								</c:if>
+							</c:forEach>
+						</select>
 					</li>
-					<input type="hidden" name="method" value="changeStudent">
 					<input style="margin-left: 100px;" type="submit" value="提交"/>
 				</form>
 			</ul>

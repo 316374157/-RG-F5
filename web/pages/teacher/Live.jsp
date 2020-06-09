@@ -49,7 +49,8 @@
                 document.getElementById("dm").innerHTML += " "+data.data+"<br />";
             }
             function sendMsg(){
-                const msg = document.getElementById("msg").value;
+                let msg= $("#user").val()+"：";
+                msg += document.getElementById("msg").value;
                 if (msg_socket.readyState === 1){
                     msg_socket.send(msg);
                 }
@@ -76,6 +77,7 @@
             <div class="word">
                 <div id="dm" class="see" style="top:0px;left:0px;color: #1687d9;overflow: auto;font-size: 20px;"></div>
                 <div class="say">
+                    <input id="user" value="${sessionScope.teacher.teacherName}" readonly hidden>
                     <input id="msg" class="sayWord" type="text" placeholder="发送弹幕" style="width: 85%"/>
                     <button id="sendBtn" style="float: right;width: 15%;height: 24px;">发送</button>
                 </div>

@@ -71,8 +71,9 @@ public class StudentDaoImpl implements StudentDao {
 
     @Override
     public boolean update(Student student) {
-        String sql= "update students set passwd=? where student_name=?";
-        return BaseDao.update(sql,student.getPassWd(),student.getUsername());
+        String sql= "update students set username=?, passwd=?, sex=? , class_id=?, student_name = ? where id=?";
+        return BaseDao.update(sql,student.getUsername(),student.getPassWd(),student.getSex(),
+                student.getClassId(),student.getStudentName(),student.getId());
     }
 
     @Override

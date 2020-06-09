@@ -28,7 +28,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student getBeanById(Student student) {
-        return null;
+        return studentDao.getBeanById(student.getId());
     }
 
     @Override
@@ -63,7 +63,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public boolean update(Student student) {
-        return false;
+        return studentDao.update(student);
     }
 
     @Override
