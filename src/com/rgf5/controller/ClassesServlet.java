@@ -6,6 +6,7 @@ import com.rgf5.service.ClassService;
 import com.rgf5.service.CourseService;
 import com.rgf5.service.impl.ClassServiceImpl;
 import com.rgf5.service.impl.CourseServiceImpl;
+import com.rgf5.utils.WebUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,5 +32,21 @@ public class ClassesServlet extends BaseServlet {
         request.setAttribute("classesList",classesList);
         request.setAttribute("map",map);
         request.getRequestDispatcher("pages/admin/classdetail.jsp").forward(request, response);
+    }
+
+    protected void getThisClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Classes classes = WebUtils.paramsToBean(request, new Classes());
+        classes = classService.getBeanByClassId(classes);
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListAll();
+        request.setAttribute("classes",classes);
+        request.setAttribute("courseList",courseList);
+        request.getRequestDispatcher("pages/admin/updateclass.jsp").forward(request, response);
+    }
+
+    protected void updateClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Classes classes = WebUtils.paramsToBean(request, new Classes());
+        classService.update(classes);
+        getAllClasses(request,response);
     }
 }

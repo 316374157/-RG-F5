@@ -30,7 +30,7 @@ public class ClassServiceImpl implements ClassService {
 
     @Override
     public boolean update(Classes classes) {
-        return false;
+        return classDao.update(classes);
     }
 
     @Override

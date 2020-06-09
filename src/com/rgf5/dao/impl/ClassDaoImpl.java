@@ -26,11 +26,11 @@ public class ClassDaoImpl implements ClassDao {
 
     @Override
     public boolean update(Classes classes) {
-        String sql = "update classes set class_id=?,class_name=?,course_id1=?,course_id2=?,course_id3=?" +
-                ",course_id4=?,course_id5=? where id =?";
-        return BaseDao.update(sql, classes.getClassId(),classes.getClassName(),
+        String sql = "update classes set class_name=?,course_id1=?,course_id2=?,course_id3=?" +
+                ",course_id4=?,course_id5=? where class_id=?";
+        return BaseDao.update(sql, classes.getClassName(),
                 classes.getCourseId1(),classes.getCourseId2(),classes.getCourseId3(),classes.getCourseId4()
-                ,classes.getCourseId5(),classes.getId());
+                ,classes.getCourseId5(),classes.getClassId());
     }
 
     @Override

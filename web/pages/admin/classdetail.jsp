@@ -39,7 +39,7 @@
 						<td>${requestScope.map.get(item.courseId3)}</td>
 						<td>${requestScope.map.get(item.courseId4)}</td>
 						<td>${requestScope.map.get(item.courseId5)}</td>
-						<td><a href="">修改</a></td>
+						<td><a href="ClassesServlet?method=getThisClass&classId=${item.classId}">修改</a></td>
 						<td><a href="">删除</a></td>
 					</tr>
 				</c:forEach>
