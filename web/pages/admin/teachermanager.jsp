@@ -6,7 +6,7 @@
 	<title>Title</title>
 	<jsp:include page="../../public/base.jsp"/>
 	<link rel="stylesheet" href="static/css/Clean.css">
-	<link rel="stylesheet" href="static/css/Class.css">
+	<link rel="stylesheet" href="static/css/classdetail.css">
 	<script type="text/javascript">
         $(function () {
             $(".delete").click(function () {
@@ -21,12 +21,12 @@
 <jsp:include page="../../public/user-hader.jsp"/>
 	<div class="main">
 		<div class="main_part">
-			<div class="main_part_top">
-				<div class="kj">管理教师账号</div>
+			<div class="main_part_top" style="padding: 0 80px;">
+				<div class="kj" style="width: 200px;">管理教师账号</div>
+				<div class="more">
+					<a href="pages/admin/addteacher.jsp">新建教师</a>
+				</div>
 			</div>
-            <div class="more">
-                <a href="pages/admin/addteacher.jsp">新建教师</a>
-            </div>
 			<div class="main_part_nav">
 				<table class="classes">
 					<thead>
@@ -37,6 +37,7 @@
                         <th scope="col">课程</th>
                         <th scope="col">课程</th>
                         <th scope="col">课程</th>
+						<th scope="col" colspan="2">操作</th>
 					</tr>
 					</thead>
 					<tbody>

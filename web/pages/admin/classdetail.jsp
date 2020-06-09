@@ -5,14 +5,14 @@
 	<title>Title</title>
 	<jsp:include page="../../public/base.jsp"/>
 	<link rel="stylesheet" href="static/css/Clean.css">
-	<link rel="stylesheet" href="static/css/Class.css">
+	<link rel="stylesheet" href="static/css/classdetail.css">
 </head>
 <body>
 <jsp:include page="../../public/user-hader.jsp"/>
 <div class="main">
 	<div class="main_part">
-		<div class="main_part_top">
-			<div class="kj">班级列表</div>
+		<div class="main_part_top" style="padding: 0 80px;">
+			<div class="kj" style="width: 130px;">班级列表</div>
 			<div class="more">
 				<a href="javascript:void(0)">新建班级</a>
 			</div>
@@ -42,7 +42,6 @@
 						<td>${requestScope.map.get(item.courseId4)}</td>
 						<td>${requestScope.map.get(item.courseId5)}</td>
 						<td><a href="ClassesServlet?method=getThisClass&classId=${item.classId}">修改</a></td>
-						<td><a href="">删除</a></td>
 					</tr>
 				</c:forEach>
 
