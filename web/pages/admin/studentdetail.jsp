@@ -44,6 +44,6 @@
 	<p>Copyright ©</p>
 	<p>http://</p>
 </div>
-<span id="Only" style="display: none;">Course</span>
+<span id="Only" style="display: none;">Student</span>
 </body>
 </html>

@@ -57,7 +57,7 @@
     </div>
     <div class="main_part" style="float: right;margin: 0 auto;padding: 30px 50px;">
         <div class="main_part_top ">
-            <div class="kj" style="padding-left: 90px;"><a id="classess" href="javascript:void(0)"></a> >> <a id="coursess" href="javascript:void(0)"></a></div>
+            <div class="kj" style="padding-left: 90px;width: 80%;"><a id="classess" href="javascript:void(0)"></a> >> <a id="coursess" href="javascript:void(0)"></a></div>
         </div>
         <div id="sign" style="width: 300px;height: 300px;margin: 0 auto;padding-top: 2px;">
             <label style="margin-bottom: 20px;">班级：</label><input style="margin-bottom: 20px;" id="className" readonly="readonly" type="text" placeholder="选择班级" />

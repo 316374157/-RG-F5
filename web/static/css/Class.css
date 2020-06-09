@@ -29,6 +29,17 @@ body{
     color: #1687d9;
 }
 
+.main .main_part .main_part_top .more
+{
+    float: right;
+
+    margin: 28px 19px 0 0;
+
+    letter-spacing: -0.2px;
+
+    color: #4d4d4d;
+}
+
 .classes
 {
     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
