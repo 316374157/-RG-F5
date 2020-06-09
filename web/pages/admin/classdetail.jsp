@@ -5,17 +5,15 @@
 	<title>Title</title>
 	<jsp:include page="../../public/base.jsp"/>
 	<link rel="stylesheet" href="static/css/Clean.css">
-	<link rel="stylesheet" href="static/css/classdetail.css">
+	<link rel="stylesheet" href="static/css/Class.css">
 </head>
 <body>
 <jsp:include page="../../public/user-hader.jsp"/>
 <div class="main">
 	<div class="main_part">
-		<div class="main_part_top" style="padding: 0 80px;">
-			<div class="kj" style="width: 130px;">班级列表</div>
-			<div class="more">
-				<a href="javascript:void(0)">新建班级</a>
-			</div>
+		<div class="main_part_top">
+			<div class="kj">班级列表</div>
+			<div><a href="ClassesServlet?method=toAddClass">增加班级</a></div>
 		</div>
 		<div class="main_part_nav">
 			<table class="classes">
@@ -55,6 +53,6 @@
 	<p>Copyright ©</p>
 	<p>http://</p>
 </div>
-<span id="Only" style="display: none;">MyAllClass</span>
+<span id="Only" style="display: none;">Classs</span>
 </body>
 </html>

@@ -18,7 +18,7 @@ public class ClassDaoImpl implements ClassDao {
     @Override
     public boolean add(Classes classes) {
         String sql = "insert into classes(id,class_id,class_name,course_id1,course_id2,course_id3,course_id4,course_id5)" +
-                " values(?,?,?,?,?,?,?)";
+                " values(?,?,?,?,?,?,?,?)";
         return BaseDao.update(sql, classes.getId(),classes.getClassId(),classes.getClassName(),
                     classes.getCourseId1(),classes.getCourseId2(),classes.getCourseId3(),classes.getCourseId4()
                 ,classes.getCourseId5());

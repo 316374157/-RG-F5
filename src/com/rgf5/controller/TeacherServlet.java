@@ -172,4 +172,43 @@ public class TeacherServlet extends BaseServlet {
         request.setAttribute("map",map);
         request.getRequestDispatcher("pages/admin/teachermanager.jsp").forward(request, response);
     }
+
+    protected void toAddTeacher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListAll();
+        request.setAttribute("courseList",courseList);
+        request.getRequestDispatcher("pages/admin/addteacher.jsp").forward(request, response);
+    }
+
+    protected void addTeacher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Teacher teacher = WebUtils.paramsToBean(request, new Teacher());
+        TeacherService teacherService= new TeacherServiceImpl();
+        teacherService.add(teacher);
+        getAllTeacher(request,response);
+    }
+
+    protected void updateTeacher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Teacher teacher = WebUtils.paramsToBean(request, new Teacher());
+        TeacherService teacherService= new TeacherServiceImpl();
+        teacherService.update(teacher);
+        getAllTeacher(request,response);
+    }
+
+    protected void toUpdateTeacher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Teacher teacher = WebUtils.paramsToBean(request, new Teacher());
+        TeacherService teacherService = new TeacherServiceImpl();
+        teacher = teacherService.getBeanById(teacher);
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListAll();
+        request.setAttribute("courseList",courseList);
+        request.setAttribute("teacher",teacher);
+        request.getRequestDispatcher("pages/admin/updateteacher.jsp").forward(request, response);
+    }
+
+    protected void deleteTeacher(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Teacher teacher = WebUtils.paramsToBean(request, new Teacher());
+        TeacherService teacherService= new TeacherServiceImpl();
+        teacherService.delete(teacher);
+        getAllTeacher(request,response);
+    }
 }

@@ -10,51 +10,63 @@
 <body>
 <jsp:include page="../../public/user-hader.jsp"/>
 <div class="main">
-    <div class="main_part" style="padding-left: 30px;padding-right: 30px;width: 100%;">
+    <div class="main_part" style="padding-left: 30px;padding-right: 30px;">
         <div class="main_part_top">
             <div class="kj">管理信息</div>
         </div>
-        <div class="but">
-            <a href="javascript:void(0)">
-                <div class="aaa">
+        <div class="sign">
+            <a href="WEB-INF/index.jsp">
+                <div class="courses">
+                    <p class="tz">登出</p>
+                </div>
+            </a>
+        </div>
+        <div class="signInfo">
+            <a href="***">
+                <div class="***">
                     <p class="tz">修改密码</p>
                 </div>
             </a>
         </div>
-        <div class="but">
-            <a href="javascript:void(0)">
-                <div class="aaa">
-                    <p class="tz">班级</p>
-                </div>
-            </a>
+    </div>
+    <div class="main_part" style="float: right;">
+        <div class="main_part_top">
+            <div class="kj">签到</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
         </div>
-        <div class="but">
-            <a href="javascript:void(0)">
-                <div class="aaa">
-                    <p class="tz">课程</p>
-                </div>
-            </a>
+    </div>
+    <div class="main_part">
+        <div class="main_part_top">
+            <div class="kj">班级</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
         </div>
-        <div class="but">
-            <a href="javascript:void(0)">
-                <div class="aaa">
-                    <p class="tz">老师</p>
-                </div>
-            </a>
+    </div>
+    <div class="main_part" style="float: right;">
+        <div class="main_part_top">
+            <div class="kj">课程</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
         </div>
-        <div class="but">
-            <a href="javascript:void(0)">
-                <div class="aaa">
-                    <p class="tz">签到</p>
-                </div>
-            </a>
+    </div>
+    <div class="main_part">
+        <div class="main_part_top">
+            <div class="kj">教师</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
         </div>
-        <div class="but">
-            <a href="javascript:void(0)">
-                <div class="aaa">
-                    <p class="tz">学生</p>
-                </div>
-            </a>
+    </div>
+    <div class="main_part" style="float: right;">
+        <div class="main_part_top">
+            <div class="kj">学生</div>
+            <div class="more">
+                <a href="javascript:void(0)">MORE+</a>
+            </div>
         </div>
     </div>
 </div>

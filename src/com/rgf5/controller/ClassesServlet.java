@@ -49,4 +49,18 @@ public class ClassesServlet extends BaseServlet {
         classService.update(classes);
         getAllClasses(request,response);
     }
+
+    protected void addClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Classes classes = WebUtils.paramsToBean(request, new Classes());
+        classService.add(classes);
+        getAllClasses(request,response);
+    }
+
+
+    protected void toAddClass(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> courseList = courseService.getBeanListAll();
+        request.setAttribute("courseList",courseList);
+        request.getRequestDispatcher("pages/admin/addclass.jsp").forward(request, response);
+    }
 }

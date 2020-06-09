@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -16,20 +17,69 @@
 		</div>
 		<div class="main_part_nav">
 			<ul>
-				<form action="AdminServlet" method="post">
+				<form action="TeacherServlet" method="post">
+					<input name="method" value="updateTeacher" type="hidden" readonly>
+					<input name="id" value="${requestScope.teacher.id}" readonly hidden>
+					<input name="passWd" value="${requestScope.teacher.passWd}" readonly hidden>
 					<li>
-						<label>教师号：</label><input type="text" placeholder="id" name="teacherid">
+						<label>教师号：</label><input type="text" value="${requestScope.teacher.username}" name="username">
 					</li>
 					<li>
-						<label>姓名：</label><input type="text" placeholder="name" name="teachername">
+						<label>姓名：</label><input type="text" value="${requestScope.teacher.teacherName}" name="teacherName">
 					</li>
 					<li>
-						<label>性别：</label><input type="text" placeholder="gender" name="gender">
+						<label>性别：</label>
+						<input type="radio" name="sex" value="男" checked>男
+						<input type="radio" name="sex" value="女">女
 					</li>
 					<li>
-						<label>密码：</label><input type="password" placeholder="password" name="password">
+						<a style="display: block;float: left;width: 70px;">课程一：</a>
+						<select name="courseId1">
+							<c:if test="${requestScope.teacher.courseId1==null || requestScope.teacher.courseId1==''}">
+								<option value="" selected>当前无课程</option>
+							</c:if>
+							<c:forEach items="${requestScope.courseList}" var="item">
+								<c:if test="${item.courseId==requestScope.teacher.courseId1}">
+									<option value="${item.courseId}" selected>${item.courseName}</option>
+								</c:if>
+								<c:if test="${item.courseId!=requestScope.teacher.courseId1}">
+									<option value="${item.courseId}">${item.courseName}</option>
+								</c:if>
+							</c:forEach>
+						</select>
 					</li>
-					<input type="hidden" name="method" value="changeTeacher">
+					<li>
+						<a style="display: block;float: left;width: 70px;">课程二：</a>
+						<select name="courseId2">
+							<c:if test="${requestScope.teacher.courseId2==null || requestScope.teacher.courseId2==''}">
+								<option value="" selected>当前无课程</option>
+							</c:if>
+							<c:forEach items="${requestScope.courseList}" var="item">
+								<c:if test="${item.courseId==requestScope.teacher.courseId2}">
+									<option value="${item.courseId}" selected>${item.courseName}</option>
+								</c:if>
+								<c:if test="${item.courseId!=requestScope.teacher.courseId2}">
+									<option value="${item.courseId}">${item.courseName}</option>
+								</c:if>
+							</c:forEach>
+						</select>
+					</li>
+					<li>
+						<a style="display: block;float: left;width: 70px;">课程三：</a>
+						<select name="courseId3">
+							<c:if test="${requestScope.teacher.courseId3==null || requestScope.teacher.courseId3==''}">
+								<option value="" selected>当前无课程</option>
+							</c:if>
+							<c:forEach items="${requestScope.courseList}" var="item">
+								<c:if test="${item.courseId==requestScope.teacher.courseId3}">
+									<option value="${item.courseId}" selected>${item.courseName}</option>
+								</c:if>
+								<c:if test="${item.courseId!=requestScope.teacher.courseId3}">
+									<option value="${item.courseId}">${item.courseName}</option>
+								</c:if>
+							</c:forEach>
+						</select>
+					</li>
 					<input style="margin-left: 100px;" type="submit" value="提交"/>
 				</form>
 			</ul>

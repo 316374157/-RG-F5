@@ -26,10 +26,4 @@ $(function () {
     if(only == "AllSignInfo"){
         $("#allsigninfo").addClass("active");
     }
-    if(only == "Teacher"){
-        $("#teacher").addClass("active");
-    }
-    if(only == "Student"){
-        $("#student").addClass("active");
-    }
 })

@@ -22,7 +22,7 @@
 		<div class="main_part_nav">
 			<ul>
 				<form action="CourseServlet" method="post">
-					<input type="hidden" name="method" value="addCourse">
+					<input type="hidden" name="method" value="addCourseAdmin">
 					<li>
 						<a style="display: block;float: left;width: 70px;">课程编号：</a><input type="text" name="courseId"/>
 					</li>

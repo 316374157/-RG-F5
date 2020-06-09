@@ -16,12 +16,14 @@
 		</div>
 		<div class="main_part_nav">
 			<ul>
-				<form action="AdminServlet" method="post">
+				<form action="CourseServlet" method="post">
+					<input name="method" value="update" type="hidden" readonly >
+					<input name="id" value="${param.id}" type="hidden" readonly >
 					<li>
-						<label>课程编号：</label><input type="text" placeholder="id" name="courseid">
+						<label>课程编号：</label><input type="text" name="courseId" value="${param.courseId}">
 					</li>
 					<li>
-						<label>课程名称：</label><input type="text" placeholder="name" name="coursename">
+						<label>课程名称：</label><input type="text" name="courseName" value="${param.courseName}">
 					</li>
 					<input style="margin-left: 100px;" type="submit" value="提交"/>
 				</form>

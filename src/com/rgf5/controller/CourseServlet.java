@@ -36,4 +36,22 @@ public class CourseServlet extends BaseServlet {
         request.setAttribute("courseList",courseList);
         request.getRequestDispatcher("pages/admin/coursemanager.jsp").forward(request,response);
     }
+
+    protected void addCourseAdmin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Course course = WebUtils.paramsToBean(request, new Course());
+        courseService.add(course);
+        getAllCourse(request,response);
+    }
+
+    protected void delete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Course course = WebUtils.paramsToBean(request, new Course());
+        courseService.delete(course);
+        getAllCourse(request,response);
+    }
+
+    protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Course course = WebUtils.paramsToBean(request, new Course());
+        courseService.update(course);
+        getAllCourse(request,response);
+    }
 }

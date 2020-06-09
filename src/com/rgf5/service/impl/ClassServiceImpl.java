@@ -25,7 +25,7 @@ public class ClassServiceImpl implements ClassService {
 
     @Override
     public boolean add(Classes classes) {
-        return false;
+        return classDao.add(classes);
     }
 
     @Override

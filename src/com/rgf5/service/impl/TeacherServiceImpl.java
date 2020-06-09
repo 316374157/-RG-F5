@@ -23,7 +23,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public boolean add(Teacher teacher) {
-        return false;
+        return teacherDao.add(teacher);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public Teacher getBeanById(Teacher teacher) {
-        return null;
+        return teacherDao.getBeanById(teacher.getId());
     }
 
     @Override
@@ -68,6 +68,6 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public boolean delete(Teacher teacher) {
-        return false;
+        return teacherDao.delete(teacher.getId());
     }
 }

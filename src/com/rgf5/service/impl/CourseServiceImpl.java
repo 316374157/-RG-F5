@@ -30,12 +30,12 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public boolean update(Course course) {
-        return false;
+        return courseDao.update(course);
     }
 
     @Override
     public boolean delete(Course course) {
-        return false;
+        return courseDao.delete(course.getId());
     }
 
     @Override
