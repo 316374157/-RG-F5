@@ -20,7 +20,7 @@
 			<div class="kj">课程信息</div>
 		</div>
 		<div class="main_part_nav">
-			<ul>
+			<ul style="width: 50%;">
 				<form action="CourseServlet" method="post">
 					<input type="hidden" name="method" value="addCourseAdmin">
 					<li>

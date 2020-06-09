@@ -19,7 +19,7 @@
 			}
 			const msg_socket = new WebSocket("ws"+realPath+"/ChatRoomServlet");
 			msg_socket.onmessage = function(data){
-				document.getElementById("dm").innerHTML += " "+data.data;
+				document.getElementById("dm").innerHTML += " "+data.data+"<br />";
 			}
 			function sendMsg(){
 				const msg = document.getElementById("msg").value;
@@ -29,6 +29,7 @@
 			}
 			$("#sendBtn").click(function (){
 				sendMsg();
+				$("#msg").val("");
 			})
 		})
 	</script>
@@ -45,18 +46,10 @@
 				<img id="receive" class="live">
 			</div>
 			<div class="word">
-				<div class="see">
-					<div id="dm" class="see" style="width:320px ;height:240px ;position: absolute;background: rgba(0,0,0,0.2);top:0px;left:0px;color: white;overflow: auto;"></div>
-					<ul>
-						<li>XXX：111</li>
-						<li>XXX：222</li>
-						<li>XXX：333</li>
-						<li>XXX：444</li>
-					</ul>
-				</div>
+				<div id="dm" class="see" style="top:0px;left:0px;color: #1687d9;overflow: auto;font-size: 20px;"></div>
 				<div class="say">
-					<input id="msg" class="sayWord" type="text" placeholder="发送弹幕" style="width: 90%"/>
-					<button id="sendBtn" style="float: right;width: 10%">发送</button>
+					<input id="msg" class="sayWord" type="text" placeholder="发送弹幕" style="width: 85%"/>
+					<button id="sendBtn" style="float: right;width: 15%;height: 24px;">发送</button>
 				</div>
 			</div>
 		</div>

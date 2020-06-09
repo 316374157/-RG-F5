@@ -18,6 +18,7 @@
 				<li id="teacher" class=""><a href="TeacherServlet?method=getAllTeacher">管理教师</a></li>
 				<li id="allsigninfo" class=""><a href="SignServlet?method=getAllSignAdmin">签到详情</a></li>
 				<li id="student" class=""><a href="StudentServlet?method=getAllStudent">学生详情</a></li>
+				<li><a href="AdminServlet?method=adminOut">登出</a></li>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container-fluid -->

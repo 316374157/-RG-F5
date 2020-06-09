@@ -27,7 +27,7 @@
 			<div class="kj">教师信息</div>
 		</div>
 		<div class="main_part_nav">
-			<ul>
+			<ul style="width: 50%;">
 				<form action="TeacherServlet" method="post">
 					<input type="hidden" name="method" value="addTeacher" readonly>
 					<li>

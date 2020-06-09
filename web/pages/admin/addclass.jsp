@@ -27,7 +27,7 @@
 				<div class="kj">班级信息</div>
 			</div>
 			<div class="main_part_nav">
-				<ul>
+				<ul style="width: 50%;">
 					<form action="ClassesServlet" method="post">
 						<input type="hidden" name="method" value="addClass">
 						<li>

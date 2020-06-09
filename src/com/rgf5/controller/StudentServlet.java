@@ -124,4 +124,11 @@ public class StudentServlet extends BaseServlet {
         request.setAttribute("studentList",studentList);
         request.getRequestDispatcher("pages/admin/studentdetail.jsp").forward(request, response);
     }
+
+    protected void studentOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        response.sendRedirect("index.jsp");
+        System.out.println(session);
+    }
 }

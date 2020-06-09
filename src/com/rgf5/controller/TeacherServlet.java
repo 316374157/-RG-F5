@@ -211,4 +211,11 @@ public class TeacherServlet extends BaseServlet {
         teacherService.delete(teacher);
         getAllTeacher(request,response);
     }
+
+    protected void teacherOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        response.sendRedirect("index.jsp");
+        System.out.println(session);
+    }
 }

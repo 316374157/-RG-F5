@@ -18,20 +18,22 @@
 		<div class="main_part_nav">
 			<table class="classes">
 				<thead>
-				<tr>
-					<th scope="col">学号</th>
-					<th scope="col">姓名</th>
-					<th scope="col">性别</th>
-					<th scope="col">班级</th>
-				</tr>
+					<tr>
+						<th style="width: 20%;" scope="col">学号</th>
+						<th style="width: 20%;" scope="col">姓名</th>
+						<th style="width: 20%;" scope="col">性别</th>
+						<th style="width: 20%;" scope="col">班级</th>
+						<th style="width: 20%;" scope="col">操作</th>
+					</tr>
 				</thead>
 				<tbody>
 				<c:forEach items="${requestScope.studentList}" var="item">
 					<tr>
-						<td>${item.username}</td>
-						<td>${item.studentName}</td>
-						<td>${item.sex}</td>
-						<td>${requestScope.classMap.get(item.classId)}</td>
+						<td style="width: 20%;">${item.username}</td>
+						<td style="width: 20%;">${item.studentName}</td>
+						<td style="width: 20%;">${item.sex}</td>
+						<td style="width: 20%;">${requestScope.classMap.get(item.classId)}</td>
+						<td  style="width: 20%;"><a href="">修改</a></td>
 					</tr>
 				</c:forEach>
 				</tbody>
@@ -44,6 +46,6 @@
 	<p>Copyright ©</p>
 	<p>http://</p>
 </div>
-<span id="Only" style="display: none;">Course</span>
+<span id="Only" style="display: none;">Student</span>
 </body>
 </html>

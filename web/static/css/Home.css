@@ -361,6 +361,45 @@ body{
     margin: 0;
 }
 
+.but{
+    line-height: 150px;
+    border-radius: 75px;
+    float: right;
+
+    width: 30%;
+    height: 150px;
+    margin: 0 1.5% 20px;
+    border: 1px #e4f0ed solid;
+    box-shadow: 0 0 1px 2px #f7f7f7;
+}
+
+.but a
+{
+    display: inline-block;
+    float: left;
+
+    width: 100%;
+    height: 80px;
+}
+
+.but a:hover
+{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.but:hover
+{
+    color: #ffffff;
+    background: lightgray;
+}
+
+.but p{
+    font-size: 35px;
+    text-align: center;
+    margin: 0;
+}
+
 .footer
 {
     width: 100%;

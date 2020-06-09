@@ -11,6 +11,7 @@
                 <li id="data" class=""><a href="pages/student/databank.jsp">教学资源</a></li>
                 <li id="sign" class=""><a href="SignServlet?method=getMySign">签到</a></li>
                 <li id="live" class=""><a href="pages/student/view.jsp">直播</a></li>
+                <li><a href="StudentServlet?method=studentOut">登出</a> </li>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->
