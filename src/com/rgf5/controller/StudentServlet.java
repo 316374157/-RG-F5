@@ -6,9 +6,11 @@ import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 import com.rgf5.dao.ClassDao;
 import com.rgf5.dao.CourseDao;
+import com.rgf5.dao.StudentDao;
 import com.rgf5.dao.TeacherDao;
 import com.rgf5.dao.impl.ClassDaoImpl;
 import com.rgf5.dao.impl.CourseDaoImpl;
+import com.rgf5.dao.impl.StudentDaoImpl;
 import com.rgf5.dao.impl.TeacherDaoImpl;
 import com.rgf5.service.ClassService;
 import com.rgf5.service.CourseService;
@@ -107,6 +109,7 @@ public class StudentServlet extends BaseServlet {
         String courseId = request.getParameter("courseId");
         CourseDao courseDao = new CourseDaoImpl();
         Course beanByCourseId = courseDao.getBeanByCourseId(courseId);
+        System.out.println(beanByCourseId);
         request.setAttribute("beanByCourseId",beanByCourseId);
         request.getRequestDispatcher("pages/student/CourseInfo.jsp").forward(request, response);
     }
@@ -149,5 +152,20 @@ public class StudentServlet extends BaseServlet {
         session.invalidate();
         response.sendRedirect("index.jsp");
         System.out.println(session);
+    }
+
+    protected void getMyCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        StudentService studentService = new StudentServiceImpl();
+        HttpSession session = request.getSession();
+        Student student = (Student) session.getAttribute("student");
+        StudentDao studentDao = new StudentDaoImpl();
+        Student beanByStudentId = studentDao.getBeanByStudentId(student.getUsername());
+        ClassDao classDao = new ClassDaoImpl();
+        Classes beanByClassId = classDao.getBeanByClassId(beanByStudentId.getClassId());
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> beanListClassAll = courseService.getBeanListClassAll(beanByClassId);
+        request.setAttribute("beanByClassId",beanByClassId);
+        request.setAttribute("beanListClassAll",beanListClassAll);
+        request.getRequestDispatcher("pages/student/databank.jsp").forward(request, response);
     }
 }

@@ -38,7 +38,7 @@
 				 <div class="classes">
 					 <c:forEach items="${requestScope.courseList}" var="item">
 						 <c:if test="${!empty item}">
-							 <a href="pages/student/coursedetail.jsp">
+							 <a href="pages/student/CourseInfo.jsp">
 								 <div class="classess" style="margin-top: 0;">
 									 <span></span>
 									 <div class="tz">${item.courseName}</div>

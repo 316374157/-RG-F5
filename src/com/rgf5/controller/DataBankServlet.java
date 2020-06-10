@@ -32,6 +32,15 @@ public class DataBankServlet extends BaseServlet {
         request.getRequestDispatcher("TeacherServlet?method=getMyClass").forward(request, response);
     }
 
+    protected void getFileForStu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Course course = WebUtils.paramsToBean(request, new Course());
+        Classes classes = WebUtils.paramsToBean(request, new Classes());
+        DataBankService dataBankService = new DataBankServiceImpl();
+        LinkedHashMap<String, List<DataBank>> fileMap = dataBankService.getFileByCourseIdAndClassId(course, classes);
+        request.setAttribute("fileMap", fileMap);
+        request.getRequestDispatcher("StudentServlet?method=getMyCourse").forward(request, response);
+    }
+
     protected void fileDelete(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Course course = WebUtils.paramsToBean(request, new Course());

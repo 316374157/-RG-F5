@@ -25,7 +25,7 @@
 			<div class="course">
 				<img src="static/image/Course.png" alt=""/>
 				<div class="courseuse">
-					<a href="TeacherServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId2}" class="enter">进入课程</a>
+					<a href="StudentServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId2}" class="enter">进入课程</a>
 				</div>
 			</div>
 		</c:if>
@@ -33,7 +33,7 @@
 			<div class="course">
 				<img src="static/image/Course.png" alt=""/>
 				<div class="courseuse">
-					<a href="TeacherServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId3}" class="enter">进入课程</a>
+					<a href="StudentServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId3}" class="enter">进入课程</a>
 				</div>
 			</div>
 		</c:if>
@@ -41,7 +41,7 @@
 			<div class="course">
 				<img src="static/image/Course.png" alt=""/>
 				<div class="courseuse">
-					<a href="TeacherServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId4}" class="enter">进入课程</a>
+					<a href="StudentServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId4}" class="enter">进入课程</a>
 				</div>
 			</div>
 		</c:if>
@@ -49,7 +49,7 @@
 			<div class="course">
 				<img src="static/image/Course.png" alt=""/>
 				<div class="courseuse">
-					<a href="TeacherServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId5}" class="enter">进入课程</a>
+					<a href="StudentServlet?method=getCourseInfo&courseId=${requestScope.beanByClassId.courseId5}" class="enter">进入课程</a>
 				</div>
 			</div>
 		</c:if>

@@ -50,6 +50,7 @@
     <p>Copyright ©</p>
     <p>http://</p>
 </div>
+<span id="Only" style="display: none;">AllSignInfo</span>
 <script>
     $('div.plan_nav1_part').mousemove(function () {
         var n = $("div.plan_nav1_part").index(this)

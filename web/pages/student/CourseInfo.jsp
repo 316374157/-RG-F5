@@ -11,7 +11,7 @@
 <div class="main">
     <div class="main_part">
         <div class="main_part_top">
-            <div class="kj">${requestScope.beanByCourseId.courseName}</div>
+            <div class="kj" style="width: 80%;">${requestScope.beanByCourseId.courseName}</div>
         </div>
         <div style="padding: 30px 50px">
             <h1>课程介绍</h1>

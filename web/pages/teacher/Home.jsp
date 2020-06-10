@@ -27,7 +27,7 @@
 		</div>
         <div class="main_part" style="float: right;border: none;margin-bottom: 0;">
             <div class="sign">
-                <a href="javascript:void(0)">
+                <a href="SignServlet?method=getSign">
                     <div class="courses">
                         <p class="tz">签到</p>
                     </div>
@@ -45,7 +45,7 @@
             <div class="main_part_top">
                 <div class="kj">班级</div>
                 <div class="more">
-                    <a href="javascript:void(0)">MORE+</a>
+                    <a href="TeacherServlet?method=getMyAllClass">MORE+</a>
                 </div>
             </div>
             <div class="classes">
@@ -63,7 +63,7 @@
             <div class="main_part_top">
                 <div class="kj">课程</div>
                 <div class="more">
-                    <a href="javascript:void(0)">MORE+</a>
+                    <a href="pages/teacher/Course.jsp">MORE+</a>
                 </div>
             </div>
             <div class="course">
