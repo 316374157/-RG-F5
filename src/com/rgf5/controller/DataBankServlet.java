@@ -38,7 +38,7 @@ public class DataBankServlet extends BaseServlet {
         DataBankService dataBankService = new DataBankServiceImpl();
         LinkedHashMap<String, List<DataBank>> fileMap = dataBankService.getFileByCourseIdAndClassId(course, classes);
         request.setAttribute("fileMap", fileMap);
-        request.getRequestDispatcher("StudentServlet?method=getMyCourse").forward(request, response);
+        request.getRequestDispatcher("StudentServlet?method=toFilePage").forward(request, response);
     }
 
     protected void fileDelete(HttpServletRequest request, HttpServletResponse response)

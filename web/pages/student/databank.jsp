@@ -12,17 +12,17 @@
 <div class="main">
 	<div class="menu">
 		<ul id="classes" class="nav nav-pills nav-stacked">
-			<li class="choses" role="presentation"><a href="javascript:void(0)">${requestScope.beanByClassId.className}</a></li>
+			<li class="choses" role="presentation"><a href="javascript:void(0)">${requestScope.classes.className}</a></li>
 			<ul id="courses" class="nav nav-pills nav-stacked half" style="display: none;">
-			<c:forEach items="${requestScope.beanListClassAll.get(requestScope.beanByClassId.className)}" var="list">
-				<li class="chosess"><a href="DataBankServlet?method=getFileForStu&className=${requestScope.beanByClassId.className}&courseName=${list}">${list}</a></li>
+			<c:forEach items="${requestScope.courseList}" var="list">
+				<li class="chosess"><a href="DataBankServlet?method=getFileForStu&className=${requestScope.classes.className}&courseName=${list.courseName}">${list.courseName}</a></li>
 			</c:forEach>
 			</ul>
 		</ul>
 	</div>
 	<div class="main_part">
 		<div class="main_part_top">
-			<div class="kj"><a id="classess" href="javascript:void(0)">${requestScope.beanByClassId.className}</a> >> <a id="coursess" href="javascript:void(0)">${param.courseName}</a> >> <a id="filefolder"></a></div>
+			<div class="kj"><a id="classess" href="javascript:void(0)">${requestScope.classes.className}</a> >> <a id="coursess" href="javascript:void(0)">${param.courseName}</a> >> <a id="filefolder"></a></div>
 		</div>
 		<div class="main_part_nav">
 			<ul class="all" id="datas">

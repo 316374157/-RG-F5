@@ -6,11 +6,9 @@ import com.rgf5.bean.Student;
 import com.rgf5.bean.Teacher;
 import com.rgf5.dao.ClassDao;
 import com.rgf5.dao.CourseDao;
-import com.rgf5.dao.StudentDao;
 import com.rgf5.dao.TeacherDao;
 import com.rgf5.dao.impl.ClassDaoImpl;
 import com.rgf5.dao.impl.CourseDaoImpl;
-import com.rgf5.dao.impl.StudentDaoImpl;
 import com.rgf5.dao.impl.TeacherDaoImpl;
 import com.rgf5.service.ClassService;
 import com.rgf5.service.CourseService;
@@ -154,18 +152,18 @@ public class StudentServlet extends BaseServlet {
         System.out.println(session);
     }
 
-    protected void getMyCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        StudentService studentService = new StudentServiceImpl();
+
+    protected void toFilePage(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         Student student = (Student) session.getAttribute("student");
-        StudentDao studentDao = new StudentDaoImpl();
-        Student beanByStudentId = studentDao.getBeanByStudentId(student.getUsername());
-        ClassDao classDao = new ClassDaoImpl();
-        Classes beanByClassId = classDao.getBeanByClassId(beanByStudentId.getClassId());
+        Classes classes = new Classes();
+        classes.setClassId(student.getClassId());
+        ClassService classService = new ClassServiceImpl();
+        classes = classService.getBeanByClassId(classes);
         CourseService courseService = new CourseServiceImpl();
-        List<Course> beanListClassAll = courseService.getBeanListClassAll(beanByClassId);
-        request.setAttribute("beanByClassId",beanByClassId);
-        request.setAttribute("beanListClassAll",beanListClassAll);
+        List<Course> courseList = courseService.getBeanListClassAll(classes);
+        request.setAttribute("classes",classes);
+        request.setAttribute("courseList",courseList);
         request.getRequestDispatcher("pages/student/databank.jsp").forward(request, response);
     }
 }
