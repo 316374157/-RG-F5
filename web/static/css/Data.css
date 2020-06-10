@@ -83,11 +83,13 @@ body{
 .main .main_part .main_part_nav ul li a
 {
     color: #4d4d4d;
+    text-decoration: none;
 }
 
 .main .main_part .main_part_nav ul li a:hover
 {
     color: lightgray;
+    text-decoration: none;
 }
 
 a:hover{
@@ -114,11 +116,13 @@ a:hover{
 .main .main_part .main_part_nav ul ul table li tr td a
 {
     color: #4d4d4d;
+    text-decoration: none;
 }
 
 .main .main_part .main_part_nav ul ul table li tr td a:hover
 {
     color: lightgray;
+    text-decoration: none;
 }
 
 .all{
@@ -131,10 +135,12 @@ a:hover{
 
 .files li a:nth-child(n+1){
     margin: 0 10px;
+    text-decoration: none;
 }
 
 .files li a:nth-child(1){
     margin-right: 70%;
+    text-decoration: none;
 }
 
 .footer

@@ -69,6 +69,7 @@ body{
 .main .main_part .main_part_nav ul li a
 {
     color: #4d4d4d;
+    text-decoration: none;
 }
 
 .main .main_part .main_part_nav ul li a:hover

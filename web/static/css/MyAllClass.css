@@ -47,7 +47,7 @@ body{
 .classes a
 {
     display: inline-block;
-
+    text-decoration: none;
     width: 40%;
     height: 80px;
     margin: 20px 5% 0;
@@ -55,10 +55,12 @@ body{
 
 .classes a:nth-child(2n-1){
     float: left;
+    text-decoration: none;
 }
 
 .classes a:nth-child(2n){
     float: right;
+    text-decoration: none;
 }
 
 .classes .classess
