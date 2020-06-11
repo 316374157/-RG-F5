@@ -17,40 +17,40 @@
         <div class="but">
             <a href="javascript:void(0)">
                 <div class="aaa">
-                    <p class="tz">修改密码</p>
+                    <p class="tz">${sessionScope.admin.username}</p>
                 </div>
             </a>
         </div>
         <div class="but">
-            <a href="javascript:void(0)">
+            <a href="ClassesServlet?method=getAllClasses">
                 <div class="aaa">
                     <p class="tz">班级</p>
                 </div>
             </a>
         </div>
         <div class="but">
-            <a href="javascript:void(0)">
+            <a href="CourseServlet?method=getAllCourse">
                 <div class="aaa">
                     <p class="tz">课程</p>
                 </div>
             </a>
         </div>
         <div class="but">
-            <a href="javascript:void(0)">
+            <a href="TeacherServlet?method=getAllTeacher">
                 <div class="aaa">
                     <p class="tz">老师</p>
                 </div>
             </a>
         </div>
         <div class="but">
-            <a href="javascript:void(0)">
+            <a href="SignServlet?method=getAllSignAdmin">
                 <div class="aaa">
                     <p class="tz">签到</p>
                 </div>
             </a>
         </div>
         <div class="but">
-            <a href="javascript:void(0)">
+            <a href="StudentServlet?method=getAllStudent">
                 <div class="aaa">
                     <p class="tz">学生</p>
                 </div>

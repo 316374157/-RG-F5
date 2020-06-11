@@ -15,8 +15,10 @@
 			<li class="choses" role="presentation"><a href="javascript:void(0)">${requestScope.classes.className}</a></li>
 			<ul id="courses" class="nav nav-pills nav-stacked half" style="display: none;">
 			<c:forEach items="${requestScope.courseList}" var="list">
-				<li class="chosess"><a href="DataBankServlet?method=getFileForStu&className=${requestScope.classes.className}&courseName=${list.courseName}">${list.courseName}</a></li>
-			</c:forEach>
+                <c:if test="${!empty list}">
+				<li class="chosess"><a class="emptys" href="DataBankServlet?method=getFileForStu&className=${requestScope.classes.className}&courseName=${list.courseName}">${list.courseName}</a></li>
+                </c:if>
+            </c:forEach>
 			</ul>
 		</ul>
 	</div>
@@ -109,29 +111,15 @@
 				$("#courses .chosess").eq(i).addClass("active");
 			}
 		}
-	})
-	$("#click1").click(function () {
-		var num = $(".filesName").length;
-		var folderName = $("#folderName").val();
-		for(i=0;i<=num;i++){
-			var filesName = $(".filesName").eq(i).text();
-			if(filesName == folderName){
-				console.log(filesName == folderName);
-				$("#mis").show();
-				break;
+		for(x = 0;x <= 5;x++){
+			if($(".emptys:eq(x)").text() == ""){
+				$(".emptys:eq(x)").parent().remove();
+				console.log(x);
 			}
 			else{
-				console.log(filesName == folderName);
-				$("#mis").hide();
+				continue;
 			}
 		}
-		if($("#mis").is(':hidden')){
-			var newfolder = '<li style="margin-top: 10px;" class="chose"><a class="filesName" href="javascript:void(0)">'+folderName+'</a></li>';
-			$(".files:last").after(newfolder);
-		}
-	})
-	$("#close").click(function () {
-		$("#folderName").val("");
 	})
 </script>
 </body>

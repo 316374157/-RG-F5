@@ -365,8 +365,7 @@ body{
 .but{
     line-height: 150px;
     border-radius: 75px;
-    float: right;
-
+    display: inline-block;
     width: 30%;
     height: 150px;
     margin: 0 1.5% 20px;
