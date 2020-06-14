@@ -59,6 +59,7 @@ public class WebUtils {
         ClassService classService = new ClassServiceImpl();
         LinkedHashMap<String, String> map = new LinkedHashMap<>();
         Map<String, Object> result = new HashMap<>();
+        result.put("error", "false");
         DiskFileItemFactory fileItemFactory = new DiskFileItemFactory();
         ServletFileUpload fileUpload = new ServletFileUpload(fileItemFactory);
         fileUpload.setHeaderEncoding("utf-8");
@@ -72,11 +73,21 @@ public class WebUtils {
                     course.setCourseName(map.get("courseName"));
                     course = courseService.getBeanByCourseName(course);
                     classes = classService.getBeanByClassName(classes);
+                    if(course==null || classes == null){
+                        result.put("error", "true");
+                        return result;
+                    }
                     System.out.println(classes);
                     System.out.println(course);
+                    result.put("course", course);
+                    result.put("classes", classes);
                     rootPath = rootPath+"\\"+classes.getClassId()+"\\"+course.getCourseId()+"\\";
                     System.out.println(rootPath);
                     String name = fileItem.getName();
+                    if(("").equals(name)||name==null){
+                        result.put("error", "true");
+                        return result;
+                    }
                     dataBank.setDataName(name);
                     dataBank.setClassId(classes.getClassId());
                     dataBank.setCourseId(course.getCourseId());
@@ -95,8 +106,6 @@ public class WebUtils {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        result.put("course", course);
-        result.put("classes", classes);
         result.put("dataBank", dataBank);
         return result;
     }

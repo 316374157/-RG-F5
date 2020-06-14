@@ -10,6 +10,12 @@
     <script src="static/js/bootstrap.js"></script>
     <script type="text/javascript">
         $(function () {
+            $("#upload").click(function () {
+                if ($("#filename").val()===''||$("#filename").val()===null){
+                    alert("上传文件不能为空！");
+                    return false;
+                }
+            })
         })
     </script>
 </head>
@@ -75,11 +81,11 @@
                                     <br />
                                     <label style="margin: 10px 10px;width: 70px;">文件夹名：</label><input id="file" readonly="readonly" name="dataType"/>
                                     <br />
-                                    <label style="margin: 10px 10px;width: 70px;">请选择文件</label><input type="file" name="file" />
+                                    <label style="margin: 10px 10px;width: 70px;">请选择文件</label><input type="file" name="file" id="filename" />
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                    <input type="submit" value="上传" class="btn btn-primary">
+                                    <input type="submit" id="upload" value="上传" class="btn btn-primary">
                                 </div>
                             </form>
                         </div>

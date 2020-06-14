@@ -11,17 +11,13 @@
     <title>Title</title>
 </head>
 <body>
+
     <form action="FileUploadServlet" method="post" enctype="multipart/form-data">
         <input name="className" value="2017级软件工程">
         <input name="courseName" value="软件工程">
         <input name="dataType" value="图片">
         <input type="file" name="file">
-        <input type="submit" value="上传">
-    </form>
-
-    <form action="FileDownloadServlet" method="post">
-        <input name="id" value="001">
-        <input type="submit" value="下载">
+        <input type="submit" value="测试">
     </form>
 </body>
 </html>

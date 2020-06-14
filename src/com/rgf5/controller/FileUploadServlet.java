@@ -25,9 +25,17 @@ public class FileUploadServlet extends HttpServlet {
             HttpServletResponse response)
             throws ServletException, IOException {
         Map<String, Object> map = WebUtils.fileUpLoad(request);
+        String error = (String) map.get("error");
         Course course = (Course) map.get("course");
         DataBank dataBank = (DataBank) map.get("dataBank");
         Classes classes = (Classes) map.get("classes");
+        if ("true".equals(error)) {
+            request.getRequestDispatcher(
+                  "DataBankServlet?method=getFileByCourseAndClass&className="
+                      + classes.getClassName()
+                      + "&courseName="
+                      + course.getCourseName()).forward(request, response);
+                }
         DataBankService dataBankService = new DataBankServiceImpl();
         HttpSession session = request.getSession();
         Teacher teacher = (Teacher) session.getAttribute("teacher");
