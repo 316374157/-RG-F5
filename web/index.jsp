@@ -48,13 +48,13 @@
             <label>
               <input type="checkbox"> 记住密码
             </label>
-            <a href="CourseServlet?method=getAllStudent" style="width: 50px;height: 30px;margin-left: 150px">注册</a>
           </div>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group" style="padding-left: 50px;">
         <div class="col-sm-offset-2 col-sm-10" style="position: absolute;margin: 0 auto">
           <button type="submit" class="btn btn-default" id="login">登录</button>
+          <a href="CourseServlet?method=getAllStudent" style="width: 50px;height: 30px;margin-left: 50px">注册</a>
         </div>
       </div>
     </form>
