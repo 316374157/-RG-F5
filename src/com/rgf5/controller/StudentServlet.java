@@ -77,6 +77,8 @@ public class StudentServlet extends BaseServlet {
         request.setAttribute("teacher1",teacher1);
         request.getRequestDispatcher("pages/student/home.jsp").forward(request, response);
     }
+
+
     protected void register(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Student student = WebUtils.paramsToBean(request, new Student());
@@ -144,7 +146,18 @@ public class StudentServlet extends BaseServlet {
         StudentService studentService = new StudentServiceImpl();
         studentService.update(student);
         session.setAttribute("student", student);
-        response.sendRedirect("pages/student/myinfo.jsp");
+        toInfo(request, response);
+    }
+
+    protected void toInfo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        ClassService classService = new ClassServiceImpl();
+        List<Classes> classesList = classService.getBeanListAll();
+        HashMap<String, String> map = new HashMap<>();
+        for (Classes classes : classesList) {
+          map.put(classes.getClassId(),classes.getClassName());
+        }
+        request.setAttribute("map", map);
+        request.getRequestDispatcher("pages/student/myinfo.jsp").forward(request, response);
     }
 
     protected void updateStu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -153,6 +166,7 @@ public class StudentServlet extends BaseServlet {
         studentService.update(student);
         getAllStudent(request,response);
     }
+
 
     protected void studentOut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

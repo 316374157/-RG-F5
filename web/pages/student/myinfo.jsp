@@ -29,7 +29,7 @@
 					<a>性别：${sessionScope.student.sex}</a>
 				</li>
 				<li>
-					<a>班级：${sessionScope.student.classId}</a>
+					<a>班级：${requestScope.map.get(sessionScope.student.classId)}</a>
 				</li>
 			</ul>
 		</div>
