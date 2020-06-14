@@ -31,7 +31,7 @@
 			 <div class="main_part_top">
 				 <div class="kj">我的课程</div>
 				 <div class="more">
-					 <a href="./#">MORE+</a>
+					 <a href="StudentServlet?method=getMyAllCourse">MORE+</a>
 				 </div>
 			 </div>
 			 <div class="main_part_nav">
@@ -47,66 +47,6 @@
 						 </c:if>
 					 </c:forEach>
 				 </div>
-			 </div>
-		 </div>
-		 <div class="main_part">
-			 <div class="main_part_top">
-				 <div class="kj">我的班级</div>
-				 <div class="more">
-					 <a href="./#">MORE+</a>
-				 </div>
-			 </div>
-			 <div class="course">
-				 <c:if test="${!empty requestScope.course1}">
-					 <a>
-						 <div class="courses">
-							 <span></span>
-							 <div class="tz">${requestScope.teacher1.teacherName}
-								 <p style="float: right;">${requestScope.course1.courseName}</p>
-							 </div>
-						 </div>
-					 </a>
-				 </c:if>
-				 <c:if test="${!empty requestScope.course2}">
-					 <a>
-						 <div class="courses">
-							 <span></span>
-							 <div class="tz">${requestScope.teacher2.teacherName}
-								 <p style="float: right;">${requestScope.course2.courseName}</p>
-							 </div>
-						 </div>
-					 </a>
-				 </c:if>
-				 <c:if test="${!empty requestScope.course3}">
-					 <a>
-						 <div class="courses">
-							 <span></span>
-							 <div class="tz">${requestScope.teacher3.teacherName}
-								 <p style="float: right;">${requestScope.course3.courseName}</p>
-							 </div>
-						 </div>
-					 </a>
-				 </c:if>
-				 <c:if test="${!empty requestScope.course4}">
-					 <a>
-						 <div class="courses">
-							 <span></span>
-							 <div class="tz">${requestScope.teacher4.teacherName}
-								 <p style="float: right;">${requestScope.course4.courseName}</p>
-							 </div>
-						 </div>
-					 </a>
-				 </c:if>
-				 <c:if test="${!empty requestScope.course5}">
-					 <a>
-						 <div class="courses">
-							 <span></span>
-							 <div class="tz">${requestScope.teacher5.teacherName}
-								 <p style="float: right;">${requestScope.course5.courseName}</p>
-							 </div>
-						 </div>
-					 </a>
-				 </c:if>
 			 </div>
 		 </div>
 	 </div>
