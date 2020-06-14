@@ -59,8 +59,8 @@
 		<div class="form-group" >
 			<label  class="col-sm-2 control-label">性别：</label>
 			<div class="col-sm-10">
-				<label for="man" class="col-sm-2 control-label">男</label>
-				<input class="radio" id="man" type="radio" name="sex" value="男">
+				<label for="man" class="col-sm-2 control-label" >男</label>
+				<input class="radio" id="man" type="radio" name="sex" value="男" checked>
 				<label for="woman" class="col-sm-2 control-label">女</label>
 				<input class="radio" id="woman" type="radio" name="sex" value="女">
 			</div>
@@ -69,8 +69,8 @@
 				<label for="classId" class="col-sm-2 control-label">班级：</label>
 				<div class="col-sm-10">
 					<select class="btn btn-default dropdown-toggle" name="classId" id="classId" style="float: left">
-						<c:forEach items="${requestScope.courseList}" var="item">
-							<option value="${item.courseId}">${item.courseName}</option>
+						<c:forEach items="${requestScope.classesList}" var="item">
+							<option value="${item.classId}">${item.className}</option>
 						</c:forEach>
 					</select>
 				</div>

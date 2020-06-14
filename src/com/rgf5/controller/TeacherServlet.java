@@ -66,7 +66,7 @@ public class TeacherServlet extends BaseServlet {
         Teacher newteacher = new Teacher(id,username,password,gender,courceId1,courceId2,courceId3,teachername);
         teacherDao.update(newteacher);
         session.setAttribute("teacher", newteacher);
-        response.sendRedirect("pages/teacher/MyInfo.jsp");
+        response.sendRedirect("TeacherServlet?method=searchCourse");
     }
 
     public void searchCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException

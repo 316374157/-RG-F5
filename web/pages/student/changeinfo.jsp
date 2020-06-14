@@ -18,17 +18,18 @@
         <div class="main_part_nav">
             <ul>
                 <form action="StudentServlet" method="post">
+                    <input name="method" value="update" readonly hidden>
+                    <input name="id" value="${sessionScope.student.id}" readonly hidden>
+                    <input name="classId" value="${sessionScope.student.classId}" readonly hidden>
+                    <input name="username" value="${sessionScope.student.username}" readonly hidden>
                     <li>
-                        <a>姓名：</a><input type="text" placeholder="name" name="studentname" value=${sessionScope.student.studentName}>
+                        <a>姓名：</a><input type="text" placeholder="name" name="studentName" value=${sessionScope.student.studentName}>
                     </li>
                     <li>
-                        <a>学号：</a><input type="text" placeholder="name" name="username" value=${sessionScope.student.username}>
+                        <a>性别：</a><input type="text" placeholder="gender" name="sex" value=${sessionScope.student.sex}>
                     </li>
                     <li>
-                        <a>性别：</a><input type="text" placeholder="gender" name="gender" value=${sessionScope.student.sex}>
-                    </li>
-                    <li>
-                        <a>密码：</a><input type="password" placeholder="password" name="password" value=${sessionScope.student.passWd}>
+                        <a>密码：</a><input type="password" placeholder="password" name="passWd" value=${sessionScope.student.passWd}>
                     </li>
                     <input style="margin-left: 100px;" type="submit" value="提交" />
                 </form>

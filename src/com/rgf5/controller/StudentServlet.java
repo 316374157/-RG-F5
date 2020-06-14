@@ -138,6 +138,15 @@ public class StudentServlet extends BaseServlet {
         request.getRequestDispatcher("pages/admin/updatestudent.jsp").forward(request, response);
     }
 
+    protected void update(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Student student = WebUtils.paramsToBean(request, new Student());
+        StudentService studentService = new StudentServiceImpl();
+        studentService.update(student);
+        session.setAttribute("student", student);
+        response.sendRedirect("pages/student/myinfo.jsp");
+    }
+
     protected void updateStu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Student student = WebUtils.paramsToBean(request, new Student());
         StudentService studentService = new StudentServiceImpl();

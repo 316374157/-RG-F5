@@ -63,4 +63,10 @@ public class ClassesServlet extends BaseServlet {
         request.setAttribute("courseList",courseList);
         request.getRequestDispatcher("pages/admin/addclass.jsp").forward(request, response);
     }
+
+    protected void getAllClassesStu(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Classes> classesList = classService.getBeanListAll();
+        request.setAttribute("classesList",classesList);
+        request.getRequestDispatcher("pages/student/register.jsp").forward(request, response);
+    }
 }
