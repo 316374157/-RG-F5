@@ -42,15 +42,6 @@
           <input type="password" class="form-control" id="inputPassword3" name="passWd" placeholder="Password" style="width: 50%">
         </div>
       </div>
-      <div class="form-group">
-        <div class="col-sm-offset-2 col-sm-10">
-          <div class="checkbox" style="position: absolute;margin: 0 auto">
-            <label>
-              <input type="checkbox"> 记住密码
-            </label>
-          </div>
-        </div>
-      </div>
       <div class="form-group" style="padding-left: 50px;">
         <div class="col-sm-offset-2 col-sm-10" style="position: absolute;margin: 0 auto">
           <button type="submit" class="btn btn-default" id="login">登录</button>
