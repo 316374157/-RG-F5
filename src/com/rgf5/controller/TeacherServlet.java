@@ -139,7 +139,7 @@ public class TeacherServlet extends BaseServlet {
         TeacherService teacherService = new TeacherServiceImpl();
         teacherService.update(teacher);
         session.setAttribute("teacher",teacher);
-        response.sendRedirect("pages/teacher/Course.jsp");
+        response.sendRedirect("TeacherServlet?method=CourseName");
     }
 
     protected void CourseInfo(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
@@ -225,5 +225,32 @@ public class TeacherServlet extends BaseServlet {
         List<Course> beanListAll = courseDao.getBeanListAll();
         request.setAttribute("beanListAll",beanListAll);
         request.getRequestDispatcher("pages/teacher/SelCourse.jsp").forward(request, response);
+    }
+
+    protected void addCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Teacher teacherNew = WebUtils.paramsToBean(request, new Teacher());
+        Teacher teacher = (Teacher) session.getAttribute("teacher");
+        teacher.setCourseId1(teacherNew.getCourseId1());
+        teacher.setCourseId2(teacherNew.getCourseId2());
+        teacher.setCourseId3(teacherNew.getCourseId3());
+        TeacherService teacherService = new TeacherServiceImpl();
+        teacherService.update(teacher);
+        session.setAttribute("teacher", teacher);
+        response.sendRedirect("TeacherServlet?method=CourseName");
+    }
+
+    protected void CourseName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        Teacher teacher = (Teacher) session.getAttribute("teacher");
+        CourseService courseService = new CourseServiceImpl();
+        List<Course> beanListAll = courseService.getBeanListAll();
+        System.out.println(beanListAll);
+        HashMap<String, Object> map = new HashMap<>();
+        for (Course course : beanListAll) {
+            map.put(course.getCourseId(), course.getCourseName());
+        }
+        request.setAttribute("map",map);
+        request.getRequestDispatcher("pages/teacher/Course.jsp").forward(request, response);
     }
 }

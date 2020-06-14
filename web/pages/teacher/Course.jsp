@@ -31,8 +31,9 @@
                 </div>
             </div>
             <c:if test="${!empty sessionScope.teacher.courseId1}">
-                <div class="course">
+                <div class="course" style="height: 180px;">
                     <img src="static/image/Course.png" alt=""/>
+                    <p style="font-size: 20px;height: 30px;border: 1px solid #96C2F1;color: #1687d9;">${requestScope.map.get(sessionScope.teacher.courseId1)}</p>
                     <div class="courseuse">
                         <a href="TeacherServlet?method=CourseInfo&courseId=${sessionScope.teacher.courseId1}" class="enter">进入课程</a>
                         <a href="TeacherServlet?method=updateCourse&courseId1=${sessionScope.teacher.courseId1}" class="delete">删除</a>
@@ -42,6 +43,7 @@
             <c:if test="${!empty sessionScope.teacher.courseId2}">
                 <div class="course">
                     <img src="static/image/Course.png" alt=""/>
+                    <p style="font-size: 20px;height: 30px;border: 1px solid #96C2F1;color: #1687d9;">${requestScope.map.get(sessionScope.teacher.courseId2)}</p>
                     <div class="courseuse">
                         <a href="TeacherServlet?method=CourseInfo&courseId=${sessionScope.teacher.courseId2}" class="enter">进入课程</a>
                         <a href="TeacherServlet?method=updateCourse&courseId2=${sessionScope.teacher.courseId2}" class="delete">删除</a>
@@ -51,6 +53,7 @@
             <c:if test="${!empty sessionScope.teacher.courseId3}">
                 <div class="course">
                     <img src="static/image/Course.png" alt=""/>
+                    <p style="font-size: 20px;height: 30px;border: 1px solid #96C2F1;color: #1687d9;">${requestScope.map.get(sessionScope.teacher.courseId3)}</p>
                     <div class="courseuse">
                         <a href="TeacherServlet?method=CourseInfo&courseId=${sessionScope.teacher.courseId3}" class="enter">进入课程</a>
                         <a href="TeacherServlet?method=updateCourse&courseId3=${sessionScope.teacher.courseId3}" class="delete">删除</a>

@@ -13,7 +13,7 @@
 <div class="main">
     <div class="main_part">
         <div class="main_part_top">
-            <div class="kj">班级1</div>
+            <div class="kj">${requestScope.beanByClassId.className}</div>
         </div>
         <div class="main_part_nav">
             <table class="class">

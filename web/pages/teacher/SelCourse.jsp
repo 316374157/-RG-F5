@@ -18,6 +18,7 @@
         <div class="main_part_nav">
             <ul>
                 <form action="TeacherServlet" method="post">
+                    <input name="method" type="hidden" value="addCourse" />
                     <li>
                         <a style="display: block;float: left;width: 70px;">课程一：</a>
                         <select name="courseId1">

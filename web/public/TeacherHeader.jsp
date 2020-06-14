@@ -16,7 +16,7 @@
 				<li id="home" class=""><a href="TeacherServlet?method=home">主页</a></li>
 				<li id="myallclass" class=""><a href="TeacherServlet?method=getMyAllClass">班级详情</a></li>
 				<li id="data" class=""><a href="TeacherServlet?method=getMyClass">教学资源</a></li>
-				<li id="course" class=""><a href="pages/teacher/Course.jsp">课程</a></li>
+				<li id="course" class=""><a href="TeacherServlet?method=CourseName">课程</a></li>
 				<li id="sign" class=""><a href="SignServlet?method=getSign">签到</a></li>
 				<li id="allsigninfo" class=""><a href="SignServlet?method=getAllSignInfo">签到详情</a></li>
 				<li id="live" class=""><a href="pages/teacher/Live.jsp">直播</a></li>

@@ -59,7 +59,10 @@ public class SignServlet extends BaseServlet {
         SignDao signDao = new SignDaoImpl();
         List<Sign> beanListByCC = signDao.getBeanListByCC(courseId, classId);
         System.out.println(beanListByCC);
+        ClassDao classDao = new ClassDaoImpl();
+        Classes beanByClassId = classDao.getBeanByClassId(classId);
         request.setAttribute("beanListByCC",beanListByCC);
+        request.setAttribute("beanByClassId",beanByClassId);
         request.getRequestDispatcher("pages/teacher/SignInformation.jsp").forward(request, response);
     }
 

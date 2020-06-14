@@ -63,7 +63,7 @@
             <div class="main_part_top">
                 <div class="kj">课程</div>
                 <div class="more">
-                    <a href="pages/teacher/Course.jsp">MORE+</a>
+                    <a href="TeacherServlet?method=CourseName">MORE+</a>
                 </div>
             </div>
             <div class="course">
