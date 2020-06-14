@@ -86,6 +86,7 @@
 		<div class="form-group" >
 			<div class="col-sm-offset-2 col-sm-10" style="position: absolute;right: 30%">
 				<input style="margin-left: 100px;" class="btn btn-default" id="registerBtn" type="submit" value="注册" />
+				<a href="index.jsp" style="margin-left: 50px;">返回</a>
 			</div>
 		</div>
 	</form>
