@@ -33,25 +33,7 @@
 
 </head>
 <body style="background-image: url(static/image/桌面.jpg);background-size: cover">
-<div style="background-image: url(static/image/桌面.jpg);background-size: cover">
-<%--
-	<div class="main_part_nav">
-		<ul>
-			<form action="StudentServlet" method="post">
-				<input type="hidden" name="method" value="register">
-				<li>
-					<a style="display: block;float: left;width: 70px;">用户名：</a><input type="text" name="username" class="form-control" id="inputEmail3" placeholder="uname" style="width: 50%"/>
-				</li>
-				<li>
-					<a style="display: block;float: left;width: 70px;">密码：</a><input type="password" name="passwd" class="form-control" id="inputPassword3" placeholder="Password" style="width: 50%" />
-				</li>
-				<li>
-					<a style="display: block;float: left;width: 70px;">确认密码：</a><input type="repassword" name="passwd1" class="form-control" id="inputPassword4" placeholder="RePassword" style="width: 50%"/>
-				</li>
-			</form>
-		</ul>
---%>
-
+<div style="text-align: center;position: absolute;width: 50%;height: 40%;margin: 0 auto;top: 25%;left: 35%">
 	<div class="main_part_nav">
 		<span id="msg" style="color: #ff0000">${requestScope.msg}</span>
         <form class="form-horizontal" action="StudentServlet" method="post">
@@ -63,7 +45,7 @@
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="passWd" class="col-sm-2 control-label">密码：</label>
+			<label for="passWd" class="col-sm-2 control-label" >密码：</label>
 			<div class="col-sm-10">
 				<input type="password" name="passWd" class="form-control" id="passWd" placeholder="密码" style="width: 50%">
 			</div>
@@ -77,14 +59,16 @@
 		<div class="form-group" >
 			<label  class="col-sm-2 control-label">性别：</label>
 			<div class="col-sm-10">
-				<input type="radio" name="sex" value="男">男
-				<input type="radio" name="sex" value="女">女
+				<label for="man" class="col-sm-2 control-label">男</label>
+				<input class="radio" id="man" type="radio" name="sex" value="男">
+				<label for="woman" class="col-sm-2 control-label">女</label>
+				<input class="radio" id="woman" type="radio" name="sex" value="女">
 			</div>
 		</div>
 			<div class="form-group">
 				<label for="classId" class="col-sm-2 control-label">班级：</label>
 				<div class="col-sm-10">
-					<select name="classId" id="classId">
+					<select class="btn btn-default dropdown-toggle" name="classId" id="classId" style="float: left">
 						<c:forEach items="${requestScope.courseList}" var="item">
 							<option value="${item.courseId}">${item.courseName}</option>
 						</c:forEach>
@@ -100,11 +84,12 @@
 
 
 		<div class="form-group" >
-			<div class="col-sm-offset-2 col-sm-10" style="position: absolute;margin: 0 auto">
+			<div class="col-sm-offset-2 col-sm-10" style="position: absolute;right: 30%">
 				<input style="margin-left: 100px;" class="btn btn-default" id="registerBtn" type="submit" value="注册" />
 			</div>
 		</div>
 	</form>
+</div>
 </div>
 </body>
 </html>
