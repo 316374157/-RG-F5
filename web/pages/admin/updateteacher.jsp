@@ -13,7 +13,7 @@
 <div class="main">
 	<div class="main_part">
 		<div class="main_part_top">
-			<div class="kj">教师信息</div>
+			<div class="kj">本人所选课程</div>
 		</div>
 		<div class="main_part_nav">
 			<ul>

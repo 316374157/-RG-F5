@@ -26,6 +26,7 @@
             <div class="main_part_top">
                 <div class="kj">课程</div>
                 <div class="more">
+                    <a href="TeacherServlet?method=SelCourse">选择课程</a>
                     <a href="pages/teacher/NewCourse.jsp">新建课程</a>
                 </div>
             </div>

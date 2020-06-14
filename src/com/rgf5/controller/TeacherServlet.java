@@ -218,4 +218,12 @@ public class TeacherServlet extends BaseServlet {
         response.sendRedirect("index.jsp");
         System.out.println(session);
     }
+
+    protected void SelCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        CourseDao courseDao = new CourseDaoImpl();
+        List<Course> beanListAll = courseDao.getBeanListAll();
+        request.setAttribute("beanListAll",beanListAll);
+        request.getRequestDispatcher("pages/teacher/SelCourse.jsp").forward(request, response);
+    }
 }
