@@ -18,7 +18,7 @@
             <ul>
                 <form action="TeacherServlet" method="post">
                     <li>
-                        <label>用户名：</label><input type="text" placeholder="name" name="username" value=${sessionScope.teacher.username}>
+                        <label>用户名：</label><input type="text" readonly="readonly" placeholder="name" name="username" value=${sessionScope.teacher.username}>
                     </li>
                     <li>
                         <label>姓名：</label><input type="text" placeholder="name" name="teachername" value=${sessionScope.teacher.teacherName}>
