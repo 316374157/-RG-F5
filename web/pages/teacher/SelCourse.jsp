@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="static/css/ChangeInfo.css">
 </head>
 <body>
-<jsp:include page="../../public/user-hader.jsp"/>
+<jsp:include page="../../public/TeacherHeader.jsp"/>
 <div class="main">
     <div class="main_part">
         <div class="main_part_top">
